@@ -1,6 +1,5 @@
 import React from 'react';
-import Home from './screens/Home';
-import {View, Text, StyleSheet} from 'react-native';
+import Home from './assets/screens/Home/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -41,7 +40,7 @@ function HomeScreen() {
           }
 
           // You can return any component that you like here!
-          return <Icon name={iconName} size={30} color={'black'} />;
+          return <Icon name={iconName} size={size} color={color} />;
         },
         activeTintColor: 'green',
         inactiveTintColor: 'gray',
@@ -54,17 +53,14 @@ function HomeScreen() {
       <Tab.Screen
         name="Orders"
         component={Home}
-        // options={{headerShown: false}}
       />
       <Tab.Screen
         name="Report"
         component={Home}
-        //options={{headerShown: false}}
       />
       <Tab.Screen
         name="Settlement"
         component={Home}
-        // options={{headerShown: false}}
       />
     </Tab.Navigator>
   );
@@ -84,11 +80,4 @@ const App = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  tab: {
-    borderTopLeftRadius: 15,
-    borderTopStartRadius: 15,
-    backgroundColor: 'white',
-  },
-});
 export default App;
