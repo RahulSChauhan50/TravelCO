@@ -8,7 +8,6 @@ import {
   FlatList,
   StyleSheet,
   Dimensions,
-  Animated,
 } from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -40,40 +39,10 @@ const offer = [
   },
 ];
 class Home extends Component {
-  anime = {
-    ActionBarHeight: new Animated.Value(50),
-    scrollBarPosition: new Animated.Value(0),
-  };
-
-  changeActionBarHeight = y => {
-    if (y > 50) {
-      this.anime.ActionBarHeight.setValue(0);
-    } else {
-      this.anime.ActionBarHeight.setValue(50 - y);
-    }
-  };
-
   render() {
     return (
       <SafeAreaView style={{flex: 1, paddingHorizontal: 5}}>
-        <Animated.View
-          style={{
-            height: this.anime.ActionBarHeight,
-            backgroundColor: '#2176E2',
-          }}></Animated.View>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          onScroll={Animated.event(
-            [{nativeEvent: {contentOffset: {x: this.anime.scrollBarPosition}}}],
-            {
-              listener: event => {
-                console.log(event.nativeEvent.contentOffset.y);
-                this.changeActionBarHeight(event.nativeEvent.contentOffset.y);
-              },
-              useNativeDriver: false,
-            },
-          )}
-          scrollEventThrottle={16}>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <ImageBackground
             style={{
               flex: 1,
