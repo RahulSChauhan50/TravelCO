@@ -46,26 +46,10 @@ function HomeScreen() {
         activeTintColor: 'green',
         inactiveTintColor: 'gray',
       })}>
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        //options={{headerShown: false}}
-      />
-      <Tab.Screen
-        name="Orders"
-        component={Home}
-        // options={{headerShown: false}}
-      />
-      <Tab.Screen
-        name="Report"
-        component={Home}
-        //options={{headerShown: false}}
-      />
-      <Tab.Screen
-        name="Settlement"
-        component={Home}
-        // options={{headerShown: false}}
-      />
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Orders" component={Home} />
+      <Tab.Screen name="Report" component={Home} />
+      <Tab.Screen name="Settlement" component={Home} />
     </Tab.Navigator>
   );
 }
