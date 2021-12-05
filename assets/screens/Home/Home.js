@@ -44,8 +44,8 @@ class Home extends Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
-        <StatusBar backgroundColor="#2176e2" />
-        <Appbar style={{backgroundColor: '#2176e2', elevation: 0}}>
+        <StatusBar backgroundColor="#2276E3" />
+        <Appbar style={{backgroundColor: '#2276E3', elevation: 0}}>
           <Avatar.Icon
             icon="account-circle-outline"
             size={30}
@@ -56,8 +56,8 @@ class Home extends Component {
           <Appbar.Action icon="wallet-outline" />
           <Appbar.Action icon="bell-outline" />
         </Appbar>
-        <View style={{height: '10%'}}>
-          <View style={{height: '50%', backgroundColor: '#2176e2'}} />
+        <View style={{height: '14%'}}>
+          <View style={{height: '50%', backgroundColor: '#2276E3'}} />
           <Card
             style={{
               backgroundColor: 'white',
@@ -66,230 +66,152 @@ class Home extends Component {
               height: '100%',
               position: 'absolute',
               width: '96%',
+              elevation: 10,
             }}>
-            <Text>asccsc</Text>
+            <Card.Content
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="office-building"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text>Hotels</Text>
+              </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="airplane"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text>Flights</Text>
+              </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="train"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text>Trains</Text>
+              </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="bus-double-decker"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text>Bus</Text>
+              </View>
+            </Card.Content>
           </Card>
         </View>
-
         <ScrollView showsVerticalScrollIndicator={false}>
-          <ImageBackground
+          <Card
             style={{
-              flex: 1,
-              height: 300,
-              width: '100%',
-              resizeMode: 'contain',
-            }}
-            imageStyle={{
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
-            }}
-            source={{
-              uri: 'https://media.istockphoto.com/photos/fresh-mixed-fruits-picture-id467652436?b=1&k=20&m=467652436&s=170667a&w=0&h=SgDVjLV5rfJ-kJ80GYcQJ4CL1R0n4LoxTYXixnSZuWs=',
-            }}
-            resizeMode={'cover'}>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'row',
-                marginLeft: 20,
-                marginTop: 20,
-              }}>
-              <TouchableHighlight
-                style={{
-                  height: 90,
-                  width: 90,
-                  borderRadius: 45,
-                  borderColor: 'white',
-                  borderWidth: 1,
-                }}>
-                <Image
-                  source={{
-                    uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFwcHklMjB3b21hbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
-                  }}
-                  style={{height: 90, width: 90, borderRadius: 45}}
-                  resizeMode={'cover'}
-                />
-              </TouchableHighlight>
-              <View style={{marginTop: 15, marginLeft: 15}}>
-                <Text style={{fontSize: 20, fontWeight: '500', color: 'white'}}>
-                  Noel Fashions
-                </Text>
-
-                <Text style={{fontSize: 15, color: 'white', marginTop: 5}}>
-                  Women's clothing
-                </Text>
-              </View>
-            </View>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'row',
-                marginTop: 60,
-              }}>
-              <View
-                style={{
-                  backgroundColor: '#65F700',
-                  paddingHorizontal: 5,
-                  borderRadius: 5,
-                  position: 'absolute',
-                  marginTop: 5,
-                  left: 10,
-                }}>
-                <MaterialCommunityIcons
-                  name="eye"
-                  color="white"
-                  size={20}
-                  style={{position: 'absolute', left: 5}}
-                />
-                <Text
-                  style={{marginLeft: 25, color: 'white', fontWeight: '300'}}>
-                  500
-                </Text>
-              </View>
-              <View
-                style={{
-                  paddingHorizontal: 10,
-                  position: 'absolute',
-                  marginTop: 5,
-                  left: 80,
-                }}>
-                <MaterialCommunityIcons
-                  name="youtube-tv"
-                  color="white"
-                  size={20}
-                  style={{position: 'absolute', left: 10}}
-                />
-                <Text
-                  style={{marginLeft: 30, color: 'white', fontWeight: '300'}}>
-                  500
-                </Text>
-              </View>
-              <MaterialCommunityIcons
-                name="account"
-                color="white"
-                size={30}
-                style={{position: 'absolute', right: 90}}
-              />
-              <MaterialCommunityIcons
-                name="share-variant"
-                color="white"
-                size={30}
-                style={{position: 'absolute', right: 10}}
-              />
-            </View>
-          </ImageBackground>
-          <View
-            style={{
-              bottom: -20,
               backgroundColor: 'white',
-              height: 280,
-              borderRadius: 10,
-              marginHorizontal: '5%',
+              marginHorizontal: '2%',
+              width: '96%',
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+              marginTop: -5,
             }}>
-            <Text
+            <Card.Content
               style={{
-                fontSize: 20,
-                fontWeight: '900',
-                color: 'black',
-                marginLeft: 10,
-                marginTop: 5,
-              }}>
-              Statics
-            </Text>
-          </View>
-          <View
-            style={{
-              borderRadius: 10,
-              paddingTop: 10,
-              backgroundColor: 'white',
-              height: 380,
-              bottom: -20,
-              marginHorizontal: '5%',
-            }}>
-            <View
-              style={{
-                flex: 1,
                 flexDirection: 'row',
-                width: '100%',
+                justifyContent: 'space-between',
+                marginVertical: 5,
               }}>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontWeight: '900',
-                  color: 'black',
-                  textAlign: 'center',
-                  position: 'absolute',
-                  marginLeft: 10,
-                }}>
-                Offers
-              </Text>
-              <Text
-                style={{
-                  color: '#02cbfe',
-                  fontSize: 15,
-                  textAlign: 'center',
-                  position: 'absolute',
-                  right: 10,
-                  fontWeight: '400',
-                }}>
-                View More
-              </Text>
-            </View>
-            {offer.map((item, ind) => (
-              <View
-                key={ind}
-                style={{
-                  flex: 1,
-                  heigt: 150,
-                  width: '50%',
-                  marginTop: 10,
-                  marginHorizontal: 2,
-                  borderColor: 'white',
-                  borderWidth: 1,
-                }}>
-                <ImageBackground
-                  source={{
-                    uri: item.img,
-                  }}
-                  style={{height: 150, width: '100%'}}
-                  resizeMode={'cover'}>
-                  <View
-                    style={{
-                      flex: 1,
-                      flexDirection: 'row',
-                      width: '100%',
-                      bottom: 0,
-                      paddingVertical: 10,
-                      position: 'absolute',
-                      backgroundColor: 'black',
-                      opacity: 0.7,
-                    }}>
-                    <Text
-                      style={{
-                        color: 'white',
-                        fontSize: 15,
-                        textAlign: 'left',
-                        marginLeft: 5,
-                        fontWeight: '400',
-                      }}>
-                      {item.status}
-                    </Text>
-                    <Text
-                      style={{
-                        color: 'white',
-                        fontSize: 15,
-                        position: 'absolute',
-                        marginTop: 10,
-                        right: 5,
-                        fontWeight: '400',
-                      }}>
-                      {item.id}
-                    </Text>
-                  </View>
-                </ImageBackground>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="home-heart"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text style={{textAlign: 'center'}}>Couple{'\n'} Hotels</Text>
               </View>
-            ))}
-          </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="car"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text style={{textAlign: 'center'}}>Airport {'\n'}Cabs</Text>
+              </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="ticket-confirmation-outline"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text style={{textAlign: 'center'}}>
+                  Train PNR {'\n'}Status
+                </Text>
+              </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="car-hatchback"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text style={{textAlign: 'center'}}>Outstation {'\n'}Cabs</Text>
+              </View>
+            </Card.Content>
+            <Card.Content
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                marginVertical: 5,
+              }}>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="home-city"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text style={{textAlign: 'center'}}>
+                  Villas &{'\n'} Homestays
+                </Text>
+              </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="food"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text style={{textAlign: 'center'}}>Airport{'\n'} meals</Text>
+              </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="timetable"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text style={{textAlign: 'center'}}>
+                  Train Running{'\n'} Status
+                </Text>
+              </View>
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="home-map-marker"
+                  size={50}
+                  color="#2276E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text style={{textAlign: 'center'}}>Nearby{'\n'} Getways</Text>
+              </View>
+            </Card.Content>
+          </Card>
         </ScrollView>
       </SafeAreaView>
     );
