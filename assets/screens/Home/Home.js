@@ -8,7 +8,9 @@ import {
   FlatList,
   StyleSheet,
   Dimensions,
+  StatusBar,
 } from 'react-native';
+import {Card, Appbar, Avatar, ProgressBar} from 'react-native-paper';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {ScrollView} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -41,7 +43,34 @@ const offer = [
 class Home extends Component {
   render() {
     return (
-      <SafeAreaView style={{flex: 1, paddingHorizontal: 5}}>
+      <SafeAreaView style={{flex: 1}}>
+        <StatusBar backgroundColor="#2176e2" />
+        <Appbar style={{backgroundColor: '#2176e2', elevation: 0}}>
+          <Avatar.Icon
+            icon="account-circle-outline"
+            size={30}
+            color="grey"
+            style={{backgroundColor: '#dee2e6', marginStart: 10}}
+          />
+          <Appbar.Content title="Welcome Guest" titleStyle={{fontSize: 15}} />
+          <Appbar.Action icon="wallet-outline" />
+          <Appbar.Action icon="bell-outline" />
+        </Appbar>
+        <View style={{height: '10%'}}>
+          <View style={{height: '50%', backgroundColor: '#2176e2'}} />
+          <Card
+            style={{
+              backgroundColor: 'white',
+              marginHorizontal: '2%',
+              borderRadius: 10,
+              height: '100%',
+              position: 'absolute',
+              width: '96%',
+            }}>
+            <Text>asccsc</Text>
+          </Card>
+        </View>
+
         <ScrollView showsVerticalScrollIndicator={false}>
           <ImageBackground
             style={{
