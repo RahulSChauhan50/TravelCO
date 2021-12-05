@@ -1,10 +1,12 @@
 import React from 'react';
-import Home from './assets/screens/Home/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Provider as PaperProvider} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createStackNavigator} from '@react-navigation/stack';
+
+import Home from './assets/screens/Home/Home';
+import Profile from './assets/screens/Profile/Profile';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -46,12 +48,8 @@ function HomeScreen() {
         activeTintColor: 'green',
         inactiveTintColor: 'gray',
       })}>
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        //options={{headerShown: false}}
-      />
-      <Tab.Screen name="Orders" component={Home} />
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Orders" component={Profile} />
       <Tab.Screen name="Report" component={Home} />
       <Tab.Screen name="Settlement" component={Home} />
     </Tab.Navigator>
