@@ -39,13 +39,28 @@ const offer = [
     status: 'Ongoing',
     id: '06',
   },
+  {
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEze2m-ndA6l0ineIS9WRTt3NJVLsPccasA&usqp=CAU',
+    status: 'Ongoing',
+    id: '06',
+  },
+  {
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEze2m-ndA6l0ineIS9WRTt3NJVLsPccasA&usqp=CAU',
+    status: 'Ongoing',
+    id: '06',
+  },
+  {
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEze2m-ndA6l0ineIS9WRTt3NJVLsPccasA&usqp=CAU',
+    status: 'Ongoing',
+    id: '06',
+  },
 ];
 class Home extends Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
-        <StatusBar backgroundColor="#2276E3" />
-        <Appbar style={{backgroundColor: '#2276E3', elevation: 0}}>
+        <StatusBar backgroundColor="#2176E3" />
+        <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
           <Avatar.Icon
             icon="account-circle-outline"
             size={30}
@@ -57,7 +72,7 @@ class Home extends Component {
           <Appbar.Action icon="bell-outline" />
         </Appbar>
         <View style={{height: '14%'}}>
-          <View style={{height: '50%', backgroundColor: '#2276E3'}} />
+          <View style={{height: '50%', backgroundColor: '#2176E3'}} />
           <Card
             style={{
               backgroundColor: 'white',
@@ -74,7 +89,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="office-building"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text>Hotels</Text>
@@ -83,7 +98,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="airplane"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text>Flights</Text>
@@ -92,7 +107,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="train"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text>Trains</Text>
@@ -101,7 +116,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="bus-double-decker"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text>Bus</Text>
@@ -129,7 +144,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="home-heart"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text style={{textAlign: 'center'}}>Couple{'\n'} Hotels</Text>
@@ -138,7 +153,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="car"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text style={{textAlign: 'center'}}>Airport {'\n'}Cabs</Text>
@@ -147,7 +162,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="ticket-confirmation-outline"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text style={{textAlign: 'center'}}>
@@ -158,7 +173,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="car-hatchback"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text style={{textAlign: 'center'}}>Outstation {'\n'}Cabs</Text>
@@ -174,7 +189,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="home-city"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text style={{textAlign: 'center'}}>
@@ -185,7 +200,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="food"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text style={{textAlign: 'center'}}>Airport{'\n'} meals</Text>
@@ -194,7 +209,7 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="timetable"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text style={{textAlign: 'center'}}>
@@ -205,13 +220,73 @@ class Home extends Component {
                 <Avatar.Icon
                   icon="home-map-marker"
                   size={50}
-                  color="#2276E3"
+                  color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text style={{textAlign: 'center'}}>Nearby{'\n'} Getways</Text>
               </View>
             </Card.Content>
           </Card>
+          <View
+            style={{
+              marginHorizontal: '2%',
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginVertical: 10,
+            }}>
+            <MaterialCommunityIcons
+              name="ticket-percent-outline"
+              size={30}
+              color="#2176E3"
+            />
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>
+              Offers For You
+            </Text>
+          </View>
+          <View>
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              data={offer}
+              renderItem={({item, index, separators}) => (
+                <Card
+                  style={{
+                    marginHorizontal: 10,
+                    padding: 10,
+                    borderRadius: 10,
+                    elevation: 5,
+                    marginBottom: 10,
+                  }}>
+                  <View style={{flexDirection: 'row', marginBottom: 10}}>
+                    <Image
+                      source={{uri: item.img}}
+                      style={{
+                        width: 70,
+                        height: 70,
+                        borderRadius: 5,
+                        marginEnd: 10,
+                      }}
+                    />
+                    <View>
+                      <Text>Domestic Flights</Text>
+                      <Text style={{fontWeight: 'bold', color: 'black'}}>
+                        FLAT 25% OFF* on select{'\n'} routes
+                      </Text>
+                    </View>
+                  </View>
+                  <Text
+                    style={{
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      color: '#2176E3',
+                    }}>
+                    Copy & Book: STEALDEAL
+                  </Text>
+                </Card>
+              )}
+              keyExtractor={(item, ind) => ind}
+            />
+          </View>
         </ScrollView>
       </SafeAreaView>
     );
