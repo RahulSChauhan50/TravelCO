@@ -18,8 +18,8 @@ function HomeScreen() {
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
           switch (route.name) {
-            case 'Qty/Price': {
-              iconName = focused ? 'tree' : 'tree-outline';
+            case 'Home': {
+              iconName = focused ? 'home' : 'home-outline';
               break;
             }
             case 'Orders': {
