@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#DDEBF7',
   },
   topContainer: {
-    backgroundColor: '#00238E',
+    backgroundColor: '#2274E0',
     height: 200,
     width: '100%',
   },
