@@ -1,10 +1,12 @@
 import React from 'react';
-import Home from './screens/Home';
-import {View, Text, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Provider as PaperProvider} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createStackNavigator} from '@react-navigation/stack';
+
+import Home from './assets/screens/Home/Home';
+import Profile from './assets/screens/Profile/Profile';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -41,13 +43,13 @@ function HomeScreen() {
           }
 
           // You can return any component that you like here!
-          return <Icon name={iconName} size={30} color={'black'} />;
+          return <Icon name={iconName} size={size} color={color} />;
         },
         activeTintColor: 'green',
         inactiveTintColor: 'gray',
       })}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Orders" component={Home} />
+      <Tab.Screen name="Orders" component={Profile} />
       <Tab.Screen name="Report" component={Home} />
       <Tab.Screen name="Settlement" component={Home} />
     </Tab.Navigator>
@@ -56,23 +58,18 @@ function HomeScreen() {
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen">
-        <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PaperProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomeScreen">
+          <Stack.Screen
+            name="HomeScreen"
+            component={HomeScreen}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 };
 
-const styles = StyleSheet.create({
-  tab: {
-    borderTopLeftRadius: 15,
-    borderTopStartRadius: 15,
-    backgroundColor: 'white',
-  },
-});
 export default App;
