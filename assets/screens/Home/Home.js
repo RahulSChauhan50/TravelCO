@@ -14,6 +14,7 @@ import {Card, Appbar, Avatar, ProgressBar} from 'react-native-paper';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {ScrollView} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import LinearGradient from 'react-native-linear-gradient';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -282,6 +283,202 @@ class Home extends Component {
                     }}>
                     Copy & Book: STEALDEAL
                   </Text>
+                </Card>
+              )}
+              keyExtractor={(item, ind) => ind}
+            />
+          </View>
+          <View style={{height: verticalScale(280)}}>
+            <LinearGradient
+              start={{x: 0, y: 0}}
+              end={{x: 0, y: 1}}
+              colors={['#fcbfbf', '#fcbfbf', '#ffffff']}
+              style={{
+                height: verticalScale(200),
+                marginHorizontal: '2%',
+                borderRadius: 10,
+                padding: 10,
+              }}>
+              <Text style={{fontWeight: 'bold', fontSize: moderateScale(20)}}>
+                Daiy Steal Deals {'>'}
+              </Text>
+              <Text style={{fontSize: moderateScale(12)}}>
+                Lowest ever prices on top-rated hotels
+              </Text>
+            </LinearGradient>
+            <View style={{position: 'absolute', marginTop: verticalScale(60)}}>
+              <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                data={offer}
+                renderItem={({item, index, separators}) => (
+                  <Card
+                    style={{
+                      width: scale(250),
+                      height: verticalScale(200),
+                      borderRadius: 10,
+                      marginHorizontal: 10,
+                      elevation: 5,
+                      marginBottom: 10,
+                    }}>
+                    <Image
+                      resizeMode="cover"
+                      source={{uri: item.img}}
+                      style={{
+                        height: verticalScale(100),
+                        width: '100%',
+                        borderRadius: 10,
+                      }}
+                    />
+                    <View
+                      style={{justifyContent: 'space-between', padding: 10}}>
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          justifyContent: 'space-between',
+                        }}>
+                        <Text style={{fontWeight: 'bold'}}>
+                          The Daanish Residency
+                        </Text>
+                        <View
+                          style={{
+                            flexDirection: 'row',
+                          }}>
+                          <MaterialCommunityIcons
+                            name="star"
+                            size={20}
+                            color="#F7B401"
+                          />
+                          <MaterialCommunityIcons
+                            name="star"
+                            size={20}
+                            color="#F7B401"
+                          />
+                          <MaterialCommunityIcons
+                            name="star"
+                            size={20}
+                            color="#F7B401"
+                          />
+                          <Text>Hotel</Text>
+                        </View>
+                      </View>
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          justifyContent: 'space-between',
+                        }}>
+                        <View
+                          style={{
+                            flexDirection: 'row',
+                          }}>
+                          <MaterialCommunityIcons name="map-marker" size={20} />
+                          <Text>Delhi {'|'} 8 KM from Delhi</Text>
+                        </View>
+                        <View
+                          style={{
+                            backgroundColor: '#20db4c',
+                            borderRadius: 3,
+                            padding: 5,
+                          }}>
+                          <Text>3.9/5</Text>
+                        </View>
+                      </View>
+                      <Text>Free cancellation </Text>
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                        }}>
+                        <View>
+                          <Text>81% OFF</Text>
+                        </View>
+                        <View>
+                          <Text style={{textDecorationLine: 'line-through'}}>
+                            Rs2,999
+                          </Text>
+                          <Text style={{fontWeight: 'bold'}}>Rs.556</Text>
+                        </View>
+                      </View>
+                    </View>
+                  </Card>
+                )}
+                keyExtractor={(item, ind) => ind}
+              />
+            </View>
+          </View>
+          <View
+            style={{
+              marginHorizontal: '2%',
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginVertical: 10,
+            }}>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>What's new?</Text>
+          </View>
+          <View>
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              data={offer}
+              renderItem={({item, index, separators}) => (
+                <Card
+                  style={{
+                    marginHorizontal: 10,
+                    borderRadius: 10,
+                    elevation: 5,
+                    marginBottom: 10,
+                    height: verticalScale(100),
+                    width: scale(200),
+                  }}>
+                  <Image
+                    source={{uri: item.img}}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: 5,
+                    }}
+                  />
+                </Card>
+              )}
+              keyExtractor={(item, ind) => ind}
+            />
+          </View>
+          <View
+            style={{
+              marginHorizontal: '2%',
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginVertical: 10,
+            }}>
+            <MaterialCommunityIcons name="alarm" size={30} color="#2176E3" />
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>
+              Top Daily Steal Deals
+            </Text>
+          </View>
+          <View>
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              data={offer}
+              renderItem={({item, index, separators}) => (
+                <Card
+                  style={{
+                    marginHorizontal: 10,
+                    borderRadius: 10,
+                    elevation: 5,
+                    marginBottom: 10,
+                    height: verticalScale(100),
+                    width: scale(200),
+                  }}>
+                  <Image
+                    source={{uri: item.img}}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: 5,
+                    }}
+                  />
                 </Card>
               )}
               keyExtractor={(item, ind) => ind}
