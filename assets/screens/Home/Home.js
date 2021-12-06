@@ -112,15 +112,19 @@ class Home extends Component {
                   <Text>Hotels</Text>
                 </View>
               </TouchableRipple>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="airplane"
-                  size={50}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text>Flights</Text>
-              </View>
+              <TouchableRipple
+                onPress={() => this.props.navigation.navigate('Flights')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="airplane"
+                    size={50}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text>Flights</Text>
+                </View>
+              </TouchableRipple>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="train"
