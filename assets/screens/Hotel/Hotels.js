@@ -479,7 +479,8 @@ export default class Hotels extends Component {
                 height: verticalScale(430),
                 backgroundColor: 'white',
                 marginHorizontal: '2%',
-                borderRadius: 10,
+                borderTopRightRadius: 10,
+                borderTopLeftRadius: 10,
                 padding: 10,
               }}>
               <View style={{flexDirection: 'row'}}>
@@ -643,6 +644,67 @@ export default class Hotels extends Component {
                           </View>
                         </View>
                       </View>
+                    </Card>
+                  )}
+                  keyExtractor={(item, ind) => ind}
+                />
+              </View>
+            </View>
+            <View
+              style={{
+                height: verticalScale(300),
+                backgroundColor: 'white',
+                marginHorizontal: '2%',
+                borderBottomRightRadius: 10,
+                borderBottomLeftRadius: 10,
+                padding: 10,
+                marginBottom: 50,
+              }}>
+              <Text
+                style={{
+                  fontWeight: '600',
+                  fontSize: moderateScale(20),
+                  color: 'black',
+                }}>
+                Trending Gateways for you
+              </Text>
+              <View
+                style={{position: 'absolute', marginTop: verticalScale(60)}}>
+                <FlatList
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  data={offer}
+                  renderItem={({item, index, separators}) => (
+                    <Card
+                      style={{
+                        width: scale(120),
+                        height: verticalScale(200),
+                        borderRadius: 10,
+                        marginHorizontal: 10,
+                        elevation: 5,
+                        marginBottom: 10,
+                      }}>
+                      <Image
+                        resizeMode="cover"
+                        source={{uri: item.img}}
+                        style={{
+                          height: verticalScale(200),
+                          width: '100%',
+                          borderRadius: 5,
+                          marginTop: 10,
+                          alignSelf: 'center',
+                        }}
+                      />
+                      <Text
+                        style={{
+                          color: 'white',
+                          fontWeight: 'bold',
+                          fontSize: moderateScale(18),
+                          alignSelf: 'center',
+                          marginTop: -50,
+                        }}>
+                        {item.city}
+                      </Text>
                     </Card>
                   )}
                   keyExtractor={(item, ind) => ind}
