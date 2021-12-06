@@ -10,7 +10,13 @@ import {
   Dimensions,
   StatusBar,
 } from 'react-native';
-import {Card, Appbar, Avatar, ProgressBar} from 'react-native-paper';
+import {
+  Card,
+  Appbar,
+  Avatar,
+  ProgressBar,
+  TouchableRipple,
+} from 'react-native-paper';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {ScrollView} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -86,15 +92,19 @@ class Home extends Component {
             }}>
             <Card.Content
               style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="office-building"
-                  size={50}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text>Hotels</Text>
-              </View>
+              <TouchableRipple
+                onPress={() => this.props.navigation.navigate('Hotels')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="office-building"
+                    size={50}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text>Hotels</Text>
+                </View>
+              </TouchableRipple>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="airplane"

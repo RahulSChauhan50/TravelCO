@@ -12,7 +12,7 @@ import {
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 const windowWidth = Dimensions.get('window').width;
-import {TextInput, Avatar, Card} from 'react-native-paper';
+import {TextInput, Avatar, Card, Appbar} from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
@@ -114,9 +114,24 @@ export default class Hotels extends Component {
     // console.log(this.state.india, this.state.international);
   };
   render() {
-    console.log(this.state.india, this.state.international);
     return (
-      <SafeAreaView style={{}}>
+      <SafeAreaView style={{flex: 1}}>
+        <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
+          <Appbar.Action
+            icon="arrow-left"
+            onPress={() => this.props.navigation.goBack()}
+          />
+          <Avatar.Icon
+            icon="office-building"
+            size={moderateScale(40)}
+            color="#2176E3"
+            style={{backgroundColor: '#dee2e6'}}
+          />
+          <Appbar.Content
+            title="Hotels"
+            titleStyle={{fontSize: moderateScale(25)}}
+          />
+        </Appbar>
         <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
           <View style={styles.mainContainer}>
             <View style={styles.topContainer}></View>
@@ -652,7 +667,7 @@ const styles = StyleSheet.create({
   travelContainer: {
     backgroundColor: 'white',
     width: '95%',
-    top: -verticalScale(50),
+    top: -verticalScale(100),
     height: moderateScale(220),
     alignSelf: 'center',
     // position: 'absolute',
