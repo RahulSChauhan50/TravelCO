@@ -68,13 +68,20 @@ class Home extends Component {
       <SafeAreaView style={{flex: 1}}>
         <StatusBar backgroundColor="#2176E3" />
         <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
-          <Avatar.Icon
-            icon="account-circle-outline"
-            size={30}
-            color="grey"
-            style={{backgroundColor: '#dee2e6', marginStart: 10}}
+          <TouchableRipple
+            onPress={() => this.props.navigation.navigate('Profile')}>
+            <Avatar.Icon
+              icon="account-circle-outline"
+              size={30}
+              color="grey"
+              style={{backgroundColor: '#dee2e6', marginStart: 10}}
+            />
+          </TouchableRipple>
+          <Appbar.Content
+            title="Welcome Guest"
+            titleStyle={{fontSize: 15}}
+            onPress={() => this.props.navigation.navigate('Profile')}
           />
-          <Appbar.Content title="Welcome Guest" titleStyle={{fontSize: 15}} />
           <Appbar.Action icon="wallet-outline" />
           <Appbar.Action icon="bell-outline" />
         </Appbar>
