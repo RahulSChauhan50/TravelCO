@@ -67,6 +67,11 @@ const App = () => {
             component={HomeScreen}
             options={{headerShown: false}}
           />
+          <Stack.Screen
+            name="Hotels"
+            component={Hotels}
+            options={{headerShown: false}}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
