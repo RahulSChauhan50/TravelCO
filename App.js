@@ -8,6 +8,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './assets/screens/Home/Home';
 import Profile from './assets/screens/Profile/Profile';
 import Hotels from './assets/screens/Hotel/Hotels';
+import Flights from './assets/screens/Flights/Flights';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -70,6 +71,16 @@ const App = () => {
           <Stack.Screen
             name="Hotels"
             component={Hotels}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Profile"
+            component={Profile}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Flights"
+            component={Flights}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

@@ -68,13 +68,20 @@ class Home extends Component {
       <SafeAreaView style={{flex: 1}}>
         <StatusBar backgroundColor="#2176E3" />
         <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
-          <Avatar.Icon
-            icon="account-circle-outline"
-            size={30}
-            color="grey"
-            style={{backgroundColor: '#dee2e6', marginStart: 10}}
+          <TouchableRipple
+            onPress={() => this.props.navigation.navigate('Profile')}>
+            <Avatar.Icon
+              icon="account-circle-outline"
+              size={30}
+              color="grey"
+              style={{backgroundColor: '#dee2e6', marginStart: 10}}
+            />
+          </TouchableRipple>
+          <Appbar.Content
+            title="Welcome Guest"
+            titleStyle={{fontSize: 15}}
+            onPress={() => this.props.navigation.navigate('Profile')}
           />
-          <Appbar.Content title="Welcome Guest" titleStyle={{fontSize: 15}} />
           <Appbar.Action icon="wallet-outline" />
           <Appbar.Action icon="bell-outline" />
         </Appbar>
@@ -105,15 +112,19 @@ class Home extends Component {
                   <Text>Hotels</Text>
                 </View>
               </TouchableRipple>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="airplane"
-                  size={50}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text>Flights</Text>
-              </View>
+              <TouchableRipple
+                onPress={() => this.props.navigation.navigate('Flights')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="airplane"
+                    size={50}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text>Flights</Text>
+                </View>
+              </TouchableRipple>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="train"
@@ -309,12 +320,27 @@ class Home extends Component {
                 borderRadius: 10,
                 padding: 10,
               }}>
-              <Text style={{fontWeight: 'bold', fontSize: moderateScale(20)}}>
-                Daiy Steal Deals {'>'}
-              </Text>
-              <Text style={{fontSize: moderateScale(12)}}>
-                Lowest ever prices on top-rated hotels
-              </Text>
+              <View style={{flexDirection: 'row'}}>
+                <View>
+                  <Text
+                    style={{
+                      fontWeight: '600',
+                      fontSize: moderateScale(20),
+                      color: 'black',
+                    }}>
+                    Daiy Steal Deals
+                  </Text>
+                  <Text style={{fontSize: moderateScale(12), color: 'black'}}>
+                    Lowest ever prices on top-rated hotels
+                  </Text>
+                </View>
+                <MaterialCommunityIcons
+                  name={'greater-than'}
+                  color={'black'}
+                  size={25}
+                  style={{position: 'absolute', right: 10}}
+                />
+              </View>
             </LinearGradient>
             <View style={{position: 'absolute', marginTop: verticalScale(60)}}>
               <FlatList
@@ -388,9 +414,13 @@ class Home extends Component {
                           style={{
                             backgroundColor: '#20db4c',
                             borderRadius: 3,
-                            padding: 5,
+                            paddingHorizontal: 7,
+                            paddingVertical: 2,
+                            marginLeft: 70,
                           }}>
-                          <Text>3.9/5</Text>
+                          <Text style={{fontWeight: '500', color: 'white'}}>
+                            3.9/5
+                          </Text>
                         </View>
                       </View>
                       <Text>Free cancellation </Text>

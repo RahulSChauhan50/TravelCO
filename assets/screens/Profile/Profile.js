@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
-import {ProgressBar, Colors} from 'react-native-paper';
+import {ProgressBar, Colors, Appbar} from 'react-native-paper';
 import FIcon from 'react-native-vector-icons/Ionicons';
 import Mat from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
@@ -61,13 +61,22 @@ export default class Profile extends Component {
   render() {
     return (
       <SafeAreaView style={{}}>
+        <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
+          <Appbar.Action
+            icon="arrow-left"
+            onPress={() => this.props.navigation.goBack()}
+          />
+          <Appbar.Content
+            title="Profile"
+            titleStyle={{fontSize: moderateScale(25)}}
+          />
+          <View style={styles.bell}>
+            <Icon name={'bell-outline'} size={30} color={'white'} />
+          </View>
+        </Appbar>
         <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
           <View style={styles.mainContainer}>
-            <View style={styles.topContainer}>
-              <View style={styles.bell}>
-                <Icon name={'bell-outline'} size={30} color={'white'} />
-              </View>
-            </View>
+            <View style={styles.topContainer}></View>
             <View style={styles.travelContainer}>
               <View style={styles.details}>
                 <Image
