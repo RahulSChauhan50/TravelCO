@@ -123,13 +123,13 @@ export default class Hotels extends Component {
           />
           <Avatar.Icon
             icon="office-building"
-            size={moderateScale(40)}
+            size={moderateScale(30)}
             color="#2176E3"
             style={{backgroundColor: '#dee2e6'}}
           />
           <Appbar.Content
             title="Hotels"
-            titleStyle={{fontSize: moderateScale(25)}}
+            titleStyle={{fontSize: moderateScale(20)}}
           />
         </Appbar>
         <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
@@ -153,7 +153,7 @@ export default class Hotels extends Component {
                     width: scale(130),
                     borderRadius: 20,
                     backgroundColor:
-                      this.state.india == true ? 'blue' : '#DDEBF7',
+                      this.state.india == true ? '#2274E0' : '#DDEBF7',
                     //  justifyContent: 'flex-start',
                   }}
                   onPress={() => this.setIndia()}>
@@ -176,7 +176,7 @@ export default class Hotels extends Component {
                     width: scale(130),
                     borderRadius: 20,
                     backgroundColor:
-                      this.state.india == false ? 'blue' : '#DDEBF7',
+                      this.state.india == false ? '#2274E0' : '#DDEBF7',
                   }}
                   onPress={() => this.setInternational()}>
                   <View>
@@ -658,7 +658,6 @@ export default class Hotels extends Component {
                 borderBottomRightRadius: 10,
                 borderBottomLeftRadius: 10,
                 padding: 10,
-                marginBottom: 50,
               }}>
               <Text
                 style={{
@@ -711,6 +710,73 @@ export default class Hotels extends Component {
                 />
               </View>
             </View>
+            <View
+              style={{
+                marginTop: 10,
+                height: verticalScale(300),
+                marginHorizontal: '2%',
+                padding: 10,
+              }}>
+              <Text
+                style={{
+                  fontWeight: '600',
+                  fontSize: moderateScale(20),
+                  color: 'black',
+                }}>
+                Todays Offer
+              </Text>
+              <View
+                style={{position: 'absolute', marginTop: verticalScale(60)}}>
+                <FlatList
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  data={offer}
+                  renderItem={({item, index, separators}) => (
+                    <Card
+                      style={{
+                        width: scale(200),
+                        height: verticalScale(170),
+                        borderRadius: 2,
+                        marginHorizontal: 10,
+                        elevation: 5,
+                        marginBottom: 10,
+                      }}>
+                      <Image
+                        resizeMode="cover"
+                        source={{uri: item.img}}
+                        style={{
+                          height: verticalScale(100),
+                          width: '100%',
+                          borderRadius: 2,
+
+                          alignSelf: 'center',
+                        }}
+                      />
+                      <Text
+                        style={{
+                          color: 'black',
+                          fontWeight: '600',
+                          fontSize: moderateScale(12),
+                          marginHorizontal: 5,
+                          marginTop: 5,
+                        }}>
+                        Get Up To 15% OFF on Domestic Hotels Booking
+                      </Text>
+                      <Text
+                        style={{
+                          color: 'black',
+                          fontSize: moderateScale(12),
+                          marginHorizontal: 5,
+                          marginTop: 10,
+                        }}>
+                        Offer validity 11th Dec'21
+                      </Text>
+                    </Card>
+                  )}
+                  keyExtractor={(item, ind) => ind}
+                />
+              </View>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -723,13 +789,13 @@ const styles = StyleSheet.create({
   },
   topContainer: {
     backgroundColor: '#2274E0',
-    height: 150,
+    height: 50,
     width: '100%',
   },
   travelContainer: {
     backgroundColor: 'white',
     width: '95%',
-    top: -verticalScale(100),
+    top: -verticalScale(50),
     height: moderateScale(220),
     alignSelf: 'center',
     // position: 'absolute',
