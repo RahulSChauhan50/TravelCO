@@ -13,6 +13,7 @@ import {ProgressBar, Colors} from 'react-native-paper';
 import FIcon from 'react-native-vector-icons/Ionicons';
 import Mat from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
+import {moderateScale} from 'react-native-size-matters';
 const data = [
   {
     iconname: 'bag-checked',
@@ -25,7 +26,7 @@ const data = [
     disc: 'Recommend your hotel stay & earn goCash',
   },
   {
-    iconname: 'content-save-all',
+    iconname: 'ticket-confirmation',
     header: 'My Coupons',
     disc: 'Your goPasses, coupons & vouchers here',
   },
@@ -104,15 +105,13 @@ export default class Profile extends Component {
               </View>
             </View>
             <LinearGradient
-              start={{x: 1, y: 0}}
-              end={{x: 0, y: 1}}
+              start={{x: 0, y: 0}}
+              end={{x: 1, y: 1}}
               colors={['#F7B401', '#ffffff', '#ffffff']}
               style={styles.vaccine}>
               <View style={styles.vdeatils}>
                 <Image
-                  source={{
-                    uri: 'https://media.istockphoto.com/vectors/covid19-flu-virus-vaccination-syringe-bottle-and-flight-travel-theme-vector-id1315267670?k=20&m=1315267670&s=612x612&w=0&h=T2cjwHjU2_FpSgm7NpCysAC-Kx67J--VgxZKYE28e1Q=',
-                  }}
+                  source={require('../../images/vaccine.png')}
                   style={styles.inject}
                   resizeMode={'cover'}
                 />
@@ -138,32 +137,9 @@ export default class Profile extends Component {
             </LinearGradient>
             <LinearGradient
               colors={['#F7B5B6', '#ffffff', '#ffffff']}
-              style={{
-                width: '95%',
-                backgroundColor: 'white',
-                alignSelf: 'center',
-                height: 100,
-                marginTop: 90,
-                marginBottom: 10,
-                borderRadius: 15,
-              }}>
-              <Text
-                style={{
-                  color: 'black',
-                  fontWeight: '700',
-                  fontSize: 17,
-                  left: 20,
-                  top: 20,
-                }}>
-                goTribe
-              </Text>
-              <Text
-                style={{
-                  color: 'black',
-                  fontSize: 13,
-                  left: 20,
-                  top: 30,
-                }}>
+              style={styles.vecContainer}>
+              <Text style={styles.trbtxt}>goTribe</Text>
+              <Text style={styles.trbdisc}>
                 Travel for Rs 30000 to become a goTribe Star!
               </Text>
             </LinearGradient>
@@ -182,7 +158,7 @@ export default class Profile extends Component {
                   style={{
                     color: 'black',
                     fontWeight: '500',
-                    fontSize: 14,
+                    fontSize: moderateScale(14),
                     left: 20,
                     top: 20,
                   }}>
@@ -191,7 +167,7 @@ export default class Profile extends Component {
                 <Text
                   style={{
                     color: 'black',
-                    fontSize: 13,
+                    fontSize: moderateScale(13),
                     left: 20,
                     top: 25,
                   }}>
@@ -212,7 +188,7 @@ export default class Profile extends Component {
                 />
                 <Text
                   style={{
-                    fontSize: 20,
+                    fontSize: moderateScale(20),
                     marginLeft: 10,
                     fontWeight: 'bold',
                     color: 'black',
@@ -250,11 +226,8 @@ export default class Profile extends Component {
                     alignSelf: 'center',
                     marginLeft: 30,
                   }}>
-                  <Text
-                    style={{fontSize: 16, fontWeight: '500', color: 'black'}}>
-                    {item.header}
-                  </Text>
-                  <Text style={{fontSize: 13, color: 'grey'}}>{item.disc}</Text>
+                  <Text style={styles.headertxt}>{item.header}</Text>
+                  <Text style={styles.disctxt}>{item.disc}</Text>
                 </View>
               </View>
             ))}
@@ -278,18 +251,23 @@ export default class Profile extends Component {
                   alignSelf: 'center',
                   marginLeft: 30,
                 }}>
-                <Text style={{fontSize: 16, fontWeight: '500', color: 'black'}}>
+                <Text
+                  style={{
+                    fontSize: moderateScale(16),
+                    fontWeight: '500',
+                    color: 'black',
+                  }}>
                   Settings
                 </Text>
-                <Text style={{fontSize: 13, color: 'grey'}}>
+                <Text style={styles.disctxt}>
                   Push notifications, go contacts
                 </Text>
               </View>
             </View>
             <LinearGradient
-              start={{x: 1, y: 0}}
-              end={{x: 0, y: 1}}
-              colors={['#F7B401', '#ffffff', '#ffffff']}
+              start={{x: 0, y: 1}}
+              end={{x: 1, y: 0}}
+              colors={['#F78025', '#ffffff', '#ffffff']}
               style={{
                 width: '95%',
                 backgroundColor: 'white',
@@ -301,9 +279,7 @@ export default class Profile extends Component {
                 flexDirection: 'row',
               }}>
               <Image
-                source={{
-                  uri: 'https://media.istockphoto.com/vectors/covid19-flu-virus-vaccination-syringe-bottle-and-flight-travel-theme-vector-id1315267670?k=20&m=1315267670&s=612x612&w=0&h=T2cjwHjU2_FpSgm7NpCysAC-Kx67J--VgxZKYE28e1Q=',
-                }}
+                source={require('../../images/rating.png')}
                 style={styles.rate}
                 resizeMode={'cover'}
               />
@@ -313,10 +289,8 @@ export default class Profile extends Component {
                   alignSelf: 'center',
                   marginLeft: 30,
                 }}>
-                <Text style={{fontSize: 16, fontWeight: '500', color: 'black'}}>
-                  Rate our App
-                </Text>
-                <Text style={{fontSize: 13, color: 'grey'}}>
+                <Text style={styles.headertxt}>Rate our App</Text>
+                <Text style={styles.disctxt}>
                   We love appreciation & feedbacks
                 </Text>
               </View>
@@ -351,6 +325,15 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     position: 'absolute',
   },
+  vecContainer: {
+    width: '95%',
+    backgroundColor: 'white',
+    alignSelf: 'center',
+    height: 100,
+    marginTop: 90,
+    marginBottom: 10,
+    borderRadius: 15,
+  },
   bell: {
     position: 'absolute',
     top: 10,
@@ -378,7 +361,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   user: {
-    fontSize: 20,
+    fontSize: moderateScale(20),
     fontWeight: '500',
     fontStyle: 'italic',
     color: 'black',
@@ -389,8 +372,8 @@ const styles = StyleSheet.create({
   },
   number: {
     marginTop: 5,
-    fontSize: 12,
-    fontWeight: '300',
+    fontSize: moderateScale(11),
+    fontWeight: '400',
     color: 'black',
   },
   edit: {
@@ -417,7 +400,7 @@ const styles = StyleSheet.create({
   },
   add: {
     position: 'absolute',
-    fontSize: 12,
+    fontSize: moderateScale(12),
     color: 'blue',
     fontWeight: '400',
     right: '10%',
@@ -434,7 +417,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   inject: {
-    height: 80,
+    height: 60,
     width: 60,
     top: 10,
     left: 10,
@@ -445,12 +428,12 @@ const styles = StyleSheet.create({
     marginRight: '30%',
   },
   getVac: {
-    fontSize: 18,
+    fontSize: moderateScale(18),
     color: 'black',
     fontWeight: '600',
   },
   pass: {flexDirection: 'row', top: 30, left: '5%'},
-  txt: {fontSize: 13, color: 'black', left: 5},
+  txt: {fontSize: moderateScale(13), color: 'black', left: 5},
   border: {
     flexDirection: 'row',
     width: '45%',
@@ -465,5 +448,20 @@ const styles = StyleSheet.create({
     width: 60,
     top: 10,
     left: 10,
+  },
+  headertxt: {fontSize: moderateScale(16), fontWeight: '500', color: 'black'},
+  disctxt: {fontSize: moderateScale(13), color: 'grey'},
+  trbtxt: {
+    color: 'black',
+    fontWeight: '700',
+    fontSize: moderateScale(17),
+    left: 20,
+    marginTop: 20,
+  },
+  trbdisc: {
+    color: 'black',
+    fontSize: moderateScale(13),
+    left: 20,
+    marginTop: 10,
   },
 });

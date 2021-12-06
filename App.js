@@ -7,6 +7,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Home from './assets/screens/Home/Home';
 import Profile from './assets/screens/Profile/Profile';
+import Hotels from './assets/screens/Hotel/Hotels';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -50,7 +51,7 @@ function HomeScreen() {
       })}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Orders" component={Profile} />
-      <Tab.Screen name="Report" component={Home} />
+      <Tab.Screen name="Report" component={Hotels} />
       <Tab.Screen name="Settlement" component={Home} />
     </Tab.Navigator>
   );
