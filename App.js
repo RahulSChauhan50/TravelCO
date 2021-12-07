@@ -11,6 +11,7 @@ import Hotels from './assets/screens/Hotel/Hotels';
 import Flights from './assets/screens/Flights/Flights';
 import Couples from './assets/screens/Couple/Couples';
 import Villas from './assets/screens/Villas/Villas';
+import Trains from './assets/screens/Trains/Trains';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -93,6 +94,16 @@ const App = () => {
           <Stack.Screen
             name="Couples"
             component={Couples}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Trains"
+            component={Trains}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Villas"
+            component={Villas}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

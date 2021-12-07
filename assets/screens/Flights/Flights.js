@@ -200,9 +200,13 @@ class Flights extends Component {
                   </Text>
                   <Text>Delhi</Text>
                 </View>
-                <MaterialCommunityIcons
-                  name="arrow-left-right-bold"
-                  size={30}
+                <Avatar.Icon
+                  icon="arrow-left-right-bold"
+                  color="white"
+                  size={35}
+                  style={{
+                    backgroundColor: 'grey',
+                  }}
                 />
                 <View>
                   <Text>Destination</Text>

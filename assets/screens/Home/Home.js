@@ -125,15 +125,19 @@ class Home extends Component {
                   <Text>Flights</Text>
                 </View>
               </TouchableRipple>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="train"
-                  size={50}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text>Trains</Text>
-              </View>
+              <TouchableRipple
+                onPress={() => this.props.navigation.navigate('Trains')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="train"
+                    size={50}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text>Trains</Text>
+                </View>
+              </TouchableRipple>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="bus-double-decker"
@@ -211,17 +215,21 @@ class Home extends Component {
                 justifyContent: 'space-between',
                 marginVertical: 5,
               }}>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="home-city"
-                  size={50}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text style={{textAlign: 'center'}}>
-                  Villas &{'\n'} Homestays
-                </Text>
-              </View>
+              <TouchableRipple
+                onPress={() => this.props.navigation.navigate('Villas')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="home-city"
+                    size={50}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text style={{textAlign: 'center'}}>
+                    Villas &{'\n'} Homestays
+                  </Text>
+                </View>
+              </TouchableRipple>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="food"
