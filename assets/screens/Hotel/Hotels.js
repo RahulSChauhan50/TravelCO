@@ -288,7 +288,7 @@ export default class Hotels extends Component {
                       fontSize: moderateScale(17),
                       fontWeight: '500',
                       color: 'white',
-                      marginTop: 5,
+                      flex:1
                     }}>
                     Search
                   </Text>
