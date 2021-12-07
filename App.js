@@ -10,6 +10,7 @@ import Profile from './assets/screens/Profile/Profile';
 import Hotels from './assets/screens/Hotel/Hotels';
 import Flights from './assets/screens/Flights/Flights';
 import Couples from './assets/screens/Couple/Couples';
+import Villas from './assets/screens/Villas/Villas';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -31,12 +32,16 @@ function HomeScreen() {
                 : 'order-bool-descending-variant';
               break;
             }
-            case 'Report': {
-              iconName = focused ? 'note-text' : 'note-text-outline';
+            case 'My Trips': {
+              iconName = focused ? 'bag-personal' : 'bag-personal-outline';
               break;
             }
-            case 'Settlement': {
-              iconName = focused ? 'credit-card' : 'credit-card-outline';
+            case 'Offers': {
+              iconName = focused ? 'ticket-percent' : 'ticket-percent-outline';
+              break;
+            }
+            case 'Trip Money': {
+              iconName = focused ? 'cash-usd' : 'cash-usd-outline';
               break;
             }
             default: {
@@ -53,8 +58,9 @@ function HomeScreen() {
       })}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Orders" component={Profile} />
-      <Tab.Screen name="Report" component={Hotels} />
-      <Tab.Screen name="Settlement" component={Couples} />
+      <Tab.Screen name="My Trips" component={Hotels} />
+      <Tab.Screen name="Offers" component={Couples} />
+      <Tab.Screen name="Trip Money" component={Villas} />
     </Tab.Navigator>
   );
 }

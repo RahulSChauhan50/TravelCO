@@ -217,7 +217,7 @@ export default class Couples extends Component {
               </View>
               <TouchableOpacity
                 style={{
-                  height: verticalScale(40),
+                  height: verticalScale(35),
                   width: scale(130),
                   borderRadius: 20,
                   backgroundColor: '#F73203',
