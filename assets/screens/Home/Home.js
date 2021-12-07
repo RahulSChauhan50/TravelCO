@@ -162,15 +162,19 @@ class Home extends Component {
                 justifyContent: 'space-between',
                 marginVertical: 5,
               }}>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="home-heart"
-                  size={50}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text style={{textAlign: 'center'}}>Couple{'\n'} Hotels</Text>
-              </View>
+              <TouchableRipple
+                onPress={() => this.props.navigation.navigate('Couples')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="home-heart"
+                    size={50}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text style={{textAlign: 'center'}}>Couple{'\n'} Hotels</Text>
+                </View>
+              </TouchableRipple>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="car"
@@ -261,7 +265,13 @@ class Home extends Component {
               size={30}
               color="#2176E3"
             />
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: '700',
+                color: 'black',
+                marginLeft: scale(5),
+              }}>
               Offers For You
             </Text>
           </View>
@@ -416,7 +426,7 @@ class Home extends Component {
                             borderRadius: 3,
                             paddingHorizontal: 7,
                             paddingVertical: 2,
-                            marginLeft: 70,
+                            marginLeft: scale(40),
                           }}>
                           <Text style={{fontWeight: '500', color: 'white'}}>
                             3.9/5

@@ -9,6 +9,7 @@ import Home from './assets/screens/Home/Home';
 import Profile from './assets/screens/Profile/Profile';
 import Hotels from './assets/screens/Hotel/Hotels';
 import Flights from './assets/screens/Flights/Flights';
+import Couples from './assets/screens/Couple/Couples';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -53,7 +54,7 @@ function HomeScreen() {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Orders" component={Profile} />
       <Tab.Screen name="Report" component={Hotels} />
-      <Tab.Screen name="Settlement" component={Home} />
+      <Tab.Screen name="Settlement" component={Couples} />
     </Tab.Navigator>
   );
 }
@@ -81,6 +82,11 @@ const App = () => {
           <Stack.Screen
             name="Flights"
             component={Flights}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Couples"
+            component={Couples}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

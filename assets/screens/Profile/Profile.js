@@ -13,7 +13,8 @@ import {ProgressBar, Colors, Appbar} from 'react-native-paper';
 import FIcon from 'react-native-vector-icons/Ionicons';
 import Mat from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
-import {moderateScale} from 'react-native-size-matters';
+import {moderateScale, scale} from 'react-native-size-matters';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 const data = [
   {
     iconname: 'bag-checked',
@@ -61,22 +62,21 @@ export default class Profile extends Component {
   render() {
     return (
       <SafeAreaView style={{}}>
-        <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
-          <Appbar.Action
-            icon="arrow-left"
-            onPress={() => this.props.navigation.goBack()}
-          />
-          <Appbar.Content
-            title="Profile"
-            titleStyle={{fontSize: moderateScale(25)}}
-          />
-          <View style={styles.bell}>
-            <Icon name={'bell-outline'} size={30} color={'white'} />
-          </View>
-        </Appbar>
         <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
           <View style={styles.mainContainer}>
-            <View style={styles.topContainer}></View>
+            <View style={styles.topContainer}>
+              <Icon
+                name={'arrow-left'}
+                size={30}
+                color={'white'}
+                style={styles.backArrow}
+                onPress={() => this.props.navigation.goBack()}
+              />
+              <Text style={styles.pageTitle}>Profile</Text>
+              <View style={styles.bell}>
+                <Icon name={'bell-outline'} size={30} color={'white'} />
+              </View>
+            </View>
             <View style={styles.travelContainer}>
               <View style={styles.details}>
                 <Image
@@ -161,6 +161,7 @@ export default class Profile extends Component {
                 marginBottom: 30,
                 borderRadius: 15,
                 flexDirection: 'row',
+                justifyContent: 'space-between',
               }}>
               <View>
                 <Text
@@ -186,8 +187,7 @@ export default class Profile extends Component {
               <View
                 style={{
                   flexDirection: 'row',
-                  justifyContent: 'flex-end',
-                  marginLeft: '25%',
+                  justifyContent: 'space-between',
                 }}>
                 <FontAwesome
                   name={'coins'}
@@ -286,6 +286,7 @@ export default class Profile extends Component {
                 marginBottom: 50,
                 borderRadius: 15,
                 flexDirection: 'row',
+                justifyContent: 'space-between',
               }}>
               <Image
                 source={require('../../images/rating.png')}
@@ -307,7 +308,11 @@ export default class Profile extends Component {
                 name={'greater-than'}
                 size={20}
                 color={'blue'}
-                style={{alignSelf: 'center', marginLeft: '15%'}}
+                style={{
+                  alignSelf: 'center',
+                  marginLeft: scale(50),
+                  marginRight: scale(10),
+                }}
               />
             </LinearGradient>
           </View>
@@ -347,6 +352,19 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 10,
     right: 15,
+  },
+  backArrow: {
+    position: 'absolute',
+    top: 10,
+    left: 15,
+  },
+  pageTitle: {
+    position: 'absolute',
+    top: 10,
+    left: 55,
+    fontSize: moderateScale(20),
+    color: 'white',
+    fontWeight: '500',
   },
   userImg: {
     height: 90,

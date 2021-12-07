@@ -17,8 +17,25 @@ import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import FIcon from 'react-native-vector-icons/FontAwesome5';
+import {Icon} from 'react-native-paper/lib/typescript/components/Avatar/Avatar';
 const data = [{id: 1}, {id: 2}];
-
+const data2 = [
+  {
+    iname: 'qrcode-scan',
+    header: 'Local ID Accepted',
+    disc: 'Carry your identity card and enjoy a hastle free stay',
+  },
+  {
+    iname: 'file-lock',
+    header: 'Local ID Accepted',
+    disc: 'Carry your identity card and enjoy a hastle free stay',
+  },
+  {
+    iname: 'safe-square',
+    header: 'Local ID Accepted',
+    disc: 'Carry your identity card and enjoy a hastle free stay',
+  },
+];
 const offer = [
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsvMnPhxiHD42Q7XTcM3H-HPtN7_9cVZwFDQ&usqp=CAU',
@@ -91,45 +108,28 @@ const offer = [
     room: 'for 1 room per night',
   },
 ];
-export default class Hotels extends Component {
+export default class Couples extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      india: false,
-      international: true,
-      city: 'Delhi',
-    };
+    this.state = {};
   }
-  setIndia = () => {
-    this.setState({
-      india: true,
-      international: false,
-    });
-    //console.log(this.state.india, this.state.international);
-  };
-  setInternational = () => {
-    this.setState({
-      india: false,
-      international: true,
-    });
-    // console.log(this.state.india, this.state.international);
-  };
+
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
-        <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
+        <Appbar style={{backgroundColor: '#F73203', elevation: 0}}>
           <Appbar.Action
             icon="arrow-left"
             onPress={() => this.props.navigation.goBack()}
           />
           <Avatar.Icon
-            icon="office-building"
-            size={moderateScale(30)}
-            color="#2176E3"
+            icon="home-heart"
+            size={moderateScale(40)}
+            color="#F73203"
             style={{backgroundColor: '#dee2e6'}}
           />
           <Appbar.Content
-            title="Hotels"
+            title="CoupleFriendly"
             titleStyle={{fontSize: moderateScale(20)}}
           />
         </Appbar>
@@ -137,63 +137,6 @@ export default class Hotels extends Component {
           <View style={styles.mainContainer}>
             <View style={styles.topContainer}></View>
             <View style={styles.travelContainer}>
-              <View
-                style={{
-                  height: moderateScale(30),
-                  width: '80%',
-                  borderRadius: 20,
-                  backgroundColor: '#DDEBF7',
-                  alignSelf: 'center',
-                  marginTop: 20,
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <TouchableOpacity
-                  style={{
-                    height: '100%',
-                    width: scale(130),
-                    borderRadius: 20,
-                    backgroundColor:
-                      this.state.india == true ? '#2274E0' : '#DDEBF7',
-                    //  justifyContent: 'flex-start',
-                  }}
-                  onPress={() => this.setIndia()}>
-                  <View>
-                    <Text
-                      style={{
-                        textAlign: 'center',
-                        fontSize: moderateScale(15),
-                        fontWeight: '500',
-                        color: 'white',
-                        marginTop: 3,
-                      }}>
-                      India
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={{
-                    height: '100%',
-                    width: scale(130),
-                    borderRadius: 20,
-                    backgroundColor:
-                      this.state.india == false ? '#2274E0' : '#DDEBF7',
-                  }}
-                  onPress={() => this.setInternational()}>
-                  <View>
-                    <Text
-                      style={{
-                        textAlign: 'center',
-                        marginTop: 3,
-                        fontSize: moderateScale(15),
-                        fontWeight: '500',
-                        color: 'white',
-                      }}>
-                      International
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              </View>
               <Text
                 style={{
                   fontSize: moderateScale(14),
@@ -290,7 +233,7 @@ export default class Hotels extends Component {
                       color: 'white',
                       marginTop: 5,
                     }}>
-                    Search
+                    Get A Room
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -577,244 +520,112 @@ export default class Hotels extends Component {
                 />
               </View>
             </View>
+            <Text
+              style={{
+                fontWeight: '600',
+                fontSize: moderateScale(20),
+                color: 'black',
+                marginBottom: 10,
+                marginLeft: 10,
+              }}>
+              Introducing CoupleFriendly
+            </Text>
             <View
               style={{
-                height: verticalScale(430),
-                backgroundColor: 'white',
                 marginHorizontal: '2%',
-                borderTopRightRadius: 10,
-                borderTopLeftRadius: 10,
-                padding: 10,
+                borderRadius: 10,
+                backgroundColor: 'white',
+                paddingHorizontal: 10,
+                paddingTop: 10,
               }}>
-              <View style={{flexDirection: 'row'}}>
-                <View>
-                  <Text
+              {data2.map((item, index) => (
+                <View
+                  key={index}
+                  style={{
+                    flexDirection: 'row',
+                    width: '100%',
+                    height: 75,
+                    alignItems: 'center',
+                    borderBottomColor: 'grey',
+                    borderBottomWidth: 0.3,
+                  }}>
+                  <View
                     style={{
-                      fontWeight: '600',
-                      fontSize: moderateScale(20),
-                      color: 'black',
+                      height: 50,
+                      width: 50,
+                      backgroundColor: 'orange',
+                      justifyContent: 'center',
+                      borderRadius: 45,
                     }}>
-                    Discover Gateways near you
-                  </Text>
-                  <Text style={{fontSize: moderateScale(12), color: 'black'}}>
-                    Amazing deals for a perfect weekend
-                  </Text>
+                    <MaterialCommunityIcons
+                      name={item.iname}
+                      size={30}
+                      color={'white'}
+                      style={{alignSelf: 'center'}}
+                    />
+                  </View>
+                  <View
+                    style={{
+                      justifyContent: 'center',
+                      alignSelf: 'center',
+                      marginLeft: 30,
+                    }}>
+                    <View style={{maxWidth: '90%'}}>
+                      <Text style={styles.headertxt}>{item.header}</Text>
+                      <Text style={styles.disctxt}>{item.disc}</Text>
+                    </View>
+                  </View>
                 </View>
-                <MaterialCommunityIcons
-                  name={'greater-than'}
-                  color={'black'}
-                  size={25}
-                  style={{position: 'absolute', right: 10}}
-                />
-              </View>
-              <View
-                style={{position: 'absolute', marginTop: verticalScale(60)}}>
-                <FlatList
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  data={offer}
-                  renderItem={({item, index, separators}) => (
-                    <Card
-                      style={{
-                        width: scale(200),
-                        height: verticalScale(350),
-                        borderRadius: 5,
-                        marginHorizontal: 10,
-                        elevation: 5,
-                        marginBottom: 10,
-                      }}>
-                      <Image
-                        resizeMode="cover"
-                        source={{uri: item.img}}
-                        style={{
-                          height: verticalScale(130),
-                          width: '90%',
-                          borderRadius: 5,
-                          marginTop: 10,
-                          alignSelf: 'center',
-                        }}
-                      />
-
-                      <View
-                        style={{justifyContent: 'space-between', padding: 10}}>
-                        <View
-                          style={{
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                          }}>
-                          <MaterialCommunityIcons
-                            name="star"
-                            size={20}
-                            color="#F7B401"
-                          />
-                          <MaterialCommunityIcons
-                            name="star"
-                            size={20}
-                            color="#F7B401"
-                          />
-                          <MaterialCommunityIcons
-                            name="star"
-                            size={20}
-                            color="#F7B401"
-                          />
-                          <Text>Hotel</Text>
-                          <View
-                            style={{
-                              backgroundColor: '#20db4c',
-                              borderRadius: 3,
-                              paddingHorizontal: 7,
-                              paddingVertical: 2,
-                              marginLeft: 70,
-                            }}>
-                            <Text style={{fontWeight: '500', color: 'white'}}>
-                              3.9/5
-                            </Text>
-                          </View>
-                        </View>
-                        <Text
-                          style={{
-                            fontWeight: 'bold',
-                            fontSize: moderateScale(15),
-                            color: 'black',
-                          }}>
-                          The Daanish Residency
-                        </Text>
-                        <Text style={{}}>{item.city}</Text>
-                        <View
-                          style={{
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                          }}>
-                          <View
-                            style={{
-                              flexDirection: 'row',
-                            }}>
-                            <MaterialCommunityIcons
-                              name="map-marker"
-                              size={20}
-                              color={'black'}
-                            />
-                            <Text style={{color: 'green'}}>
-                              Delhi {'|'} 8 KM from {item.city}
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={{
-                            flexDirection: 'row',
-                          }}>
-                          <MatIcon name="done" size={20} color={'gold'} />
-                          <Text style={{color: 'black'}}>{item.off1}</Text>
-                        </View>
-                        <View
-                          style={{
-                            flexDirection: 'row',
-                            width: '100%',
-                            marginRight: 20,
-                          }}>
-                          <MatIcon name="done" size={20} color={'gold'} />
-                          <Text style={{color: 'black'}}>{item.off2}</Text>
-                        </View>
-                        <View
-                          style={{
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                          }}>
-                          <View>
-                            <Text
-                              style={{
-                                textDecorationLine: 'line-through',
-                                color: 'purple',
-                              }}>
-                              Rs2,999
-                            </Text>
-                            <Text
-                              style={{
-                                fontWeight: '600',
-                                color: '#F73203',
-                                fontSize: moderateScale(15),
-                              }}>
-                              Rs.556
-                            </Text>
-                            <Text
-                              style={{
-                                color: 'black',
-                                marginTop: 5,
-                              }}>
-                              {item.room}
-                            </Text>
-                          </View>
-                        </View>
-                      </View>
-                    </Card>
-                  )}
-                  keyExtractor={(item, ind) => ind}
-                />
-              </View>
+              ))}
             </View>
             <View
               style={{
-                height: verticalScale(300),
-                backgroundColor: 'white',
                 marginHorizontal: '2%',
-                borderBottomRightRadius: 10,
-                borderBottomLeftRadius: 10,
                 padding: 10,
+                borderRadius: 10,
+                backgroundColor: 'white',
+                marginTop: 20,
               }}>
               <Text
                 style={{
                   fontWeight: '600',
-                  fontSize: moderateScale(20),
+                  fontSize: moderateScale(17),
+                  color: 'black',
+                  marginBottom: 10,
+                }}>
+                Why Book Hotels for Couples with Goibibo
+              </Text>
+              <Text style={{color: 'black', marginBottom: 10}}>
+                Hourly Basis Hotels, Local ID Accepted, Hassle Free Secure
+                Booking Process. Code: GETAROOM. Sanitized and Safe Hotels with
+                Trained Staff on Hygiene, Social Distancing Etiquette. Lowest
+                Price Guaranteed. Dedicated Helpline No. Multiple Bank Offers.
+              </Text>
+              <Text
+                style={{
+                  fontWeight: '600',
+                  fontSize: moderateScale(16),
                   color: 'black',
                 }}>
-                Trending Gateways for you
+                Better Selection
               </Text>
-              <View
+              <Text style={{color: 'black', marginBottom: 10}}>
+                Selection from over 10,000 hotels across India for your ideal
+                stay
+              </Text>
+              <Text
                 style={{
-                  position: 'absolute',
-                  marginTop: verticalScale(60),
+                  fontWeight: '600',
+                  fontSize: moderateScale(16),
+                  color: 'black',
                 }}>
-                <FlatList
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  data={offer}
-                  renderItem={({item, index, separators}) => (
-                    <Card
-                      style={{
-                        width: scale(120),
-                        height: verticalScale(200),
-                        borderRadius: 10,
-                        marginHorizontal: 10,
-                        elevation: 5,
-                        marginBottom: 10,
-                      }}>
-                      <Image
-                        resizeMode="cover"
-                        source={{uri: item.img}}
-                        style={{
-                          height: verticalScale(200),
-                          width: '100%',
-                          borderRadius: 5,
-                          alignSelf: 'center',
-                        }}
-                      />
-                      <Text
-                        style={{
-                          color: 'white',
-                          fontWeight: 'bold',
-                          fontSize: moderateScale(18),
-                          alignSelf: 'center',
-                          marginTop: -50,
-                        }}>
-                        {item.city}
-                      </Text>
-                    </Card>
-                  )}
-                  keyExtractor={(item, ind) => ind}
-                />
-              </View>
+                Better Price
+              </Text>
+              <Text style={{color: 'black', marginBottom: 10}}>
+                Get the best price for your hassle free stay
+              </Text>
             </View>
+
             <View
               style={{
                 marginTop: 10,
@@ -895,7 +706,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#DDEBF7',
   },
   topContainer: {
-    backgroundColor: '#2274E0',
+    backgroundColor: '#F73203',
     height: 50,
     width: '100%',
   },
@@ -903,9 +714,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     width: '95%',
     top: -verticalScale(40),
-    height: moderateScale(220),
+    height: moderateScale(160),
     alignSelf: 'center',
     // position: 'absolute',
     borderRadius: 5,
   },
+  headertxt: {fontSize: moderateScale(16), fontWeight: '500', color: 'black'},
+  disctxt: {fontSize: moderateScale(13), color: 'grey'},
 });
