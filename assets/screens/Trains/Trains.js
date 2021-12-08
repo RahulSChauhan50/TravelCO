@@ -6,6 +6,7 @@ import {
   ScrollView,
   FlatList,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {
@@ -111,7 +112,7 @@ class Trains extends Component {
                   justifyContent: 'space-between',
                   alignSelf: 'center',
                 }}>
-                <TouchableRipple
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'bookTrain'})}
                   style={{
                     alignItems: 'center',
@@ -133,8 +134,8 @@ class Trains extends Component {
                     }}>
                     Book Train
                   </Text>
-                </TouchableRipple>
-                <TouchableRipple
+                </TouchableOpacity>
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'PNRStatus'})}
                   style={{
                     alignItems: 'center',
@@ -156,8 +157,8 @@ class Trains extends Component {
                     }}>
                     PNRStatus
                   </Text>
-                </TouchableRipple>
-                <TouchableRipple
+                </TouchableOpacity>
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'trainStatus'})}
                   style={{
                     alignItems: 'center',
@@ -179,7 +180,7 @@ class Trains extends Component {
                     }}>
                     Train Status
                   </Text>
-                </TouchableRipple>
+                </TouchableOpacity>
               </View>
               <View
                 style={{
@@ -306,7 +307,7 @@ class Trains extends Component {
                   </View>
                 </View>
               </View>
-              <TouchableRipple
+              <TouchableOpacity
                 style={{
                   height: 40,
                   width: scale(130),
@@ -325,7 +326,7 @@ class Trains extends Component {
                   }}>
                   SEARCH
                 </Text>
-              </TouchableRipple>
+              </TouchableOpacity>
             </Card>
           </View>
           <View style={{marginHorizontal: '2%'}}>

@@ -6,6 +6,7 @@ import {
   ScrollView,
   FlatList,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {
@@ -112,7 +113,7 @@ class Flights extends Component {
                   justifyContent: 'space-between',
                   alignSelf: 'center',
                 }}>
-                <TouchableRipple
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'oneWay'})}
                   style={{
                     alignItems: 'center',
@@ -134,8 +135,8 @@ class Flights extends Component {
                     }}>
                     One-Way
                   </Text>
-                </TouchableRipple>
-                <TouchableRipple
+                </TouchableOpacity>
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'roundTrip'})}
                   style={{
                     alignItems: 'center',
@@ -157,8 +158,8 @@ class Flights extends Component {
                     }}>
                     Round Trip
                   </Text>
-                </TouchableRipple>
-                <TouchableRipple
+                </TouchableOpacity>
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'multiCity'})}
                   style={{
                     alignItems: 'center',
@@ -180,7 +181,7 @@ class Flights extends Component {
                     }}>
                     Multi-City
                   </Text>
-                </TouchableRipple>
+                </TouchableOpacity>
               </View>
               <View
                 style={{
@@ -293,7 +294,7 @@ class Flights extends Component {
                 />
                 <Text>Non-Stop Only</Text>
               </View>
-              <TouchableRipple
+              <TouchableOpacity
                 style={{
                   height: 40,
                   width: scale(130),
@@ -312,7 +313,7 @@ class Flights extends Component {
                   }}>
                   SEARCH
                 </Text>
-              </TouchableRipple>
+              </TouchableOpacity>
             </Card>
           </View>
           <View style={{height: 250}}>
