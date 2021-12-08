@@ -164,7 +164,7 @@ export default class Hotels extends Component {
                         textAlign: 'center',
                         fontSize: moderateScale(15),
                         fontWeight: '500',
-                        color: 'white',
+                        color: this.state.india ? 'white' : '#2274E0',
                         marginTop: 3,
                       }}>
                       India
@@ -187,7 +187,7 @@ export default class Hotels extends Component {
                         marginTop: 3,
                         fontSize: moderateScale(15),
                         fontWeight: '500',
-                        color: 'white',
+                        color: this.state.india ? '#2274E0' : 'white',
                       }}>
                       International
                     </Text>
@@ -288,7 +288,7 @@ export default class Hotels extends Component {
                       fontSize: moderateScale(17),
                       fontWeight: '500',
                       color: 'white',
-                      flex:1
+                      flex: 1,
                     }}>
                     Search
                   </Text>
