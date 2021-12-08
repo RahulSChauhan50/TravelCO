@@ -133,7 +133,11 @@ export default class Profile extends Component {
               </View>
               <View style={styles.pass}>
                 <View style={styles.border}>
-                  <Icon name={'passport'} size={30} color={'blue'} />
+                  <Icon
+                    name={'passport'}
+                    size={moderateScale(30)}
+                    color={'blue'}
+                  />
                   <Text style={styles.txt}>
                     Link passport to your certificate
                   </Text>
@@ -460,7 +464,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   pass: {flexDirection: 'row', top: 30, left: '5%'},
-  txt: {fontSize: moderateScale(13), color: 'black', left: 5},
+  txt: {fontSize: moderateScale(13), color: 'black', left: scale(5)},
   border: {
     flexDirection: 'row',
     width: '45%',
