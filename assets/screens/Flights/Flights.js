@@ -84,28 +84,28 @@ class Flights extends Component {
           />
         </Appbar>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={{height: verticalScale(430)}}>
+          <View style={{height: 460}}>
             <View
               style={{
-                height: verticalScale(70),
+                height: 70,
                 width: '100%',
                 backgroundColor: '#2176E3',
               }}
             />
             <Card
               style={{
-                height: verticalScale(360),
+                height: 390,
                 width: '96%',
                 alignSelf: 'center',
                 elevation: 10,
                 padding: 10,
                 position: 'absolute',
-                marginTop: verticalScale(20),
+                marginTop: 20,
               }}>
               <View
                 style={{
                   width: '90%',
-                  height: verticalScale(30),
+                  height: 30,
                   borderRadius: 30,
                   flexDirection: 'row',
                   backgroundColor: '#DDEBF7',
@@ -186,7 +186,7 @@ class Flights extends Component {
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <View>
                   <Text>From</Text>
@@ -226,7 +226,7 @@ class Flights extends Component {
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <View>
                   <Text>Depart</Text>
@@ -258,7 +258,7 @@ class Flights extends Component {
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <View>
                   <Text>Travellers</Text>
@@ -295,7 +295,7 @@ class Flights extends Component {
               </View>
               <TouchableRipple
                 style={{
-                  height: verticalScale(40),
+                  height: 40,
                   width: scale(130),
                   borderRadius: 20,
                   backgroundColor: '#F73203',
