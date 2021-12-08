@@ -274,7 +274,7 @@ export default class Hotels extends Component {
               </View>
               <TouchableOpacity
                 style={{
-                  height: verticalScale(35),
+                  height: 35,
                   width: scale(130),
                   borderRadius: 20,
                   backgroundColor: '#F73203',
@@ -349,7 +349,7 @@ export default class Hotels extends Component {
                             color: 'white',
                             fontSize: moderateScale(13),
                             alignSelf: 'center',
-                            marginRight: 3,
+                            marginRight: 5,
                             fontWeight: '500',
                           }}>
                           City
@@ -441,7 +441,7 @@ export default class Hotels extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: scale(200),
+                        width: 220,
                         height: 350,
                         borderRadius: 5,
                         marginHorizontal: 10,
@@ -492,7 +492,7 @@ export default class Hotels extends Component {
                               borderRadius: 3,
                               paddingHorizontal: 7,
                               paddingVertical: 2,
-                              marginLeft: scale(55),
+                              marginLeft: 55,
                             }}>
                             <Text style={{fontWeight: '500', color: 'white'}}>
                               3.9/5
@@ -619,7 +619,7 @@ export default class Hotels extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: scale(200),
+                        width: 220,
                         height: 350,
                         borderRadius: 5,
                         marginHorizontal: 10,
@@ -670,7 +670,7 @@ export default class Hotels extends Component {
                               borderRadius: 3,
                               paddingHorizontal: 7,
                               paddingVertical: 2,
-                              marginLeft: scale(55),
+                              marginLeft: 55,
                             }}>
                             <Text style={{fontWeight: '500', color: 'white'}}>
                               3.9/5
@@ -788,7 +788,7 @@ export default class Hotels extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: scale(120),
+                        width: 140,
                         height: 200,
                         borderRadius: 10,
                         marginHorizontal: 10,
@@ -848,7 +848,7 @@ export default class Hotels extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: scale(200),
+                        width: 200,
                         height: 190,
                         borderRadius: 5,
                         marginHorizontal: 10,
@@ -871,7 +871,7 @@ export default class Hotels extends Component {
                           fontWeight: '600',
                           fontSize: moderateScale(12),
                           marginHorizontal: 5,
-                          marginTop: 5,
+                          marginTop: 10,
                         }}>
                         Get Up To 15% OFF on Domestic Hotels Booking
                       </Text>
@@ -908,7 +908,7 @@ const styles = StyleSheet.create({
   travelContainer: {
     backgroundColor: 'white',
     width: '95%',
-    top: -verticalScale(40),
+    top: -40,
     height: 220,
     alignSelf: 'center',
     // position: 'absolute',
