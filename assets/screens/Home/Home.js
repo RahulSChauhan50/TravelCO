@@ -9,6 +9,7 @@ import {
   StyleSheet,
   Dimensions,
   StatusBar,
+  TouchableOpacity,
 } from 'react-native';
 import {
   Card,
@@ -68,7 +69,7 @@ class Home extends Component {
       <SafeAreaView style={{flex: 1}}>
         <StatusBar backgroundColor="#2176E3" />
         <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
-          <TouchableRipple
+          <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Profile')}>
             <Avatar.Icon
               icon="account-circle-outline"
@@ -76,7 +77,7 @@ class Home extends Component {
               color="grey"
               style={{backgroundColor: '#dee2e6', marginStart: 10}}
             />
-          </TouchableRipple>
+          </TouchableOpacity>
           <Appbar.Content
             title="Welcome Guest"
             titleStyle={{fontSize: 15}}
@@ -97,57 +98,63 @@ class Home extends Component {
               width: '96%',
               elevation: 10,
             }}>
-            <Card.Content
-              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <TouchableRipple
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                flex: 1,
+                alignItems: 'center',
+                padding: 10,
+              }}>
+              <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Hotels')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon
                     icon="office-building"
-                    size={50}
+                    size={moderateScale(39)}
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text>Hotels</Text>
+                  <Text style={{fontSize: moderateScale(12)}}>Hotels</Text>
                 </View>
-              </TouchableRipple>
-              <TouchableRipple
+              </TouchableOpacity>
+              <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Flights')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon
                     icon="airplane"
-                    size={50}
+                    size={moderateScale(39)}
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text>Flights</Text>
+                  <Text style={{fontSize: moderateScale(12)}}>Flights</Text>
                 </View>
-              </TouchableRipple>
-              <TouchableRipple
+              </TouchableOpacity>
+              <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Trains')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon
                     icon="train"
-                    size={50}
+                    size={moderateScale(39)}
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text>Trains</Text>
+                  <Text style={{fontSize: moderateScale(12)}}>Trains</Text>
                 </View>
-              </TouchableRipple>
+              </TouchableOpacity>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="bus-double-decker"
-                  size={50}
+                  size={moderateScale(39)}
                   color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
-                <Text>Bus</Text>
+                <Text style={{fontSize: moderateScale(12)}}>Bus</Text>
               </View>
-            </Card.Content>
+            </View>
           </Card>
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -160,106 +167,129 @@ class Home extends Component {
               borderBottomRightRadius: 10,
               marginTop: -5,
             }}>
-            <Card.Content
+            <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
+                flex: 1,
+                alignItems: 'center',
+                padding: 10,
                 marginVertical: 5,
               }}>
-              <TouchableRipple
+              <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Couples')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon
                     icon="home-heart"
-                    size={50}
+                    size={moderateScale(39)}
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text style={{textAlign: 'center'}}>Couple{'\n'} Hotels</Text>
+                  <Text
+                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    Couple{'\n'} Hotels
+                  </Text>
                 </View>
-              </TouchableRipple>
+              </TouchableOpacity>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="car"
-                  size={50}
+                  size={moderateScale(39)}
                   color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
-                <Text style={{textAlign: 'center'}}>Airport {'\n'}Cabs</Text>
+                <Text
+                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                  Airport {'\n'}Cabs
+                </Text>
               </View>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="ticket-confirmation-outline"
-                  size={50}
+                  size={moderateScale(39)}
                   color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
-                <Text style={{textAlign: 'center'}}>
+                <Text
+                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
                   Train PNR {'\n'}Status
                 </Text>
               </View>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="car-hatchback"
-                  size={50}
+                  size={moderateScale(39)}
                   color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
-                <Text style={{textAlign: 'center'}}>Outstation {'\n'}Cabs</Text>
+                <Text
+                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                  Outstation {'\n'}Cabs
+                </Text>
               </View>
-            </Card.Content>
-            <Card.Content
+            </View>
+            <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                marginVertical: 5,
+                flex: 1,
+                alignItems: 'center',
+                padding: 10,
               }}>
-              <TouchableRipple
+              <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Villas')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon
                     icon="home-city"
-                    size={50}
+                    size={moderateScale(39)}
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text style={{textAlign: 'center'}}>
+                  <Text
+                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
                     Villas &{'\n'} Homestays
                   </Text>
                 </View>
-              </TouchableRipple>
+              </TouchableOpacity>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="food"
-                  size={50}
+                  size={moderateScale(39)}
                   color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
-                <Text style={{textAlign: 'center'}}>Airport{'\n'} meals</Text>
+                <Text
+                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                  Airport{'\n'} meals
+                </Text>
               </View>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="timetable"
-                  size={50}
+                  size={moderateScale(39)}
                   color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
-                <Text style={{textAlign: 'center'}}>
+                <Text
+                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
                   Train Running{'\n'} Status
                 </Text>
               </View>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="home-map-marker"
-                  size={50}
+                  size={moderateScale(39)}
                   color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
-                <Text style={{textAlign: 'center'}}>Nearby{'\n'} Getways</Text>
+                <Text
+                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                  Nearby{'\n'} Getways
+                </Text>
               </View>
-            </Card.Content>
+            </View>
           </Card>
           <View
             style={{
@@ -360,7 +390,7 @@ class Home extends Component {
                 />
               </View>
             </LinearGradient>
-            <View style={{position: 'absolute', marginTop: verticalScale(60)}}>
+            <View style={{position: 'absolute', marginTop: '18%'}}>
               <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
