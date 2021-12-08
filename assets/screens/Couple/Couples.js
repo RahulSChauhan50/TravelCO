@@ -141,8 +141,8 @@ export default class Couples extends Component {
                 style={{
                   fontSize: moderateScale(14),
                   color: 'black',
-                  marginLeft: scale(15),
-                  marginTop: scale(10),
+                  marginLeft: 15,
+                  marginTop: 10,
                 }}>
                 Area, Landmark or Hotel
               </Text>
@@ -151,8 +151,8 @@ export default class Couples extends Component {
                   fontSize: moderateScale(18),
                   color: 'black',
                   fontWeight: '500',
-                  marginLeft: scale(15),
-                  marginTop: scale(10),
+                  marginLeft: 15,
+                  marginTop: 10,
                 }}>
                 Delhi
               </Text>
@@ -162,7 +162,7 @@ export default class Couples extends Component {
                   borderTopWidth: 0.2,
                   borderColor: 'grey',
                   marginTop: 10,
-                  height: verticalScale(70),
+                  height: 70,
                 }}>
                 <View>
                   <Text
@@ -170,8 +170,8 @@ export default class Couples extends Component {
                       fontSize: moderateScale(18),
                       color: 'black',
                       fontWeight: '500',
-                      marginLeft: scale(15),
-                      marginTop: scale(10),
+                      marginLeft: 15,
+                      marginTop: 10,
                     }}>
                     10 DEC - 11 DEC
                   </Text>
@@ -179,7 +179,7 @@ export default class Couples extends Component {
                     style={{
                       fontSize: moderateScale(14),
                       color: 'black',
-                      marginLeft: scale(15),
+                      marginLeft: 15,
                       // marginTop: scale(10),
                     }}>
                     1 Night
@@ -191,7 +191,7 @@ export default class Couples extends Component {
                     width: 1,
                     backgroundColor: '#909090',
                     alignSelf: 'center',
-                    marginLeft: scale(30),
+                    marginLeft: 30,
                   }}></View>
                 <View>
                   <Text
@@ -199,8 +199,8 @@ export default class Couples extends Component {
                       fontSize: moderateScale(18),
                       color: 'black',
                       fontWeight: '500',
-                      marginLeft: scale(90),
-                      marginTop: scale(10),
+                      marginLeft: 90,
+                      marginTop: 10,
                     }}>
                     1 Room
                   </Text>
@@ -208,8 +208,8 @@ export default class Couples extends Component {
                     style={{
                       fontSize: moderateScale(14),
                       color: 'black',
-                      marginLeft: scale(15),
-                      marginLeft: scale(95),
+                      marginLeft: 15,
+                      marginLeft: 95,
                     }}>
                     2 Adults
                   </Text>
@@ -217,11 +217,12 @@ export default class Couples extends Component {
               </View>
               <TouchableOpacity
                 style={{
-                  height: verticalScale(35),
+                  height: 35,
                   width: scale(130),
                   borderRadius: 20,
                   backgroundColor: '#F73203',
                   alignSelf: 'center',
+                  justifyContent: 'center',
                 }}>
                 <Text
                   style={{
@@ -230,7 +231,6 @@ export default class Couples extends Component {
                     fontSize: moderateScale(17),
                     fontWeight: '500',
                     color: 'white',
-                    marginTop: 5,
                   }}>
                   Get A Room
                 </Text>
@@ -238,7 +238,7 @@ export default class Couples extends Component {
             </View>
             <View
               style={{
-                height: verticalScale(230),
+                height: 210,
                 width: '95%',
                 alignSelf: 'center',
                 backgroundColor: 'white',
@@ -250,11 +250,11 @@ export default class Couples extends Component {
                   fontWeight: '600',
                   fontSize: moderateScale(20),
                   color: 'black',
-                  margin: 15,
+                  margin: '4%',
                 }}>
                 Recent searches
               </Text>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{flexDirection: 'row', height: '90%'}}>
                 <FlatList
                   horizontal
                   showsHorizontalScrollIndicator={false}
@@ -262,15 +262,15 @@ export default class Couples extends Component {
                   renderItem={({item, index, separators}) => (
                     <View
                       style={{
-                        height: 150,
-                        width: 150,
+                        height: '70%',
+                        width: 140,
                         elevation: 5,
                         borderWidth: 1,
                         borderColor: 'grey',
                         borderRadius: 10,
-                        marginHorizontal: 15,
+                        marginHorizontal: 10,
                         backgroundColor: 'white',
-                        padding: 10,
+                        padding: '5%',
                       }}>
                       <View
                         style={{
@@ -292,7 +292,7 @@ export default class Couples extends Component {
                             color: 'white',
                             fontSize: moderateScale(13),
                             alignSelf: 'center',
-                            marginRight: 3,
+                            marginRight: 5,
                             fontWeight: '500',
                           }}>
                           City
@@ -339,16 +339,16 @@ export default class Couples extends Component {
                 />
               </View>
             </View>
-            <View style={{height: verticalScale(430)}}>
+            <View style={{height: 450}}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 0, y: 1}}
                 colors={['#fcbfbf', '#fcbfbf', '#ffffff']}
                 style={{
-                  height: verticalScale(350),
+                  height: 350,
                   marginHorizontal: '2%',
                   borderRadius: 10,
-                  padding: 10,
+                  padding: moderateScale(10),
                 }}>
                 <View style={{flexDirection: 'row'}}>
                   <View>
@@ -360,7 +360,11 @@ export default class Couples extends Component {
                       }}>
                       Daiy Steal Deals
                     </Text>
-                    <Text style={{fontSize: moderateScale(12), color: 'black'}}>
+                    <Text
+                      style={{
+                        fontSize: moderateScale(12),
+                        color: 'black',
+                      }}>
                       Lowest ever prices on top-rated hotels
                     </Text>
                   </View>
@@ -372,8 +376,7 @@ export default class Couples extends Component {
                   />
                 </View>
               </LinearGradient>
-              <View
-                style={{position: 'absolute', marginTop: verticalScale(60)}}>
+              <View style={{position: 'absolute', marginTop: 70}}>
                 <FlatList
                   horizontal
                   showsHorizontalScrollIndicator={false}
@@ -381,8 +384,8 @@ export default class Couples extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: scale(200),
-                        height: verticalScale(350),
+                        width: 220,
+                        height: 350,
                         borderRadius: 5,
                         marginHorizontal: 10,
                         elevation: 5,
@@ -392,7 +395,7 @@ export default class Couples extends Component {
                         resizeMode="cover"
                         source={{uri: item.img}}
                         style={{
-                          height: verticalScale(130),
+                          height: 130,
                           width: '90%',
                           borderRadius: 5,
                           marginTop: 10,
@@ -401,7 +404,10 @@ export default class Couples extends Component {
                       />
 
                       <View
-                        style={{justifyContent: 'space-between', padding: 10}}>
+                        style={{
+                          justifyContent: 'space-between',
+                          padding: moderateScale(10),
+                        }}>
                         <View
                           style={{
                             flexDirection: 'row',
@@ -429,7 +435,7 @@ export default class Couples extends Component {
                               borderRadius: 3,
                               paddingHorizontal: 7,
                               paddingVertical: 2,
-                              marginLeft: 70,
+                              marginLeft: 55,
                             }}>
                             <Text style={{fontWeight: '500', color: 'white'}}>
                               3.9/5
@@ -628,7 +634,7 @@ export default class Couples extends Component {
             <View
               style={{
                 marginTop: 10,
-                height: verticalScale(250),
+                height: 270,
                 borderRadius: 5,
                 padding: 10,
               }}>
@@ -643,7 +649,7 @@ export default class Couples extends Component {
               <View
                 style={{
                   position: 'absolute',
-                  marginTop: verticalScale(60),
+                  marginTop: 60,
                 }}>
                 <FlatList
                   horizontal
@@ -652,8 +658,8 @@ export default class Couples extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: scale(200),
-                        height: verticalScale(170),
+                        width: 200,
+                        height: 190,
                         borderRadius: 5,
                         marginHorizontal: 10,
                         elevation: 5,
@@ -663,7 +669,7 @@ export default class Couples extends Component {
                         resizeMode="cover"
                         source={{uri: item.img}}
                         style={{
-                          height: verticalScale(100),
+                          height: 110,
                           width: '100%',
                           borderRadius: 5,
                           alignSelf: 'center',
@@ -675,7 +681,7 @@ export default class Couples extends Component {
                           fontWeight: '600',
                           fontSize: moderateScale(12),
                           marginHorizontal: 5,
-                          marginTop: 5,
+                          marginTop: 10,
                         }}>
                         Get Up To 15% OFF on Domestic Hotels Booking
                       </Text>
@@ -712,8 +718,8 @@ const styles = StyleSheet.create({
   travelContainer: {
     backgroundColor: 'white',
     width: '95%',
-    top: -verticalScale(40),
-    height: moderateScale(160),
+    top: -40,
+    height: 160,
     alignSelf: 'center',
     // position: 'absolute',
     borderRadius: 5,

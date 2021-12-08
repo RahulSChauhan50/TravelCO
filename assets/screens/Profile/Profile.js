@@ -144,7 +144,7 @@ export default class Profile extends Component {
                 </View>
                 <View style={[styles.border, {marginLeft: '5%'}]}>
                   <Icon name={'download'} size={30} color={'blue'} />
-                  <Text style={styles.txt}>Download certificate</Text>
+                  <Text style={styles.txt}>Download certificate </Text>
                 </View>
               </View>
             </LinearGradient>
@@ -463,8 +463,16 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '600',
   },
-  pass: {flexDirection: 'row', top: 30, left: '5%'},
-  txt: {fontSize: moderateScale(13), color: 'black', left: scale(5)},
+  pass: {
+    flexDirection: 'row',
+    top: 30,
+    left: '5%',
+  },
+  txt: {
+    fontSize: moderateScale(13),
+    color: 'black',
+    maxWidth: '80%',
+  },
   border: {
     flexDirection: 'row',
     width: '45%',
@@ -473,6 +481,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: 50,
     alignItems: 'center',
+    justifyContent: 'space-around',
   },
   rate: {
     height: 60,

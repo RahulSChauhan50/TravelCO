@@ -251,14 +251,14 @@ export default class Villas extends Component {
           style={{
             backgroundColor: '#2274E0',
             width: '100%',
-            height: verticalScale(80),
+            height: 80,
           }}>
           <View
             style={{
               borderRadius: 10,
               marginHorizontal: '1%',
               backgroundColor: 'white',
-              height: verticalScale(70),
+              height: 70,
               padding: 10,
             }}>
             <Text style={{fontSize: moderateScale(13)}}>
@@ -281,25 +281,24 @@ export default class Villas extends Component {
         <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
           <View
             style={{
-              height: verticalScale(230),
-              marginLeft: '3%',
-              width: '97%',
+              height: 210,
+              width: '95%',
               alignSelf: 'center',
               backgroundColor: 'white',
-              borderTopLeftRadius: 10,
-              borderBottomLeftRadius: 10,
-              marginTop: 20,
+              borderRadius: 10,
+              marginBottom: 30,
+              marginTop: 15,
             }}>
             <Text
               style={{
-                fontWeight: '500',
-                fontSize: moderateScale(18),
+                fontWeight: '600',
+                fontSize: moderateScale(20),
                 color: 'black',
-                margin: 15,
+                margin: '4%',
               }}>
               Recent searches
             </Text>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{flexDirection: 'row', height: '90%'}}>
               <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -307,16 +306,15 @@ export default class Villas extends Component {
                 renderItem={({item, index, separators}) => (
                   <View
                     style={{
-                      height: 150,
+                      height: '70%',
                       width: 150,
                       elevation: 5,
                       borderWidth: 1,
                       borderColor: 'grey',
                       borderRadius: 10,
-                      marginHorizontal: 15,
+                      marginHorizontal: 10,
                       backgroundColor: 'white',
-                      padding: 10,
-                      paddingTop: 15,
+                      padding: '5%',
                     }}>
                     <View
                       style={{
@@ -326,6 +324,7 @@ export default class Villas extends Component {
                         justifyContent: 'center',
                         flexDirection: 'row',
                         borderRadius: 5,
+                        marginTop: 5,
                       }}>
                       <MaterialCommunityIcons
                         size={15}
@@ -348,7 +347,7 @@ export default class Villas extends Component {
                       size={20}
                       color="blue"
                       name={'greater-than'}
-                      style={{position: 'absolute', right: 10, top: 15}}
+                      style={{position: 'absolute', right: 5, top: 15}}
                     />
                     <Text
                       style={{
@@ -385,6 +384,7 @@ export default class Villas extends Component {
               />
             </View>
           </View>
+
           <Text
             style={{
               fontWeight: '500',
@@ -415,7 +415,7 @@ export default class Villas extends Component {
               <Card
                 style={{
                   width: '46%',
-                  height: verticalScale(350),
+                  height: 350,
                   borderRadius: 5,
                   marginHorizontal: '2%',
                   elevation: 5,
@@ -426,7 +426,7 @@ export default class Villas extends Component {
                   resizeMode="cover"
                   source={{uri: item.img}}
                   style={{
-                    height: verticalScale(130),
+                    height: 130,
                     width: '90%',
                     borderRadius: 5,
                     marginTop: 10,
@@ -481,7 +481,7 @@ export default class Villas extends Component {
                         paddingHorizontal: 7,
                         paddingVertical: 2,
                         width: 50,
-                        marginTop: verticalScale(5),
+                        marginTop: 5,
                       }}>
                       <Text
                         style={{
@@ -581,7 +581,7 @@ export default class Villas extends Component {
               <Card
                 style={{
                   width: '46%',
-                  height: verticalScale(350),
+                  height: 350,
                   borderRadius: 5,
                   marginHorizontal: '2%',
                   elevation: 5,
@@ -592,7 +592,7 @@ export default class Villas extends Component {
                   resizeMode="cover"
                   source={{uri: item.img}}
                   style={{
-                    height: verticalScale(130),
+                    height: 130,
                     width: '90%',
                     borderRadius: 5,
                     marginTop: 10,
@@ -647,7 +647,7 @@ export default class Villas extends Component {
                         paddingHorizontal: 7,
                         paddingVertical: 2,
                         width: 50,
-                        marginTop: verticalScale(5),
+                        marginTop: 5,
                       }}>
                       <Text
                         style={{
@@ -745,7 +745,7 @@ export default class Villas extends Component {
                 <Card
                   style={{
                     width: scale(130),
-                    height: verticalScale(350),
+                    height: 350,
                     borderRadius: 5,
                     marginHorizontal: 5,
                     elevation: 5,
@@ -755,7 +755,7 @@ export default class Villas extends Component {
                     resizeMode="cover"
                     source={{uri: item.img}}
                     style={{
-                      height: verticalScale(100),
+                      height: 100,
                       width: '90%',
                       borderRadius: 5,
                       marginTop: 10,
@@ -880,7 +880,7 @@ export default class Villas extends Component {
           </View>
           <View
             style={{
-              height: verticalScale(180),
+              height: 180,
               borderBottomRightRadius: 10,
               borderBottomLeftRadius: 10,
               marginTop: 10,
@@ -900,14 +900,14 @@ export default class Villas extends Component {
               showsHorizontalScrollIndicator={false}
               style={{
                 position: 'absolute',
-                marginTop: verticalScale(40),
+                marginTop: 40,
               }}>
               {offer2.map((item, index) => (
                 <View key={index}>
                   <Card
                     style={{
-                      width: scale(80),
-                      height: verticalScale(60),
+                      width: 100,
+                      height: 60,
                       borderRadius: 10,
                       marginHorizontal: 5,
                       elevation: 5,
@@ -917,7 +917,7 @@ export default class Villas extends Component {
                       resizeMode="cover"
                       source={{uri: item.img}}
                       style={{
-                        height: verticalScale(60),
+                        height: 60,
                         width: '100%',
                         borderRadius: 5,
                         alignSelf: 'center',
@@ -936,8 +936,8 @@ export default class Villas extends Component {
                   </Card>
                   <Card
                     style={{
-                      width: scale(80),
-                      height: verticalScale(60),
+                      width: 100,
+                      height: 60,
                       borderRadius: 10,
                       marginHorizontal: 5,
                       elevation: 5,
@@ -947,7 +947,7 @@ export default class Villas extends Component {
                       resizeMode="cover"
                       source={{uri: item.img}}
                       style={{
-                        height: verticalScale(60),
+                        height: 60,
                         width: '100%',
                         borderRadius: 5,
                         alignSelf: 'center',
@@ -996,8 +996,8 @@ export default class Villas extends Component {
               renderItem={({item, index, separators}) => (
                 <Card
                   style={{
-                    width: scale(130),
-                    height: verticalScale(350),
+                    width: 130,
+                    height: 350,
                     borderRadius: 5,
                     marginHorizontal: 5,
                     elevation: 5,
@@ -1007,7 +1007,7 @@ export default class Villas extends Component {
                     resizeMode="cover"
                     source={{uri: item.img}}
                     style={{
-                      height: verticalScale(100),
+                      height: 100,
                       width: '90%',
                       borderRadius: 5,
                       marginTop: 10,
@@ -1132,7 +1132,7 @@ export default class Villas extends Component {
           </View>
           <View
             style={{
-              height: verticalScale(180),
+              height: 180,
               borderBottomRightRadius: 10,
               borderBottomLeftRadius: 10,
               marginTop: 10,
@@ -1152,14 +1152,14 @@ export default class Villas extends Component {
               showsHorizontalScrollIndicator={false}
               style={{
                 position: 'absolute',
-                marginTop: verticalScale(40),
+                marginTop: 40,
               }}>
               {offer2.map((item, index) => (
                 <View key={index}>
                   <Card
                     style={{
-                      width: scale(80),
-                      height: verticalScale(60),
+                      width: 100,
+                      height: 60,
                       borderRadius: 10,
                       marginHorizontal: 5,
                       elevation: 5,
@@ -1169,7 +1169,7 @@ export default class Villas extends Component {
                       resizeMode="cover"
                       source={{uri: item.img}}
                       style={{
-                        height: verticalScale(60),
+                        height: 60,
                         width: '100%',
                         borderRadius: 5,
                         alignSelf: 'center',
@@ -1188,8 +1188,8 @@ export default class Villas extends Component {
                   </Card>
                   <Card
                     style={{
-                      width: scale(80),
-                      height: verticalScale(60),
+                      width: 100,
+                      height: 60,
                       borderRadius: 10,
                       marginHorizontal: 5,
                       elevation: 5,
@@ -1199,7 +1199,7 @@ export default class Villas extends Component {
                       resizeMode="cover"
                       source={{uri: item.img}}
                       style={{
-                        height: verticalScale(60),
+                        height: 60,
                         width: '100%',
                         borderRadius: 5,
                         alignSelf: 'center',
