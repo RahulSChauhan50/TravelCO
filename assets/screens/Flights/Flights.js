@@ -315,7 +315,7 @@ class Flights extends Component {
               </TouchableRipple>
             </Card>
           </View>
-          <View style={{height: verticalScale(250)}}>
+          <View style={{height: 250}}>
             <LinearGradient
               start={{x: 0, y: 0}}
               end={{x: 0, y: 1}}
@@ -331,8 +331,8 @@ class Flights extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: scale(250),
-                        height: verticalScale(200),
+                        width: 250,
+                        height: 200,
                         borderRadius: 10,
                         marginHorizontal: 10,
                         elevation: 5,
@@ -342,7 +342,7 @@ class Flights extends Component {
                         resizeMode="cover"
                         source={{uri: item.img}}
                         style={{
-                          height: verticalScale(100),
+                          height: 100,
                           width: '100%',
                           borderRadius: 10,
                         }}
@@ -354,7 +354,11 @@ class Flights extends Component {
                             flexDirection: 'row',
                             justifyContent: 'space-between',
                           }}>
-                          <Text style={{fontWeight: 'bold'}}>
+                          <Text
+                            style={{
+                              fontWeight: 'bold',
+                              fontSize: moderateScale(12),
+                            }}>
                             The Daanish Residency
                           </Text>
                           <View
@@ -363,20 +367,22 @@ class Flights extends Component {
                             }}>
                             <MaterialCommunityIcons
                               name="star"
-                              size={20}
+                              size={moderateScale(15)}
                               color="#F7B401"
                             />
                             <MaterialCommunityIcons
                               name="star"
-                              size={20}
+                              size={moderateScale(15)}
                               color="#F7B401"
                             />
                             <MaterialCommunityIcons
                               name="star"
-                              size={20}
+                              size={moderateScale(15)}
                               color="#F7B401"
                             />
-                            <Text>Hotel</Text>
+                            <Text style={{fontSize: moderateScale(10)}}>
+                              Hotel
+                            </Text>
                           </View>
                         </View>
                         <View
@@ -392,7 +398,9 @@ class Flights extends Component {
                               name="map-marker"
                               size={20}
                             />
-                            <Text>Delhi {'|'} 8 KM from Delhi</Text>
+                            <Text style={{fontSize: moderateScale(10)}}>
+                              Delhi {'|'} 8 KM from Delhi
+                            </Text>
                           </View>
                           <View
                             style={{
@@ -402,12 +410,19 @@ class Flights extends Component {
                               paddingVertical: 2,
                               marginLeft: scale(40),
                             }}>
-                            <Text style={{fontWeight: '500', color: 'white'}}>
+                            <Text
+                              style={{
+                                fontWeight: '500',
+                                color: 'white',
+                                fontSize: moderateScale(10),
+                              }}>
                               3.9/5
                             </Text>
                           </View>
                         </View>
-                        <Text>Free cancellation </Text>
+                        <Text style={{fontSize: moderateScale(10)}}>
+                          Free cancellation{' '}
+                        </Text>
                         <View
                           style={{
                             flexDirection: 'row',
@@ -415,13 +430,25 @@ class Flights extends Component {
                             alignItems: 'center',
                           }}>
                           <View>
-                            <Text>81% OFF</Text>
+                            <Text style={{fontSize: moderateScale(10)}}>
+                              81% OFF
+                            </Text>
                           </View>
                           <View>
-                            <Text style={{textDecorationLine: 'line-through'}}>
+                            <Text
+                              style={{
+                                textDecorationLine: 'line-through',
+                                fontSize: moderateScale(10),
+                              }}>
                               Rs2,999
                             </Text>
-                            <Text style={{fontWeight: 'bold'}}>Rs.556</Text>
+                            <Text
+                              style={{
+                                fontWeight: 'bold',
+                                fontSize: moderateScale(10),
+                              }}>
+                              Rs.556
+                            </Text>
                           </View>
                         </View>
                       </View>
