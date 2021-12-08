@@ -357,13 +357,13 @@ class Home extends Component {
               keyExtractor={(item, ind) => ind}
             />
           </View>
-          <View style={{height: verticalScale(280)}}>
+          <View style={{height: 280}}>
             <LinearGradient
               start={{x: 0, y: 0}}
               end={{x: 0, y: 1}}
               colors={['#fcbfbf', '#fcbfbf', '#ffffff']}
               style={{
-                height: verticalScale(200),
+                height: 200,
                 marginHorizontal: '2%',
                 borderRadius: 10,
                 padding: 10,
@@ -398,8 +398,8 @@ class Home extends Component {
                 renderItem={({item, index, separators}) => (
                   <Card
                     style={{
-                      width: scale(250),
-                      height: verticalScale(200),
+                      width: 250,
+                      height: 200,
                       borderRadius: 10,
                       marginHorizontal: 10,
                       elevation: 5,
@@ -409,7 +409,7 @@ class Home extends Component {
                       resizeMode="cover"
                       source={{uri: item.img}}
                       style={{
-                        height: verticalScale(100),
+                        height: 100,
                         width: '100%',
                         borderRadius: 10,
                       }}
@@ -421,7 +421,11 @@ class Home extends Component {
                           flexDirection: 'row',
                           justifyContent: 'space-between',
                         }}>
-                        <Text style={{fontWeight: 'bold'}}>
+                        <Text
+                          style={{
+                            fontWeight: 'bold',
+                            fontSize: moderateScale(12),
+                          }}>
                           The Daanish Residency
                         </Text>
                         <View
@@ -430,20 +434,22 @@ class Home extends Component {
                           }}>
                           <MaterialCommunityIcons
                             name="star"
-                            size={20}
+                            size={moderateScale(15)}
                             color="#F7B401"
                           />
                           <MaterialCommunityIcons
                             name="star"
-                            size={20}
+                            size={moderateScale(15)}
                             color="#F7B401"
                           />
                           <MaterialCommunityIcons
                             name="star"
-                            size={20}
+                            size={moderateScale(15)}
                             color="#F7B401"
                           />
-                          <Text>Hotel</Text>
+                          <Text style={{fontSize: moderateScale(10)}}>
+                            Hotel
+                          </Text>
                         </View>
                       </View>
                       <View
@@ -456,7 +462,9 @@ class Home extends Component {
                             flexDirection: 'row',
                           }}>
                           <MaterialCommunityIcons name="map-marker" size={20} />
-                          <Text>Delhi {'|'} 8 KM from Delhi</Text>
+                          <Text style={{fontSize: moderateScale(10)}}>
+                            Delhi {'|'} 8 KM from Delhi
+                          </Text>
                         </View>
                         <View
                           style={{
@@ -466,12 +474,19 @@ class Home extends Component {
                             paddingVertical: 2,
                             marginLeft: scale(40),
                           }}>
-                          <Text style={{fontWeight: '500', color: 'white'}}>
+                          <Text
+                            style={{
+                              fontWeight: '500',
+                              color: 'white',
+                              fontSize: moderateScale(10),
+                            }}>
                             3.9/5
                           </Text>
                         </View>
                       </View>
-                      <Text>Free cancellation </Text>
+                      <Text style={{fontSize: moderateScale(10)}}>
+                        Free cancellation{' '}
+                      </Text>
                       <View
                         style={{
                           flexDirection: 'row',
@@ -479,13 +494,25 @@ class Home extends Component {
                           alignItems: 'center',
                         }}>
                         <View>
-                          <Text>81% OFF</Text>
+                          <Text style={{fontSize: moderateScale(10)}}>
+                            81% OFF
+                          </Text>
                         </View>
                         <View>
-                          <Text style={{textDecorationLine: 'line-through'}}>
+                          <Text
+                            style={{
+                              textDecorationLine: 'line-through',
+                              fontSize: moderateScale(10),
+                            }}>
                             Rs2,999
                           </Text>
-                          <Text style={{fontWeight: 'bold'}}>Rs.556</Text>
+                          <Text
+                            style={{
+                              fontWeight: 'bold',
+                              fontSize: moderateScale(10),
+                            }}>
+                            Rs.556
+                          </Text>
                         </View>
                       </View>
                     </View>
@@ -516,7 +543,7 @@ class Home extends Component {
                     borderRadius: 10,
                     elevation: 5,
                     marginBottom: 10,
-                    height: verticalScale(100),
+                    height: 100,
                     width: scale(200),
                   }}>
                   <Image
@@ -556,7 +583,7 @@ class Home extends Component {
                     borderRadius: 10,
                     elevation: 5,
                     marginBottom: 10,
-                    height: verticalScale(100),
+                    height: 100,
                     width: scale(200),
                   }}>
                   <Image
