@@ -6,6 +6,7 @@ import {
   ScrollView,
   FlatList,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {
@@ -84,35 +85,35 @@ class Flights extends Component {
           />
         </Appbar>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={{height: verticalScale(430)}}>
+          <View style={{height: 460}}>
             <View
               style={{
-                height: verticalScale(70),
+                height: 70,
                 width: '100%',
                 backgroundColor: '#2176E3',
               }}
             />
             <Card
               style={{
-                height: verticalScale(360),
+                height: 390,
                 width: '96%',
                 alignSelf: 'center',
                 elevation: 10,
                 padding: 10,
                 position: 'absolute',
-                marginTop: verticalScale(20),
+                marginTop: 20,
               }}>
               <View
                 style={{
                   width: '90%',
-                  height: verticalScale(30),
+                  height: 30,
                   borderRadius: 30,
                   flexDirection: 'row',
                   backgroundColor: '#DDEBF7',
                   justifyContent: 'space-between',
                   alignSelf: 'center',
                 }}>
-                <TouchableRipple
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'oneWay'})}
                   style={{
                     alignItems: 'center',
@@ -134,8 +135,8 @@ class Flights extends Component {
                     }}>
                     One-Way
                   </Text>
-                </TouchableRipple>
-                <TouchableRipple
+                </TouchableOpacity>
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'roundTrip'})}
                   style={{
                     alignItems: 'center',
@@ -157,8 +158,8 @@ class Flights extends Component {
                     }}>
                     Round Trip
                   </Text>
-                </TouchableRipple>
-                <TouchableRipple
+                </TouchableOpacity>
+                <TouchableOpacity
                   onPress={() => this.setState({ButtonToggle: 'multiCity'})}
                   style={{
                     alignItems: 'center',
@@ -180,13 +181,13 @@ class Flights extends Component {
                     }}>
                     Multi-City
                   </Text>
-                </TouchableRipple>
+                </TouchableOpacity>
               </View>
               <View
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <View>
                   <Text>From</Text>
@@ -226,7 +227,7 @@ class Flights extends Component {
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <View>
                   <Text>Depart</Text>
@@ -258,7 +259,7 @@ class Flights extends Component {
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <View>
                   <Text>Travellers</Text>
@@ -293,9 +294,9 @@ class Flights extends Component {
                 />
                 <Text>Non-Stop Only</Text>
               </View>
-              <TouchableRipple
+              <TouchableOpacity
                 style={{
-                  height: verticalScale(40),
+                  height: 40,
                   width: scale(130),
                   borderRadius: 20,
                   backgroundColor: '#F73203',
@@ -312,10 +313,10 @@ class Flights extends Component {
                   }}>
                   SEARCH
                 </Text>
-              </TouchableRipple>
+              </TouchableOpacity>
             </Card>
           </View>
-          <View style={{height: verticalScale(250)}}>
+          <View style={{height: 250}}>
             <LinearGradient
               start={{x: 0, y: 0}}
               end={{x: 0, y: 1}}
@@ -331,8 +332,8 @@ class Flights extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: scale(250),
-                        height: verticalScale(200),
+                        width: 250,
+                        height: 200,
                         borderRadius: 10,
                         marginHorizontal: 10,
                         elevation: 5,
@@ -342,7 +343,7 @@ class Flights extends Component {
                         resizeMode="cover"
                         source={{uri: item.img}}
                         style={{
-                          height: verticalScale(100),
+                          height: 100,
                           width: '100%',
                           borderRadius: 10,
                         }}
@@ -354,7 +355,11 @@ class Flights extends Component {
                             flexDirection: 'row',
                             justifyContent: 'space-between',
                           }}>
-                          <Text style={{fontWeight: 'bold'}}>
+                          <Text
+                            style={{
+                              fontWeight: 'bold',
+                              fontSize: moderateScale(12),
+                            }}>
                             The Daanish Residency
                           </Text>
                           <View
@@ -363,20 +368,22 @@ class Flights extends Component {
                             }}>
                             <MaterialCommunityIcons
                               name="star"
-                              size={20}
+                              size={moderateScale(15)}
                               color="#F7B401"
                             />
                             <MaterialCommunityIcons
                               name="star"
-                              size={20}
+                              size={moderateScale(15)}
                               color="#F7B401"
                             />
                             <MaterialCommunityIcons
                               name="star"
-                              size={20}
+                              size={moderateScale(15)}
                               color="#F7B401"
                             />
-                            <Text>Hotel</Text>
+                            <Text style={{fontSize: moderateScale(10)}}>
+                              Hotel
+                            </Text>
                           </View>
                         </View>
                         <View
@@ -392,7 +399,9 @@ class Flights extends Component {
                               name="map-marker"
                               size={20}
                             />
-                            <Text>Delhi {'|'} 8 KM from Delhi</Text>
+                            <Text style={{fontSize: moderateScale(10)}}>
+                              Delhi {'|'} 8 KM from Delhi
+                            </Text>
                           </View>
                           <View
                             style={{
@@ -402,12 +411,19 @@ class Flights extends Component {
                               paddingVertical: 2,
                               marginLeft: scale(40),
                             }}>
-                            <Text style={{fontWeight: '500', color: 'white'}}>
+                            <Text
+                              style={{
+                                fontWeight: '500',
+                                color: 'white',
+                                fontSize: moderateScale(10),
+                              }}>
                               3.9/5
                             </Text>
                           </View>
                         </View>
-                        <Text>Free cancellation </Text>
+                        <Text style={{fontSize: moderateScale(10)}}>
+                          Free cancellation{' '}
+                        </Text>
                         <View
                           style={{
                             flexDirection: 'row',
@@ -415,13 +431,25 @@ class Flights extends Component {
                             alignItems: 'center',
                           }}>
                           <View>
-                            <Text>81% OFF</Text>
+                            <Text style={{fontSize: moderateScale(10)}}>
+                              81% OFF
+                            </Text>
                           </View>
                           <View>
-                            <Text style={{textDecorationLine: 'line-through'}}>
+                            <Text
+                              style={{
+                                textDecorationLine: 'line-through',
+                                fontSize: moderateScale(10),
+                              }}>
                               Rs2,999
                             </Text>
-                            <Text style={{fontWeight: 'bold'}}>Rs.556</Text>
+                            <Text
+                              style={{
+                                fontWeight: 'bold',
+                                fontSize: moderateScale(10),
+                              }}>
+                              Rs.556
+                            </Text>
                           </View>
                         </View>
                       </View>
