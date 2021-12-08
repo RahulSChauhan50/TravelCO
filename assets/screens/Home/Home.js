@@ -302,6 +302,7 @@ class Home extends Component {
               name="ticket-percent-outline"
               size={30}
               color="#2176E3"
+              style={{marginLeft: 5}}
             />
             <Text
               style={{
@@ -529,7 +530,15 @@ class Home extends Component {
               alignItems: 'center',
               marginVertical: 10,
             }}>
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>What's new?</Text>
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: '700',
+                color: 'black',
+                marginLeft: 5,
+              }}>
+              What's new?
+            </Text>
           </View>
           <View>
             <FlatList
@@ -566,8 +575,19 @@ class Home extends Component {
               alignItems: 'center',
               marginVertical: 10,
             }}>
-            <MaterialCommunityIcons name="alarm" size={30} color="#2176E3" />
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>
+            <MaterialCommunityIcons
+              name="alarm"
+              size={30}
+              color="#2176E3"
+              style={{marginLeft: 5}}
+            />
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: '700',
+                color: 'black',
+                marginLeft: 5,
+              }}>
               Top Daily Steal Deals
             </Text>
           </View>
@@ -582,7 +602,7 @@ class Home extends Component {
                     marginHorizontal: 10,
                     borderRadius: 10,
                     elevation: 5,
-                    marginBottom: 10,
+                    marginBottom: 50,
                     height: 100,
                     width: scale(200),
                   }}>

@@ -238,6 +238,7 @@ export default class Profile extends Component {
                     justifyContent: 'center',
                     alignSelf: 'center',
                     marginLeft: 30,
+                    maxWidth: '80%',
                   }}>
                   <Text style={styles.headertxt}>{item.header}</Text>
                   <Text style={styles.disctxt}>{item.disc}</Text>
