@@ -83,28 +83,28 @@ class Trains extends Component {
           />
         </Appbar>
         <ScrollView>
-          <View style={{height: verticalScale(450)}}>
+          <View style={{height: 490}}>
             <View
               style={{
-                height: verticalScale(70),
+                height: 70,
                 width: '100%',
                 backgroundColor: '#2176E3',
               }}
             />
             <Card
               style={{
-                height: verticalScale(380),
+                height: 420,
                 width: '96%',
                 alignSelf: 'center',
                 elevation: 10,
                 padding: 10,
                 position: 'absolute',
-                marginTop: verticalScale(20),
+                marginTop: 20,
               }}>
               <View
                 style={{
                   width: '90%',
-                  height: verticalScale(30),
+                  height: 30,
                   borderRadius: 30,
                   flexDirection: 'row',
                   backgroundColor: '#DDEBF7',
@@ -183,7 +183,7 @@ class Trains extends Component {
               </View>
               <View
                 style={{
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <Text>From</Text>
                 <Text
@@ -202,13 +202,13 @@ class Trains extends Component {
                 size={35}
                 style={{
                   alignSelf: 'flex-end',
-                  marginVertical: -verticalScale(15),
+                  marginVertical: -15,
                   backgroundColor: 'grey',
                 }}
               />
               <View
                 style={{
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <Text>To</Text>
                 <Text
@@ -223,7 +223,7 @@ class Trains extends Component {
               <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
               <View
                 style={{
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                 }}>
                 <Text>I know my train (Optional)</Text>
                 <Text
@@ -238,7 +238,7 @@ class Trains extends Component {
               <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
               <View
                 style={{
-                  marginVertical: verticalScale(20),
+                  marginVertical: 20,
                   flexDirection: 'row',
                   justifyContent: 'space-between',
                 }}>
@@ -308,7 +308,7 @@ class Trains extends Component {
               </View>
               <TouchableRipple
                 style={{
-                  height: verticalScale(40),
+                  height: 40,
                   width: scale(130),
                   borderRadius: 20,
                   backgroundColor: '#F73203',
@@ -341,7 +341,7 @@ class Trains extends Component {
               <Card
                 style={{
                   width: scale(150),
-                  height: verticalScale(50),
+                  height: 50,
                   backgroundColor: 'white',
                   borderRadius: 5,
                   elevation: 5,
@@ -366,7 +366,7 @@ class Trains extends Component {
               <Card
                 style={{
                   width: scale(150),
-                  height: verticalScale(50),
+                  height: 50,
                   backgroundColor: 'white',
                   borderRadius: 5,
                   elevation: 5,
@@ -398,7 +398,7 @@ class Trains extends Component {
               <Card
                 style={{
                   width: scale(150),
-                  height: verticalScale(50),
+                  height: 50,
                   backgroundColor: 'white',
                   borderRadius: 5,
                   elevation: 5,
@@ -419,7 +419,7 @@ class Trains extends Component {
               <Card
                 style={{
                   width: scale(150),
-                  height: verticalScale(50),
+                  height: 50,
                   backgroundColor: 'white',
                   borderRadius: 5,
                   elevation: 5,
@@ -456,7 +456,7 @@ class Trains extends Component {
               <Card
                 style={{
                   width: scale(150),
-                  height: verticalScale(50),
+                  height: 50,
                   backgroundColor: 'white',
                   borderRadius: 5,
                   elevation: 5,
@@ -474,7 +474,7 @@ class Trains extends Component {
               <Card
                 style={{
                   width: scale(150),
-                  height: verticalScale(50),
+                  height: 50,
                   backgroundColor: 'white',
                   borderRadius: 5,
                   elevation: 5,
@@ -503,7 +503,7 @@ class Trains extends Component {
               <Card
                 style={{
                   width: scale(150),
-                  height: verticalScale(50),
+                  height: 50,
                   backgroundColor: 'white',
                   borderRadius: 5,
                   elevation: 5,
