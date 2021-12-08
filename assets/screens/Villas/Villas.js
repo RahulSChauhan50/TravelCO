@@ -16,7 +16,7 @@ import {TextInput, Avatar, Card, Appbar} from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import FIcon from 'react-native-vector-icons/FontAwesome5';
+import FIcon from 'react-native-vector-icons/Ionicons';
 import {Icon} from 'react-native-paper/lib/typescript/components/Avatar/Avatar';
 const data = [{id: 1}, {id: 2}];
 const data2 = [
@@ -247,6 +247,37 @@ export default class Villas extends Component {
             titleStyle={{fontSize: moderateScale(18)}}
           />
         </Appbar>
+        <View
+          style={{
+            backgroundColor: '#2274E0',
+            width: '100%',
+            height: verticalScale(80),
+          }}>
+          <View
+            style={{
+              borderRadius: 10,
+              marginHorizontal: '1%',
+              backgroundColor: 'white',
+              height: verticalScale(70),
+              padding: 10,
+            }}>
+            <Text style={{fontSize: moderateScale(13)}}>
+              Where do you want to go?
+            </Text>
+            <View style={{flexDirection: 'row', marginVertical: 5}}>
+              <FIcon name="search" size={20} />
+              <Text
+                style={{
+                  fontSize: moderateScale(18),
+                  marginTop: -3,
+                  fontWeight: '700',
+                  marginLeft: 5,
+                }}>
+                Area, Landmark or Property
+              </Text>
+            </View>
+          </View>
+        </View>
         <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
           <View
             style={{

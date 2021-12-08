@@ -280,24 +280,22 @@ export default class Hotels extends Component {
                   backgroundColor: '#F73203',
                   alignSelf: 'center',
                 }}>
-                <View>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      textAlignVertical: 'center',
-                      fontSize: moderateScale(17),
-                      fontWeight: '500',
-                      color: 'white',
-                      flex:1
-                    }}>
-                    Search
-                  </Text>
-                </View>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    textAlignVertical: 'center',
+                    fontSize: moderateScale(17),
+                    fontWeight: '500',
+                    color: 'white',
+                    flex: 1,
+                  }}>
+                  Search
+                </Text>
               </TouchableOpacity>
             </View>
             <View
               style={{
-                height: verticalScale(230),
+                height: 210,
                 width: '95%',
                 alignSelf: 'center',
                 backgroundColor: 'white',
@@ -309,11 +307,11 @@ export default class Hotels extends Component {
                   fontWeight: '600',
                   fontSize: moderateScale(20),
                   color: 'black',
-                  margin: 15,
+                  margin: '4%',
                 }}>
                 Recent searches
               </Text>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{flexDirection: 'row', height: '90%'}}>
                 <FlatList
                   horizontal
                   showsHorizontalScrollIndicator={false}
@@ -321,15 +319,15 @@ export default class Hotels extends Component {
                   renderItem={({item, index, separators}) => (
                     <View
                       style={{
-                        height: 150,
-                        width: 150,
+                        height: '70%',
+                        width: 140,
                         elevation: 5,
                         borderWidth: 1,
                         borderColor: 'grey',
                         borderRadius: 10,
-                        marginHorizontal: 15,
+                        marginHorizontal: 10,
                         backgroundColor: 'white',
-                        padding: 10,
+                        padding: '5%',
                       }}>
                       <View
                         style={{
@@ -407,7 +405,7 @@ export default class Hotels extends Component {
                   height: verticalScale(350),
                   marginHorizontal: '2%',
                   borderRadius: 10,
-                  padding: 10,
+                  padding: moderateScale(10),
                 }}>
                 <View style={{flexDirection: 'row'}}>
                   <View>
@@ -419,7 +417,11 @@ export default class Hotels extends Component {
                       }}>
                       Daiy Steal Deals
                     </Text>
-                    <Text style={{fontSize: moderateScale(12), color: 'black'}}>
+                    <Text
+                      style={{
+                        fontSize: moderateScale(12),
+                        color: 'black',
+                      }}>
                       Lowest ever prices on top-rated hotels
                     </Text>
                   </View>
@@ -431,8 +433,7 @@ export default class Hotels extends Component {
                   />
                 </View>
               </LinearGradient>
-              <View
-                style={{position: 'absolute', marginTop: verticalScale(60)}}>
+              <View style={{position: 'absolute', marginTop: 70}}>
                 <FlatList
                   horizontal
                   showsHorizontalScrollIndicator={false}
@@ -445,7 +446,7 @@ export default class Hotels extends Component {
                         borderRadius: 5,
                         marginHorizontal: 10,
                         elevation: 5,
-                        marginBottom: 10,
+                        marginBottom: verticalScale(10),
                       }}>
                       <Image
                         resizeMode="cover"
@@ -454,13 +455,16 @@ export default class Hotels extends Component {
                           height: verticalScale(130),
                           width: '90%',
                           borderRadius: 5,
-                          marginTop: 10,
+                          marginTop: verticalScale(10),
                           alignSelf: 'center',
                         }}
                       />
 
                       <View
-                        style={{justifyContent: 'space-between', padding: 10}}>
+                        style={{
+                          justifyContent: 'space-between',
+                          padding: moderateScale(10),
+                        }}>
                         <View
                           style={{
                             flexDirection: 'row',
@@ -488,7 +492,7 @@ export default class Hotels extends Component {
                               borderRadius: 3,
                               paddingHorizontal: 7,
                               paddingVertical: 2,
-                              marginLeft: 70,
+                              marginLeft: scale(55),
                             }}>
                             <Text style={{fontWeight: '500', color: 'white'}}>
                               3.9/5

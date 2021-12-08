@@ -223,19 +223,17 @@ export default class Couples extends Component {
                   backgroundColor: '#F73203',
                   alignSelf: 'center',
                 }}>
-                <View>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      textAlignVertical: 'center',
-                      fontSize: moderateScale(17),
-                      fontWeight: '500',
-                      color: 'white',
-                      marginTop: 5,
-                    }}>
-                    Get A Room
-                  </Text>
-                </View>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    textAlignVertical: 'center',
+                    fontSize: moderateScale(17),
+                    fontWeight: '500',
+                    color: 'white',
+                    marginTop: 5,
+                  }}>
+                  Get A Room
+                </Text>
               </TouchableOpacity>
             </View>
             <View
@@ -532,8 +530,9 @@ export default class Couples extends Component {
             </Text>
             <View
               style={{
-                marginHorizontal: '2%',
-                borderRadius: 10,
+                marginLeft: '2%',
+                borderTopLeftRadius: 10,
+                borderBottomLeftRadius: 10,
                 backgroundColor: 'white',
                 paddingHorizontal: 10,
                 paddingTop: 10,
