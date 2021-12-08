@@ -280,7 +280,6 @@ export default class Hotels extends Component {
                   backgroundColor: '#F73203',
                   alignSelf: 'center',
                 }}>
-                <View>
                   <Text
                     style={{
                       textAlign: 'center',
@@ -292,7 +291,6 @@ export default class Hotels extends Component {
                     }}>
                     Search
                   </Text>
-                </View>
               </TouchableOpacity>
             </View>
             <View
