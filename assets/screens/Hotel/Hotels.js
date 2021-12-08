@@ -139,7 +139,7 @@ export default class Hotels extends Component {
             <View style={styles.travelContainer}>
               <View
                 style={{
-                  height: moderateScale(30),
+                  height: 30,
                   width: '80%',
                   borderRadius: 20,
                   backgroundColor: '#DDEBF7',
@@ -198,8 +198,8 @@ export default class Hotels extends Component {
                 style={{
                   fontSize: moderateScale(14),
                   color: 'black',
-                  marginLeft: scale(15),
-                  marginTop: scale(10),
+                  marginLeft: 15,
+                  marginTop: 10,
                 }}>
                 Area, Landmark or Hotel
               </Text>
@@ -208,8 +208,8 @@ export default class Hotels extends Component {
                   fontSize: moderateScale(18),
                   color: 'black',
                   fontWeight: '500',
-                  marginLeft: scale(15),
-                  marginTop: scale(10),
+                  marginLeft: 15,
+                  marginTop: 10,
                 }}>
                 Delhi
               </Text>
@@ -219,7 +219,7 @@ export default class Hotels extends Component {
                   borderTopWidth: 0.2,
                   borderColor: 'grey',
                   marginTop: 10,
-                  height: verticalScale(70),
+                  height: 70,
                 }}>
                 <View>
                   <Text
@@ -227,8 +227,8 @@ export default class Hotels extends Component {
                       fontSize: moderateScale(18),
                       color: 'black',
                       fontWeight: '500',
-                      marginLeft: scale(15),
-                      marginTop: scale(10),
+                      marginLeft: 15,
+                      marginTop: 10,
                     }}>
                     10 DEC - 11 DEC
                   </Text>
@@ -236,7 +236,7 @@ export default class Hotels extends Component {
                     style={{
                       fontSize: moderateScale(14),
                       color: 'black',
-                      marginLeft: scale(15),
+                      marginLeft: 15,
                       // marginTop: scale(10),
                     }}>
                     1 Night
@@ -256,8 +256,8 @@ export default class Hotels extends Component {
                       fontSize: moderateScale(18),
                       color: 'black',
                       fontWeight: '500',
-                      marginLeft: scale(90),
-                      marginTop: scale(10),
+                      marginLeft: 90,
+                      marginTop: 10,
                     }}>
                     1 Room
                   </Text>
@@ -265,8 +265,8 @@ export default class Hotels extends Component {
                     style={{
                       fontSize: moderateScale(14),
                       color: 'black',
-                      marginLeft: scale(15),
-                      marginLeft: scale(95),
+                      marginLeft: 15,
+                      marginLeft: 95,
                     }}>
                     2 Adults
                   </Text>
@@ -396,13 +396,13 @@ export default class Hotels extends Component {
                 />
               </View>
             </View>
-            <View style={{height: verticalScale(430)}}>
+            <View style={{height: 450}}>
               <LinearGradient
                 start={{x: 0, y: 0}}
                 end={{x: 0, y: 1}}
                 colors={['#fcbfbf', '#fcbfbf', '#ffffff']}
                 style={{
-                  height: verticalScale(350),
+                  height: 350,
                   marginHorizontal: '2%',
                   borderRadius: 10,
                   padding: moderateScale(10),
@@ -442,20 +442,20 @@ export default class Hotels extends Component {
                     <Card
                       style={{
                         width: scale(200),
-                        height: verticalScale(350),
+                        height: 350,
                         borderRadius: 5,
                         marginHorizontal: 10,
                         elevation: 5,
-                        marginBottom: verticalScale(10),
+                        marginBottom: 10,
                       }}>
                       <Image
                         resizeMode="cover"
                         source={{uri: item.img}}
                         style={{
-                          height: verticalScale(130),
+                          height: 130,
                           width: '90%',
                           borderRadius: 5,
-                          marginTop: verticalScale(10),
+                          marginTop: 10,
                           alignSelf: 'center',
                         }}
                       />
@@ -583,7 +583,7 @@ export default class Hotels extends Component {
             </View>
             <View
               style={{
-                height: verticalScale(430),
+                height: 430,
                 backgroundColor: 'white',
                 marginHorizontal: '2%',
                 borderTopRightRadius: 10,
@@ -611,8 +611,7 @@ export default class Hotels extends Component {
                   style={{position: 'absolute', right: 10}}
                 />
               </View>
-              <View
-                style={{position: 'absolute', marginTop: verticalScale(60)}}>
+              <View style={{position: 'absolute', marginTop: 70}}>
                 <FlatList
                   horizontal
                   showsHorizontalScrollIndicator={false}
@@ -621,7 +620,7 @@ export default class Hotels extends Component {
                     <Card
                       style={{
                         width: scale(200),
-                        height: verticalScale(350),
+                        height: 350,
                         borderRadius: 5,
                         marginHorizontal: 10,
                         elevation: 5,
@@ -631,7 +630,7 @@ export default class Hotels extends Component {
                         resizeMode="cover"
                         source={{uri: item.img}}
                         style={{
-                          height: verticalScale(130),
+                          height: 130,
                           width: '90%',
                           borderRadius: 5,
                           marginTop: 10,
@@ -640,7 +639,10 @@ export default class Hotels extends Component {
                       />
 
                       <View
-                        style={{justifyContent: 'space-between', padding: 10}}>
+                        style={{
+                          justifyContent: 'space-between',
+                          padding: moderateScale(10),
+                        }}>
                         <View
                           style={{
                             flexDirection: 'row',
@@ -668,7 +670,7 @@ export default class Hotels extends Component {
                               borderRadius: 3,
                               paddingHorizontal: 7,
                               paddingVertical: 2,
-                              marginLeft: 70,
+                              marginLeft: scale(55),
                             }}>
                             <Text style={{fontWeight: '500', color: 'white'}}>
                               3.9/5
@@ -759,7 +761,7 @@ export default class Hotels extends Component {
             </View>
             <View
               style={{
-                height: verticalScale(300),
+                height: 300,
                 backgroundColor: 'white',
                 marginHorizontal: '2%',
                 borderBottomRightRadius: 10,
@@ -777,7 +779,7 @@ export default class Hotels extends Component {
               <View
                 style={{
                   position: 'absolute',
-                  marginTop: verticalScale(60),
+                  marginTop: 60,
                 }}>
                 <FlatList
                   horizontal
@@ -787,7 +789,7 @@ export default class Hotels extends Component {
                     <Card
                       style={{
                         width: scale(120),
-                        height: verticalScale(200),
+                        height: 200,
                         borderRadius: 10,
                         marginHorizontal: 10,
                         elevation: 5,
@@ -797,7 +799,7 @@ export default class Hotels extends Component {
                         resizeMode="cover"
                         source={{uri: item.img}}
                         style={{
-                          height: verticalScale(200),
+                          height: 200,
                           width: '100%',
                           borderRadius: 5,
                           alignSelf: 'center',
@@ -822,7 +824,7 @@ export default class Hotels extends Component {
             <View
               style={{
                 marginTop: 10,
-                height: verticalScale(250),
+                height: 270,
                 borderRadius: 5,
                 padding: 10,
               }}>
@@ -837,7 +839,7 @@ export default class Hotels extends Component {
               <View
                 style={{
                   position: 'absolute',
-                  marginTop: verticalScale(60),
+                  marginTop: 60,
                 }}>
                 <FlatList
                   horizontal
@@ -847,7 +849,7 @@ export default class Hotels extends Component {
                     <Card
                       style={{
                         width: scale(200),
-                        height: verticalScale(170),
+                        height: 190,
                         borderRadius: 5,
                         marginHorizontal: 10,
                         elevation: 5,
@@ -857,7 +859,7 @@ export default class Hotels extends Component {
                         resizeMode="cover"
                         source={{uri: item.img}}
                         style={{
-                          height: verticalScale(100),
+                          height: 110,
                           width: '100%',
                           borderRadius: 5,
                           alignSelf: 'center',
@@ -907,7 +909,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     width: '95%',
     top: -verticalScale(40),
-    height: moderateScale(220),
+    height: 220,
     alignSelf: 'center',
     // position: 'absolute',
     borderRadius: 5,
