@@ -658,7 +658,7 @@ export default class Couples extends Component {
                   renderItem={({item, index, separators}) => (
                     <Card
                       style={{
-                        width: 200,
+                        width: 250,
                         height: 190,
                         borderRadius: 5,
                         marginHorizontal: 10,
@@ -671,7 +671,8 @@ export default class Couples extends Component {
                         style={{
                           height: 110,
                           width: '100%',
-                          borderRadius: 5,
+                          borderTopLeftRadius: 5,
+                          borderTopRightRadius: 5,
                           alignSelf: 'center',
                         }}
                       />

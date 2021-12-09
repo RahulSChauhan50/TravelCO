@@ -145,15 +145,19 @@ class Home extends Component {
                   <Text style={{fontSize: moderateScale(12)}}>Trains</Text>
                 </View>
               </TouchableOpacity>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="bus-double-decker"
-                  size={moderateScale(39)}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text style={{fontSize: moderateScale(12)}}>Bus</Text>
-              </View>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Bus')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="bus-double-decker"
+                    size={moderateScale(39)}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text style={{fontSize: moderateScale(12)}}>Bus</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </Card>
         </View>
