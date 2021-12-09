@@ -69,6 +69,10 @@ class Bus extends Component {
     super(props);
     this.state = {
       ButtonToggle: 'bookTrain',
+      ac: 0,
+      nonAc: 0,
+      sleeper: 0,
+      seater: 0,
     };
   }
   render() {
@@ -90,11 +94,11 @@ class Bus extends Component {
             titleStyle={{fontSize: moderateScale(25)}}
           />
         </Appbar>
-        <ScrollView>
-          <View style={{height: 490}}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={{height: 470}}>
             <View
               style={{
-                height: 70,
+                height: 50,
                 width: '100%',
                 backgroundColor: '#2176E3',
               }}
@@ -106,8 +110,8 @@ class Bus extends Component {
                 alignSelf: 'center',
                 elevation: 10,
                 padding: 10,
+                borderRadius: 10,
                 position: 'absolute',
-                marginTop: 20,
               }}>
               <View
                 style={{
@@ -123,7 +127,7 @@ class Bus extends Component {
                 <View
                   style={{
                     height: 25,
-                    width: 45,
+                    width: 40,
                     borderColor: '#F73203',
                     borderWidth: 1,
                     justifyContent: 'center',
@@ -261,7 +265,9 @@ class Bus extends Component {
                     justifyContent: 'space-around',
                   }}>
                   {travel.map((item, index) => (
-                    <View key={index} style={{alignItems: 'center'}}>
+                    <TouchableOpacity
+                      key={index}
+                      style={{alignItems: 'center'}}>
                       <MaterialCommunityIcons name={item.iName} size={30} />
                       <Text
                         style={{
@@ -271,7 +277,7 @@ class Bus extends Component {
                         }}>
                         {item.name}
                       </Text>
-                    </View>
+                    </TouchableOpacity>
                   ))}
                 </View>
               </View>

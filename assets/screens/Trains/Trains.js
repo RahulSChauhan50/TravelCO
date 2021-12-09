@@ -83,11 +83,11 @@ class Trains extends Component {
             titleStyle={{fontSize: moderateScale(25)}}
           />
         </Appbar>
-        <ScrollView>
-          <View style={{height: 490}}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={{height: 470}}>
             <View
               style={{
-                height: 70,
+                height: 50,
                 width: '100%',
                 backgroundColor: '#2176E3',
               }}
@@ -98,9 +98,9 @@ class Trains extends Component {
                 width: '96%',
                 alignSelf: 'center',
                 elevation: 10,
+                borderRadius: 10,
                 padding: 10,
                 position: 'absolute',
-                marginTop: 20,
               }}>
               <View
                 style={{
