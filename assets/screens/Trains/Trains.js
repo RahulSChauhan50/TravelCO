@@ -63,7 +63,7 @@ class Trains extends Component {
     this.state = {
       ButtonToggle:
         this.props.route.params === undefined
-          ? 'PNRStatus'
+          ? 'trainStatus'
           : this.props.route.params.toggleOption,
     };
   }
@@ -455,7 +455,7 @@ class Trains extends Component {
         );
       case 'trainStatus':
         return (
-          <View style={{height: 490}}>
+          <View style={{height: 300}}>
             <View
               style={{
                 height: 70,
@@ -465,7 +465,7 @@ class Trains extends Component {
             />
             <Card
               style={{
-                height: 420,
+                height: 250,
                 width: '96%',
                 alignSelf: 'center',
                 elevation: 10,
@@ -553,130 +553,17 @@ class Trains extends Component {
                   </Text>
                 </TouchableOpacity>
               </View>
-              <View
-                style={{
-                  marginVertical: 20,
-                }}>
-                <Text>From</Text>
+              <View style={{flex: 1, justifyContent: 'center'}}>
+                <Text>Train</Text>
                 <Text
                   style={{
                     fontSize: moderateScale(18),
                     color: 'black',
                     fontWeight: '500',
                   }}>
-                  Select Station
+                  Train Name/Number
                 </Text>
-              </View>
-              <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
-              <Avatar.Icon
-                icon="arrow-up-down-bold"
-                color="white"
-                size={35}
-                style={{
-                  alignSelf: 'flex-end',
-                  marginVertical: -15,
-                  backgroundColor: 'grey',
-                }}
-              />
-              <View
-                style={{
-                  marginVertical: 20,
-                }}>
-                <Text>To</Text>
-                <Text
-                  style={{
-                    fontSize: moderateScale(18),
-                    color: 'black',
-                    fontWeight: '500',
-                  }}>
-                  Select Station
-                </Text>
-              </View>
-              <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
-              <View
-                style={{
-                  marginVertical: 20,
-                }}>
-                <Text>I know my train (Optional)</Text>
-                <Text
-                  style={{
-                    fontSize: moderateScale(18),
-                    color: 'black',
-                    fontWeight: '500',
-                  }}>
-                  Select Train
-                </Text>
-              </View>
-              <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
-              <View
-                style={{
-                  marginVertical: 20,
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <View>
-                  <Text>Date</Text>
-                  <Text
-                    style={{
-                      fontSize: moderateScale(18),
-                      color: 'black',
-                      fontWeight: '500',
-                    }}>
-                    07 Dec' 21
-                  </Text>
-                  <Text>Today, Tuesday</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    width: scale(180),
-                    justifyContent: 'space-between',
-                  }}>
-                  <View>
-                    <View
-                      style={{
-                        backgroundColor: '#e2e2e2',
-                        padding: 10,
-                        alignItems: 'center',
-                        borderBottomColor: 'green',
-                        borderBottomWidth: 1,
-                      }}>
-                      <Text style={{fontSize: moderateScale(10)}}>Today</Text>
-                    </View>
-                    <Text style={{color: 'green', fontSize: moderateScale(10)}}>
-                      Tatkal open
-                    </Text>
-                  </View>
-                  <View>
-                    <View
-                      style={{
-                        backgroundColor: '#e2e2e2',
-                        padding: 10,
-                        alignItems: 'center',
-                        borderBottomColor: 'green',
-                        borderBottomWidth: 1,
-                      }}>
-                      <Text style={{fontSize: moderateScale(10)}}>
-                        Tomorrow
-                      </Text>
-                    </View>
-                    <Text style={{color: 'green', fontSize: moderateScale(10)}}>
-                      Tatkal open
-                    </Text>
-                  </View>
-                  <View>
-                    <View
-                      style={{
-                        backgroundColor: '#e2e2e2',
-                        padding: 10,
-                        alignItems: 'center',
-                      }}>
-                      <Text style={{fontSize: moderateScale(10)}}>
-                        Day After
-                      </Text>
-                    </View>
-                  </View>
-                </View>
+                <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
               </View>
               <TouchableOpacity
                 style={{
@@ -735,7 +622,7 @@ class Trains extends Component {
             titleStyle={{fontSize: moderateScale(25)}}
           />
         </Appbar>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           {this.TrainsMainCardContent()}
           <View style={{marginHorizontal: '2%'}}>
             <Text style={{fontWeight: '700', fontSize: moderateScale(20)}}>
