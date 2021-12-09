@@ -63,7 +63,7 @@ class Trains extends Component {
     this.state = {
       ButtonToggle:
         this.props.route.params === undefined
-          ? 'trainStatus'
+          ? 'bookTrain'
           : this.props.route.params.toggleOption,
     };
   }
@@ -330,7 +330,7 @@ class Trains extends Component {
             />
             <Card
               style={{
-                height: 210,
+                height: 250,
                 width: '96%',
                 alignSelf: 'center',
                 elevation: 10,
