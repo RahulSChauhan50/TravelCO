@@ -75,7 +75,7 @@ class Trains extends Component {
           <View style={{height: 490}}>
             <View
               style={{
-                height: 70,
+                height: 50,
                 width: '100%',
                 backgroundColor: '#2176E3',
               }}
@@ -86,9 +86,9 @@ class Trains extends Component {
                 width: '96%',
                 alignSelf: 'center',
                 elevation: 10,
+                borderRadius: 10,
                 padding: 10,
                 position: 'absolute',
-                marginTop: 20,
               }}>
               <View
                 style={{

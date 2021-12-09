@@ -149,15 +149,19 @@ class Home extends Component {
                   <Text style={{fontSize: moderateScale(12)}}>Trains</Text>
                 </View>
               </TouchableOpacity>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="bus-double-decker"
-                  size={moderateScale(39)}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text style={{fontSize: moderateScale(12)}}>Bus</Text>
-              </View>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Bus')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="bus-double-decker"
+                    size={moderateScale(39)}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text style={{fontSize: moderateScale(12)}}>Bus</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </Card>
         </View>
@@ -196,51 +200,52 @@ class Home extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="car"
-                  size={moderateScale(39)}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text
-                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                  Airport {'\n'}Cabs
-                </Text>
-              </View>
               <TouchableOpacity
-                onPress={() =>
-                  this.props.navigation.navigate('Trains', {
-                    toggleOption: 'PNRStatus',
-                  })
-                }
+                onPress={() => this.props.navigation.navigate('Cab')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon
-                    icon="ticket-confirmation-outline"
+                    icon="car"
                     size={moderateScale(39)}
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
                   <Text
                     style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Train PNR {'\n'}Status
+                    Airport {'\n'}Cabs
                   </Text>
                 </View>
               </TouchableOpacity>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
-                  icon="car-hatchback"
+                  icon="ticket-confirmation-outline"
                   size={moderateScale(39)}
                   color="#2176E3"
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text
                   style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                  Outstation {'\n'}Cabs
+                  Train PNR {'\n'}Status
                 </Text>
               </View>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Cab')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="car-hatchback"
+                    size={moderateScale(39)}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text
+                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    Outstation {'\n'}Cabs
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
+
             <View
               style={{
                 flexDirection: 'row',
