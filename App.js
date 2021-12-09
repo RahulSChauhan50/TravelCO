@@ -70,7 +70,7 @@ const App = () => {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Navigator initialRouteName="Trains">
           <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
