@@ -264,21 +264,86 @@ class Bus extends Component {
                     flexDirection: 'row',
                     justifyContent: 'space-around',
                   }}>
-                  {travel.map((item, index) => (
-                    <TouchableOpacity
-                      key={index}
-                      style={{alignItems: 'center'}}>
-                      <MaterialCommunityIcons name={item.iName} size={30} />
-                      <Text
-                        style={{
-                          fontSize: moderateScale(15),
-                          fontWeight: '400',
-                          marginTop: 10,
-                        }}>
-                        {item.name}
-                      </Text>
-                    </TouchableOpacity>
-                  ))}
+                  <TouchableOpacity
+                    style={{alignItems: 'center'}}
+                    onPress={() => {
+                      this.setState({ac: 1, nonAc: 0});
+                    }}>
+                    <MaterialCommunityIcons
+                      name={'crosshairs'}
+                      size={30}
+                      color={this.state.ac === 1 ? 'blue' : 'grey'}
+                    />
+                    <Text
+                      style={{
+                        fontSize: moderateScale(15),
+                        fontWeight: '400',
+                        marginTop: 10,
+                        color: this.state.ac === 1 ? 'blue' : 'grey',
+                      }}>
+                      AC
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{alignItems: 'center'}}
+                    onPress={() => {
+                      this.setState({ac: 0, nonAc: 1});
+                    }}>
+                    <MaterialCommunityIcons
+                      name={'crosshairs-off'}
+                      size={30}
+                      color={this.state.nonAc === 1 ? 'blue' : 'grey'}
+                    />
+                    <Text
+                      style={{
+                        fontSize: moderateScale(15),
+                        fontWeight: '400',
+                        marginTop: 10,
+                        color: this.state.nonAc === 1 ? 'blue' : 'grey',
+                      }}>
+                      Non-AC
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{alignItems: 'center'}}
+                    onPress={() => {
+                      this.setState({sleeper: 1});
+                    }}>
+                    <MaterialCommunityIcons
+                      name={'bed'}
+                      size={30}
+                      color={this.state.sleeper === 1 ? 'blue' : 'grey'}
+                    />
+                    <Text
+                      style={{
+                        fontSize: moderateScale(15),
+                        fontWeight: '400',
+                        marginTop: 10,
+                        color: this.state.sleeper === 1 ? 'blue' : 'grey',
+                      }}>
+                      Sleeper
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{alignItems: 'center'}}
+                    onPress={() => {
+                      this.setState({seater: 1});
+                    }}>
+                    <MaterialCommunityIcons
+                      name={'seat-recline-extra'}
+                      size={30}
+                      color={this.state.seater === 1 ? 'blue' : 'grey'}
+                    />
+                    <Text
+                      style={{
+                        fontSize: moderateScale(15),
+                        fontWeight: '400',
+                        marginTop: 10,
+                        color: this.state.seater === 1 ? 'blue' : 'grey',
+                      }}>
+                      Seater
+                    </Text>
+                  </TouchableOpacity>
                 </View>
               </View>
               <TouchableOpacity
