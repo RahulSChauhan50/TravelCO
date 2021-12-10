@@ -14,6 +14,7 @@ import Villas from './assets/screens/Villas/Villas';
 import Trains from './assets/screens/Trains/Trains';
 import Bus from './assets/screens/Bus/Bus';
 import Cabs from './assets/screens/Cabs/Cabs';
+import MyTrips from './assets/screens/MyTrip/MyTrips';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -61,7 +62,7 @@ function HomeScreen() {
       })}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Orders" component={Profile} />
-      <Tab.Screen name="My Trips" component={Hotels} />
+      <Tab.Screen name="My Trips" component={MyTrips} />
       <Tab.Screen name="Offers" component={Couples} />
       <Tab.Screen name="Trip Money" component={Villas} />
     </Tab.Navigator>
