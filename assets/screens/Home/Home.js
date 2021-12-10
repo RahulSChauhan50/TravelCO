@@ -133,7 +133,11 @@ class Home extends Component {
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Trains')}
+                onPress={() =>
+                  this.props.navigation.navigate('Trains', {
+                    toggleOption: 'bookTrain',
+                  })
+                }
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon
@@ -212,18 +216,26 @@ class Home extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="ticket-confirmation-outline"
-                  size={moderateScale(39)}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text
-                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                  Train PNR {'\n'}Status
-                </Text>
-              </View>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('Trains', {
+                    toggleOption: 'PNRStatus',
+                  })
+                }
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="ticket-confirmation-outline"
+                    size={moderateScale(39)}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text
+                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    Train PNR {'\n'}Status
+                  </Text>
+                </View>
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Cab')}
                 rippleColor="#dbd9d9">
@@ -278,18 +290,26 @@ class Home extends Component {
                   Airport{'\n'} meals
                 </Text>
               </View>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="timetable"
-                  size={moderateScale(39)}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text
-                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                  Train Running{'\n'} Status
-                </Text>
-              </View>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('Trains', {
+                    toggleOption: 'trainStatus',
+                  })
+                }
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="timetable"
+                    size={moderateScale(39)}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text
+                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    Train Running{'\n'} Status
+                  </Text>
+                </View>
+              </TouchableOpacity>
               <View style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="home-map-marker"

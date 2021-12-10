@@ -61,30 +61,18 @@ class Trains extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ButtonToggle: 'bookTrain',
+      ButtonToggle:
+        this.props.route.params === undefined
+          ? 'bookTrain'
+          : this.props.route.params.toggleOption,
     };
   }
-  render() {
-    return (
-      <SafeAreaView style={{flex: 1}}>
-        <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
-          <Appbar.Action
-            icon="arrow-left"
-            onPress={() => this.props.navigation.goBack()}
-          />
-          <Avatar.Icon
-            icon="train"
-            size={moderateScale(40)}
-            color="#2176E3"
-            style={{backgroundColor: '#dee2e6'}}
-          />
-          <Appbar.Content
-            title="IRCTC Trains"
-            titleStyle={{fontSize: moderateScale(25)}}
-          />
-        </Appbar>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={{height: 470}}>
+
+  TrainsMainCardContent = () => {
+    switch (this.state.ButtonToggle) {
+      case 'bookTrain':
+        return (
+          <View style={{height: 490}}>
             <View
               style={{
                 height: 50,
@@ -329,6 +317,313 @@ class Trains extends Component {
               </TouchableOpacity>
             </Card>
           </View>
+        );
+      case 'PNRStatus':
+        return (
+          <View style={{height: 300}}>
+            <View
+              style={{
+                height: 70,
+                width: '100%',
+                backgroundColor: '#2176E3',
+              }}
+            />
+            <Card
+              style={{
+                height: 250,
+                width: '96%',
+                alignSelf: 'center',
+                elevation: 10,
+                padding: 10,
+                position: 'absolute',
+                marginTop: 20,
+              }}>
+              <View
+                style={{
+                  width: '90%',
+                  height: 30,
+                  borderRadius: 30,
+                  flexDirection: 'row',
+                  backgroundColor: '#DDEBF7',
+                  justifyContent: 'space-between',
+                  alignSelf: 'center',
+                }}>
+                <TouchableOpacity
+                  onPress={() => this.setState({ButtonToggle: 'bookTrain'})}
+                  style={{
+                    alignItems: 'center',
+                    backgroundColor:
+                      this.state.ButtonToggle === 'bookTrain'
+                        ? '#2176E3'
+                        : 'transparent',
+                    borderRadius: 30,
+                    width: '33%',
+                  }}>
+                  <Text
+                    style={{
+                      textAlignVertical: 'center',
+                      flex: 1,
+                      color:
+                        this.state.ButtonToggle === 'bookTrain'
+                          ? 'white'
+                          : '#2176E3',
+                    }}>
+                    Book Train
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.setState({ButtonToggle: 'PNRStatus'})}
+                  style={{
+                    alignItems: 'center',
+                    backgroundColor:
+                      this.state.ButtonToggle === 'PNRStatus'
+                        ? '#2176E3'
+                        : 'transparent',
+                    borderRadius: 30,
+                    width: '33%',
+                  }}>
+                  <Text
+                    style={{
+                      textAlignVertical: 'center',
+                      flex: 1,
+                      color:
+                        this.state.ButtonToggle === 'PNRStatus'
+                          ? 'white'
+                          : '#2176E3',
+                    }}>
+                    PNRStatus
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.setState({ButtonToggle: 'trainStatus'})}
+                  style={{
+                    alignItems: 'center',
+                    backgroundColor:
+                      this.state.ButtonToggle === 'trainStatus'
+                        ? '#2176E3'
+                        : 'transparent',
+                    borderRadius: 30,
+                    width: '33%',
+                  }}>
+                  <Text
+                    style={{
+                      textAlignVertical: 'center',
+                      flex: 1,
+                      color:
+                        this.state.ButtonToggle === 'trainStatus'
+                          ? 'white'
+                          : '#2176E3',
+                    }}>
+                    Train Status
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={{flex: 1, justifyContent: 'center'}}>
+                <Text>PNR</Text>
+                <Text
+                  style={{
+                    fontSize: moderateScale(18),
+                    color: 'black',
+                    fontWeight: '500',
+                  }}>
+                  Enter PNR Number
+                </Text>
+                <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
+              </View>
+              <TouchableOpacity
+                style={{
+                  height: 40,
+                  width: scale(130),
+                  borderRadius: 20,
+                  backgroundColor: '#F73203',
+                  alignSelf: 'center',
+                }}>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    textAlignVertical: 'center',
+                    fontSize: moderateScale(17),
+                    fontWeight: '500',
+                    color: 'white',
+                    flex: 1,
+                  }}>
+                  SEARCH
+                </Text>
+              </TouchableOpacity>
+            </Card>
+          </View>
+        );
+      case 'trainStatus':
+        return (
+          <View style={{height: 300}}>
+            <View
+              style={{
+                height: 70,
+                width: '100%',
+                backgroundColor: '#2176E3',
+              }}
+            />
+            <Card
+              style={{
+                height: 250,
+                width: '96%',
+                alignSelf: 'center',
+                elevation: 10,
+                padding: 10,
+                position: 'absolute',
+                marginTop: 20,
+              }}>
+              <View
+                style={{
+                  width: '90%',
+                  height: 30,
+                  borderRadius: 30,
+                  flexDirection: 'row',
+                  backgroundColor: '#DDEBF7',
+                  justifyContent: 'space-between',
+                  alignSelf: 'center',
+                }}>
+                <TouchableOpacity
+                  onPress={() => this.setState({ButtonToggle: 'bookTrain'})}
+                  style={{
+                    alignItems: 'center',
+                    backgroundColor:
+                      this.state.ButtonToggle === 'bookTrain'
+                        ? '#2176E3'
+                        : 'transparent',
+                    borderRadius: 30,
+                    width: '33%',
+                  }}>
+                  <Text
+                    style={{
+                      textAlignVertical: 'center',
+                      flex: 1,
+                      color:
+                        this.state.ButtonToggle === 'bookTrain'
+                          ? 'white'
+                          : '#2176E3',
+                    }}>
+                    Book Train
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.setState({ButtonToggle: 'PNRStatus'})}
+                  style={{
+                    alignItems: 'center',
+                    backgroundColor:
+                      this.state.ButtonToggle === 'PNRStatus'
+                        ? '#2176E3'
+                        : 'transparent',
+                    borderRadius: 30,
+                    width: '33%',
+                  }}>
+                  <Text
+                    style={{
+                      textAlignVertical: 'center',
+                      flex: 1,
+                      color:
+                        this.state.ButtonToggle === 'PNRStatus'
+                          ? 'white'
+                          : '#2176E3',
+                    }}>
+                    PNRStatus
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.setState({ButtonToggle: 'trainStatus'})}
+                  style={{
+                    alignItems: 'center',
+                    backgroundColor:
+                      this.state.ButtonToggle === 'trainStatus'
+                        ? '#2176E3'
+                        : 'transparent',
+                    borderRadius: 30,
+                    width: '33%',
+                  }}>
+                  <Text
+                    style={{
+                      textAlignVertical: 'center',
+                      flex: 1,
+                      color:
+                        this.state.ButtonToggle === 'trainStatus'
+                          ? 'white'
+                          : '#2176E3',
+                    }}>
+                    Train Status
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={{flex: 1, justifyContent: 'center'}}>
+                <Text>Train</Text>
+                <Text
+                  style={{
+                    fontSize: moderateScale(18),
+                    color: 'black',
+                    fontWeight: '500',
+                  }}>
+                  Train Name/Number
+                </Text>
+                <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
+              </View>
+              <TouchableOpacity
+                style={{
+                  height: 40,
+                  width: scale(130),
+                  borderRadius: 20,
+                  backgroundColor: '#F73203',
+                  alignSelf: 'center',
+                }}>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    textAlignVertical: 'center',
+                    fontSize: moderateScale(17),
+                    fontWeight: '500',
+                    color: 'white',
+                    flex: 1,
+                  }}>
+                  SEARCH
+                </Text>
+              </TouchableOpacity>
+            </Card>
+          </View>
+        );
+      default:
+        return (
+          <View style={{height: 490}}>
+            <View
+              style={{
+                height: 70,
+                width: '100%',
+                backgroundColor: '#2176E3',
+              }}
+            />
+          </View>
+        );
+    }
+  };
+  render() {
+    console.log(this.props.route.params);
+    return (
+      <SafeAreaView style={{flex: 1}}>
+        <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
+          <Appbar.Action
+            icon="arrow-left"
+            onPress={() => this.props.navigation.goBack()}
+          />
+          <Avatar.Icon
+            icon="train"
+            size={moderateScale(40)}
+            color="#2176E3"
+            style={{backgroundColor: '#dee2e6'}}
+          />
+          <Appbar.Content
+            title="IRCTC Trains"
+            titleStyle={{fontSize: moderateScale(25)}}
+          />
+        </Appbar>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {this.TrainsMainCardContent()}
           <View style={{marginHorizontal: '2%'}}>
             <Text style={{fontWeight: '700', fontSize: moderateScale(20)}}>
               Train Information Services
