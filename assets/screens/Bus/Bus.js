@@ -69,10 +69,10 @@ class Bus extends Component {
     super(props);
     this.state = {
       ButtonToggle: 'bookTrain',
-      ac: 0,
-      nonAc: 0,
-      sleeper: 0,
-      seater: 0,
+      ac: false,
+      nonAc: false,
+      sleeper: false,
+      seater: false,
     };
   }
   render() {
@@ -267,19 +267,21 @@ class Bus extends Component {
                   <TouchableOpacity
                     style={{alignItems: 'center'}}
                     onPress={() => {
-                      this.setState({ac: 1, nonAc: 0});
+                      this.setState({
+                        ac: !this.state.ac,
+                      });
                     }}>
                     <MaterialCommunityIcons
                       name={'crosshairs'}
                       size={30}
-                      color={this.state.ac === 1 ? 'blue' : 'grey'}
+                      color={this.state.ac === true ? 'blue' : 'grey'}
                     />
                     <Text
                       style={{
                         fontSize: moderateScale(15),
                         fontWeight: '400',
                         marginTop: 10,
-                        color: this.state.ac === 1 ? 'blue' : 'grey',
+                        color: this.state.ac === true ? 'blue' : 'grey',
                       }}>
                       AC
                     </Text>
@@ -287,19 +289,21 @@ class Bus extends Component {
                   <TouchableOpacity
                     style={{alignItems: 'center'}}
                     onPress={() => {
-                      this.setState({ac: 0, nonAc: 1});
+                      this.setState({
+                        nonAc: !this.state.nonAc,
+                      });
                     }}>
                     <MaterialCommunityIcons
                       name={'crosshairs-off'}
                       size={30}
-                      color={this.state.nonAc === 1 ? 'blue' : 'grey'}
+                      color={this.state.nonAc === true ? 'blue' : 'grey'}
                     />
                     <Text
                       style={{
                         fontSize: moderateScale(15),
                         fontWeight: '400',
                         marginTop: 10,
-                        color: this.state.nonAc === 1 ? 'blue' : 'grey',
+                        color: this.state.nonAc === true ? 'blue' : 'grey',
                       }}>
                       Non-AC
                     </Text>
@@ -307,19 +311,19 @@ class Bus extends Component {
                   <TouchableOpacity
                     style={{alignItems: 'center'}}
                     onPress={() => {
-                      this.setState({sleeper: 1});
+                      this.setState({sleeper: !this.state.sleeper});
                     }}>
                     <MaterialCommunityIcons
                       name={'bed'}
                       size={30}
-                      color={this.state.sleeper === 1 ? 'blue' : 'grey'}
+                      color={this.state.sleeper === true ? 'blue' : 'grey'}
                     />
                     <Text
                       style={{
                         fontSize: moderateScale(15),
                         fontWeight: '400',
                         marginTop: 10,
-                        color: this.state.sleeper === 1 ? 'blue' : 'grey',
+                        color: this.state.sleeper === true ? 'blue' : 'grey',
                       }}>
                       Sleeper
                     </Text>
@@ -327,19 +331,19 @@ class Bus extends Component {
                   <TouchableOpacity
                     style={{alignItems: 'center'}}
                     onPress={() => {
-                      this.setState({seater: 1});
+                      this.setState({seater: !this.state.seater});
                     }}>
                     <MaterialCommunityIcons
                       name={'seat-recline-extra'}
                       size={30}
-                      color={this.state.seater === 1 ? 'blue' : 'grey'}
+                      color={this.state.seater === true ? 'blue' : 'grey'}
                     />
                     <Text
                       style={{
                         fontSize: moderateScale(15),
                         fontWeight: '400',
                         marginTop: 10,
-                        color: this.state.seater === 1 ? 'blue' : 'grey',
+                        color: this.state.seater === true ? 'blue' : 'grey',
                       }}>
                       Seater
                     </Text>

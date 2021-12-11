@@ -194,14 +194,14 @@ class Cabs extends Component {
                 style={{
                   marginVertical: 20,
                 }}>
-                <Text>From</Text>
+                <Text>From (Airport or Pickup address)</Text>
                 <Text
                   style={{
-                    fontSize: moderateScale(18),
+                    fontSize: moderateScale(17),
                     color: 'black',
                     fontWeight: '500',
                   }}>
-                  Select Station
+                  Enter pickup location
                 </Text>
               </View>
               <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
@@ -219,14 +219,14 @@ class Cabs extends Component {
                 style={{
                   marginVertical: 20,
                 }}>
-                <Text>To</Text>
+                <Text>To (Airport or Pickup address)</Text>
                 <Text
                   style={{
-                    fontSize: moderateScale(18),
+                    fontSize: moderateScale(17),
                     color: 'black',
                     fontWeight: '500',
                   }}>
-                  Select Station
+                  Enter drop location
                 </Text>
               </View>
               <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
@@ -317,7 +317,7 @@ class Cabs extends Component {
 
           <View
             style={{
-              marginTop: -20,
+              marginTop: 20,
               height: 270,
               borderRadius: 5,
               padding: 10,

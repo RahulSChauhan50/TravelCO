@@ -268,9 +268,9 @@ export default class Villas extends Component {
               <FIcon name="search" size={20} />
               <Text
                 style={{
-                  fontSize: moderateScale(18),
+                  fontSize: moderateScale(17),
                   marginTop: -3,
-                  fontWeight: '700',
+                  fontWeight: '500',
                   marginLeft: 5,
                 }}>
                 Area, Landmark or Property
