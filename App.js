@@ -16,6 +16,7 @@ import Bus from './assets/screens/Bus/Bus';
 import Cabs from './assets/screens/Cabs/Cabs';
 import MyTrips from './assets/screens/MyTrip/MyTrips';
 import Offer from './assets/screens/Offer/Offer';
+import TripMoney from './assets/screens/TripMoney/TripMoney';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -65,7 +66,7 @@ function HomeScreen() {
       <Tab.Screen name="Orders" component={Profile} />
       <Tab.Screen name="My Trips" component={MyTrips} />
       <Tab.Screen name="Offers" component={Offer} />
-      <Tab.Screen name="Trip Money" component={Villas} />
+      <Tab.Screen name="Trip Money" component={TripMoney} />
     </Tab.Navigator>
   );
 }

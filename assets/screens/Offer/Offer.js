@@ -60,14 +60,31 @@ const offer = [
     id: '06',
   },
 ];
+const list = [
+  {name: '1st Booking', id: 0},
+  {name: 'All', id: 1},
+  {name: 'Bank Offers', id: 2},
+  {name: 'Flights', id: 3},
+  {name: 'Hotels', id: 4},
+  {name: 'Cabs', id: 5},
+  {name: 'Bus', id: 6},
+  {name: 'Trains', id: 7},
+  {name: 'Metro', id: 8},
+  {name: 'Self Drive', id: 9},
+];
 const safe = [{id: 0}, {id: 1}, {id: 2}, {id: 3}, {id: 4}];
 
 class Offer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ButtonToggle: 'Outstation',
+      selectedItem: 0,
     };
+  }
+
+  onPressHandler(id) {
+    this.setState({selectedItem: id});
+    // console.log(id);
   }
   render() {
     return (
@@ -86,6 +103,42 @@ class Offer extends Component {
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{flexGrow: 1, backgroundColor: '#DDEBF7'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              width: '100%',
+              marginVertical: 10,
+            }}>
+            <FlatList
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              data={list}
+              renderItem={({item, index, separators}) => (
+                <TouchableOpacity
+                  onPress={() => this.onPressHandler(item.id)}
+                  style={{
+                    backgroundColor:
+                      this.state.selectedItem === item.id ? 'blue' : 'white',
+                    padding: 5,
+                    borderRadius: 25,
+                    paddingHorizontal: 20,
+                    marginHorizontal: 10,
+                    alignItems: 'center',
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      fontWeight: '500',
+                      color:
+                        this.state.selectedItem === item.id ? 'white' : 'grey',
+                    }}>
+                    {item.name}
+                  </Text>
+                </TouchableOpacity>
+              )}
+              keyExtractor={(item, ind) => ind}
+            />
+          </View>
           {offer.map((item, index) => (
             <View
               key={index}
