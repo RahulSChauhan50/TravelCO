@@ -14,6 +14,7 @@ import Villas from './assets/screens/Villas/Villas';
 import Trains from './assets/screens/Trains/Trains';
 import Bus from './assets/screens/Bus/Bus';
 import Cabs from './assets/screens/Cabs/Cabs';
+import AirportMeals from './assets/screens/AirportMeals/AirportMeals';
 import MyTrips from './assets/screens/MyTrip/MyTrips';
 import Offer from './assets/screens/Offer/Offer';
 import TripMoney from './assets/screens/TripMoney/TripMoney';
@@ -137,6 +138,12 @@ const App = () => {
           <Stack.Screen
             name="Wallet"
             component={Wallet}
+            options={{headerShown: false}}
+          />
+
+          <Stack.Screen
+            name="AirportMeals"
+            component={AirportMeals}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
