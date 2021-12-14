@@ -124,6 +124,7 @@ class Offer extends Component {
                     paddingHorizontal: 20,
                     marginHorizontal: 10,
                     alignItems: 'center',
+                    elevation: 5,
                   }}>
                   <Text
                     style={{

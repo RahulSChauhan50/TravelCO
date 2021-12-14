@@ -204,6 +204,7 @@ export default class Hotels extends Component {
                 Area, Landmark or Hotel
               </Text>
               <Text
+                onPress={() => this.props.navigation.navigate('SearchBar')}
                 style={{
                   fontSize: moderateScale(18),
                   color: 'black',
@@ -211,7 +212,7 @@ export default class Hotels extends Component {
                   marginLeft: 15,
                   marginTop: 10,
                 }}>
-                Delhi
+                Properties near you
               </Text>
               <View
                 style={{
