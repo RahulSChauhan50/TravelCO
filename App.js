@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {StatusBar} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Provider as PaperProvider} from 'react-native-paper';
@@ -73,8 +75,12 @@ function HomeScreen() {
 }
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <PaperProvider>
+      <StatusBar backgroundColor="#2176E3" />
       <NavigationContainer>
         <Stack.Navigator initialRouteName="HomeScreen">
           <Stack.Screen
