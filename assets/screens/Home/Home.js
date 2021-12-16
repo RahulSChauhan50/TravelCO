@@ -83,8 +83,14 @@ class Home extends Component {
             titleStyle={{fontSize: 15}}
             onPress={() => this.props.navigation.navigate('Profile')}
           />
-          <Appbar.Action icon="wallet-outline" />
-          <Appbar.Action icon="bell-outline" />
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Wallet')}>
+            <Appbar.Action icon="wallet-outline" color="white" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Notifications')}>
+            <Appbar.Action icon="bell-outline" color="white" />
+          </TouchableOpacity>
         </Appbar>
         <View style={{height: '14%'}}>
           <View style={{height: '50%', backgroundColor: '#2176E3'}} />

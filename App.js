@@ -20,6 +20,9 @@ import AirportMeals from './assets/screens/AirportMeals/AirportMeals';
 import MyTrips from './assets/screens/MyTrip/MyTrips';
 import Offer from './assets/screens/Offer/Offer';
 import TripMoney from './assets/screens/TripMoney/TripMoney';
+import SearchBar from './assets/screens/Searchbar/SearchBar';
+import Notification from './assets/screens/Notification/Notification';
+import Wallet from './assets/screens/Wallet/Wallet';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -66,7 +69,7 @@ function HomeScreen() {
         inactiveTintColor: 'gray',
       })}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Orders" component={Profile} />
+      <Tab.Screen name="Orders" component={SearchBar} />
       <Tab.Screen name="My Trips" component={MyTrips} />
       <Tab.Screen name="Offers" component={Offer} />
       <Tab.Screen name="Trip Money" component={TripMoney} />
@@ -128,6 +131,22 @@ const App = () => {
             component={Cabs}
             options={{headerShown: false}}
           />
+          <Stack.Screen
+            name="SearchBar"
+            component={SearchBar}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Notifications"
+            component={Notification}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Wallet"
+            component={Wallet}
+            options={{headerShown: false}}
+          />
+
           <Stack.Screen
             name="AirportMeals"
             component={AirportMeals}
