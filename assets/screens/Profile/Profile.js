@@ -227,6 +227,7 @@ export default class Profile extends Component {
                   width: '100%',
                   backgroundColor: 'white',
                   height: 60,
+                  elevation: 5,
                 }}>
                 <Icon
                   name={item.iconname}
@@ -253,6 +254,7 @@ export default class Profile extends Component {
                 width: '100%',
                 backgroundColor: 'white',
                 height: 60,
+                elevation: 5,
               }}>
               <FIcon
                 name={'settings'}
@@ -304,7 +306,7 @@ export default class Profile extends Component {
                 style={{
                   justifyContent: 'center',
                   alignSelf: 'center',
-                  marginLeft: 30,
+                  marginLeft: '-8%',
                 }}>
                 <Text style={styles.headertxt}>Rate our App</Text>
                 <Text style={styles.disctxt}>
@@ -317,8 +319,6 @@ export default class Profile extends Component {
                 color={'blue'}
                 style={{
                   alignSelf: 'center',
-                  marginLeft: scale(50),
-                  marginRight: scale(10),
                 }}
               />
             </LinearGradient>

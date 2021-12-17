@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   SafeAreaView,
+  FlatList,
 } from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {
@@ -27,6 +28,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {TouchableOpacity} from 'react-native-gesture-handler';
+const list = [
+  {iname: 'piggy-bank', title: 'Affordable interest rates'},
+  {iname: 'mobile-alt', title: 'Easy 3-step process'},
+  {iname: 'calendar-check', title: 'Upto 12 months EMI options'},
+  {iname: 'rupee-sign', title: 'Borrow as little as Rs. 2,000'},
+  {iname: 'piggy-bank', title: 'No down payment'},
+];
 const data = [
   {
     iconname: 'bag-checked',
@@ -75,14 +83,13 @@ export default class Wallet extends Component {
     return (
       <SafeAreaView style={{}}>
         <View style={styles.topContainer}>
-          <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-            <MaterialCommunityIcons
-              name="arrow-left"
-              size={35}
-              color={'white'}
-              style={{position: 'absolute', left: 10, top: 10}}
-            />
-          </TouchableOpacity>
+          <MaterialCommunityIcons
+            name="arrow-left"
+            size={35}
+            color={'white'}
+            style={{position: 'absolute', left: 10, top: 10}}
+            onPress={() => this.props.navigation.goBack()}
+          />
           <Text
             style={{
               fontSize: moderateScale(16),
@@ -109,20 +116,20 @@ export default class Wallet extends Component {
               justifyContent: 'space-between',
               alignItems: 'center',
               paddingVertical: 10,
-              paddingHorizontal: 10,
+              paddingHorizontal: 7,
               // opacity: 0.8,
             }}>
             <View
               style={{
-                height: 25,
-                width: 25,
+                height: 23,
+                width: 23,
                 borderRadius: 45,
                 backgroundColor: '#CEE7CA',
                 padding: 5,
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Icon name="trending-up-sharp" size={15} color={'green'} />
+              <Icon name="trending-up-sharp" size={13} color={'green'} />
             </View>
             <Text
               style={{
@@ -139,8 +146,225 @@ export default class Wallet extends Component {
             />
           </View>
         </View>
-        <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
-          <View style={styles.mainContainer}></View>
+        <ScrollView
+          style={{flexGrow: 1, backgroundColor: '#DDEBF7', paddingTop: 10}}
+          showsVerticalScrollIndicator={false}>
+          <View style={{backgroundColor: 'white', elevation: 5, padding: 10}}>
+            <Text
+              style={{
+                fontSize: moderateScale(16),
+                fontWeight: 'bold',
+                color: 'black',
+              }}>
+              Recent Transactions
+            </Text>
+            <View style={{marginVertical: 10}}>
+              <Text>Dec 04, 2021</Text>
+              <View
+                style={{
+                  marginTop: 10,
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      borderRadius: 45,
+                      backgroundColor: '#DDEBF7',
+                      padding: 10,
+                      height: 40,
+                      width: 40,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: 10,
+                    }}>
+                    <FontAwesome name={'coins'} size={20} color={'#E7B61C'} />
+                  </View>
+                  <View>
+                    <Text
+                      style={{
+                        fontSize: moderateScale(13),
+                        fontWeight: 'bold',
+                        color: 'black',
+                        marginTop: 10,
+                      }}>
+                      goCash expired
+                    </Text>
+                  </View>
+                </View>
+                <Text
+                  style={{
+                    fontSize: moderateScale(16),
+                    fontWeight: 'bold',
+                    color: 'red',
+                  }}>
+                  -50
+                </Text>
+              </View>
+            </View>
+            <View style={{backgroundColor: 'grey', height: 0.2}} />
+            <View style={{marginVertical: 10}}>
+              <Text>Dec 03, 2021</Text>
+              <View
+                style={{
+                  marginTop: 10,
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      borderRadius: 45,
+                      backgroundColor: '#DDEBF7',
+                      padding: 10,
+                      height: 40,
+                      width: 40,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: 10,
+                    }}>
+                    <FontAwesome name={'coins'} size={20} color={'#E7B61C'} />
+                  </View>
+                  <View style={{maxWidth: '70%'}}>
+                    <Text
+                      style={{
+                        fontSize: moderateScale(13),
+                        fontWeight: 'bold',
+                        color: 'black',
+                        marginTop: 10,
+                      }}>
+                      goCash expired
+                    </Text>
+                    <Text>
+                      Sigin-up bonus from Goibibo Expires on Dec 04, 2021
+                    </Text>
+                  </View>
+                </View>
+                <Text
+                  style={{
+                    fontSize: moderateScale(16),
+                    fontWeight: 'bold',
+                    color: 'green',
+                  }}>
+                  +50
+                </Text>
+              </View>
+            </View>
+          </View>
+          <Text
+            style={{
+              fontSize: moderateScale(16),
+              fontWeight: '500',
+              color: 'black',
+              marginTop: 30,
+
+              marginLeft: 10,
+            }}>
+            How to Earn goCash?
+          </Text>
+          <View style={{flexDirection: 'row', marginLeft: 10}}>
+            <FlatList
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              data={data}
+              renderItem={({item, index, separators}) => (
+                <LinearGradient
+                  key={index}
+                  start={{x: 0, y: 0}}
+                  end={{x: 0.5, y: 0.5}}
+                  colors={['#F7F763', '#ffffff', '#ffffff']}
+                  style={{
+                    width: '95%',
+                    backgroundColor: 'white',
+                    alignSelf: 'center',
+                    height: 90,
+                    width: 300,
+                    marginTop: 20,
+                    marginHorizontal: 5,
+                    elevation: 5,
+                    marginBottom: 10,
+                    borderRadius: 10,
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    padding: 10,
+                  }}>
+                  <View style={{alignSelf: 'center'}}>
+                    <FontAwesome name={'coins'} size={25} color={'#E7B61C'} />
+                    <Text
+                      style={{
+                        fontSize: moderateScale(14),
+                        fontWeight: '900',
+                        color: 'black',
+                      }}>
+                      ₹125
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      height: '100%',
+                      width: 0.2,
+                      backgroundColor: 'grey',
+                    }}
+                  />
+                  <View
+                    style={{
+                      alignSelf: 'center',
+                      maxWidth: '80%',
+                    }}>
+                    <Text
+                      style={{
+                        fontSize: moderateScale(15),
+                        fontWeight: 'bold',
+                        color: 'black',
+                      }}>
+                      Invite Friends
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: moderateScale(10),
+                        fontWeight: '400',
+                      }}>
+                      Share your referral link and invite your friends on
+                      Goibibo. Earn ₹125 goCash on every referral
+                    </Text>
+                  </View>
+                </LinearGradient>
+              )}
+              keyExtractor={(item, ind) => ind}
+            />
+          </View>
+          <View
+            style={{
+              backgroundColor: 'white',
+              marginTop: 10,
+              padding: 10,
+              elevation: 5,
+              height: 430,
+            }}>
+            <Text
+              style={{
+                fontSize: moderateScale(16),
+                fontWeight: '900',
+                color: 'black',
+                marginBottom: 20,
+              }}>
+              FAQ
+            </Text>
+            {list.map((item, index) => (
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  height: 40,
+                }}
+                key={index}>
+                <Text style={{fontSize: moderateScale(13), color: 'black'}}>
+                  {item.title}
+                </Text>
+                <MaterialCommunityIcons name="chevron-down" size={30} />
+              </View>
+            ))}
+          </View>
         </ScrollView>
       </SafeAreaView>
     );
@@ -149,6 +373,7 @@ export default class Wallet extends Component {
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: '#DDEBF7',
+    paddingTop: 10,
   },
   topContainer: {
     backgroundColor: '#2274E0',
@@ -156,22 +381,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-  },
-  travelContainer: {
-    backgroundColor: 'white',
-    width: '95%',
-    top: 70,
-    height: 190,
-    borderRadius: 15,
-    alignSelf: 'center',
-    position: 'absolute',
-    elevation: 5,
-    // shadowColor: '#ccc',
-    // shadowOpacity: 0.8,
-    // shadowRadius: 10,
-    // shadowOffset: {
-    //   height: 10,
-    //   width: 10,
-    // },
   },
 });
