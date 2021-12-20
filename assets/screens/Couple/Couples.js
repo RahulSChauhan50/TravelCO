@@ -117,7 +117,7 @@ export default class Couples extends Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
-        <Appbar style={{backgroundColor: '#F73203', elevation: 0}}>
+        {/* <Appbar style={{backgroundColor: '#F73203', elevation: 0}}>
           <Appbar.Action
             icon="arrow-left"
             onPress={() => this.props.navigation.goBack()}
@@ -132,7 +132,7 @@ export default class Couples extends Component {
             title="CoupleFriendly"
             titleStyle={{fontSize: moderateScale(20)}}
           />
-        </Appbar>
+        </Appbar> */}
         <ScrollView style={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
           <View style={styles.mainContainer}>
             <View style={styles.topContainer}></View>
@@ -712,7 +712,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#DDEBF7',
   },
   topContainer: {
-    backgroundColor: '#F73203',
+    backgroundColor: '#2274E0',
     height: 50,
     width: '100%',
   },

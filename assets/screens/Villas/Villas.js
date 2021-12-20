@@ -231,7 +231,7 @@ export default class Villas extends Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
-        <Appbar style={{backgroundColor: '#2274E0', elevation: 0}}>
+        {/* <Appbar style={{backgroundColor: '#2274E0', elevation: 0}}>
           <Appbar.Action
             icon="arrow-left"
             onPress={() => this.props.navigation.goBack()}
@@ -246,7 +246,7 @@ export default class Villas extends Component {
             title="Villas & Appartments"
             titleStyle={{fontSize: moderateScale(18)}}
           />
-        </Appbar>
+        </Appbar> */}
         <View
           style={{
             backgroundColor: '#2274E0',

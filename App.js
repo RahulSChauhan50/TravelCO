@@ -23,12 +23,14 @@ import TripMoney from './assets/screens/TripMoney/TripMoney';
 import SearchBar from './assets/screens/Searchbar/SearchBar';
 import Notification from './assets/screens/Notification/Notification';
 import Wallet from './assets/screens/Wallet/Wallet';
+import Login from './assets/screens/Login/Login';
+import OTP from './assets/screens/OTP/OTP';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeScreen"
       screenOptions={({route}) => ({
         headerShown: false,
         tabBarIcon: ({focused, color, size}) => {
@@ -85,7 +87,7 @@ const App = () => {
     <PaperProvider>
       <StatusBar backgroundColor="#2176E3" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Navigator initialRouteName="Login">
           <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
@@ -150,6 +152,16 @@ const App = () => {
           <Stack.Screen
             name="AirportMeals"
             component={AirportMeals}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="OTP"
+            component={OTP}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

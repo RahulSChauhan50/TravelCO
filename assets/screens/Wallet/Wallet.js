@@ -281,7 +281,7 @@ export default class Wallet extends Component {
                     width: 300,
                     marginTop: 20,
                     marginHorizontal: 5,
-                    elevation: 5,
+                    elevation: 10,
                     marginBottom: 10,
                     borderRadius: 10,
                     flexDirection: 'row',
