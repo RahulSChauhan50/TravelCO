@@ -21,6 +21,10 @@ import SearchBar from './assets/screens/Searchbar/SearchBar';
 import Notification from './assets/screens/Notification/Notification';
 import Wallet from './assets/screens/Wallet/Wallet';
 import Login from './assets/screens/Login/Login';
+<<<<<<< HEAD
+import OTP from './assets/screens/OTP/OTP';
+=======
+>>>>>>> 886ed76ed9197a9d69988b9dd8c43027d155f07c
 import Tourism from './assets/screens/Tourism/Tourism';
 import Book from './assets/screens/Trains/Book';
 import CheckPNR from './assets/screens/Trains/CheckPNR';
