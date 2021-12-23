@@ -134,13 +134,16 @@ export default class Trains extends Component {
             titleStyle={{fontSize: moderateScale(20)}}
           />
         </Appbar>
-        <ScrollView style={{flexGrow: 1, backgroundColor: 'white'}}>
+        <ScrollView
+          style={{flexGrow: 1, backgroundColor: 'white'}}
+          showsVerticalScrollIndicator={false}>
           <View
             style={{
               flexDirection: 'row',
               alignItems: 'center',
               marginTop: 20,
               marginLeft: 10,
+              justifyContent: 'space-around',
             }}>
             <View
               style={{

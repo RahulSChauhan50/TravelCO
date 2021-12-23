@@ -85,7 +85,7 @@ const App = () => {
       <PaperProvider>
         <StatusBar backgroundColor="#2176E3" />
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="HomeScreen">
+          <Stack.Navigator initialRouteName="Login">
             <Stack.Screen
               name="HomeScreen"
               component={HomeScreen}

@@ -238,7 +238,9 @@ class Home extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity style={{alignItems: 'center'}}>
+              <TouchableOpacity
+                style={{alignItems: 'center'}}
+                onPress={() => this.props.navigation.navigate('Tourism')}>
                 <Avatar.Icon
                   icon="home-map-marker"
                   size={moderateScale(39)}
