@@ -44,8 +44,8 @@ function HomeScreen() {
               iconName = focused ? 'home' : 'home-outline';
               break;
             }
-            case 'Trip Money': {
-              iconName = focused ? 'cash-usd' : 'cash-usd-outline';
+            case 'My Trips': {
+              iconName = focused ? 'bag-personal' : 'bag-personal-outline';
               break;
             }
             case 'Offers': {
@@ -85,7 +85,7 @@ const App = () => {
       <PaperProvider>
         <StatusBar backgroundColor="#2176E3" />
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="SearchBar">
+          <Stack.Navigator initialRouteName="HomeScreen">
             <Stack.Screen
               name="HomeScreen"
               component={HomeScreen}
