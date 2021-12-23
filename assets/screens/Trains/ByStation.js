@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Dimensions,
   StyleSheet,
+  Platform,
 } from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {
@@ -27,6 +28,7 @@ import {
   setFinalStationAction,
 } from '../../Redux/index';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -91,14 +93,51 @@ const offer = [
     txt: 'How to view PNR Status',
   },
 ];
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 class ByStation extends Component {
   constructor(props) {
     super(props);
     this.state = {
       check: false,
+      date: new Date(),
+      show: false,
+      mode: 'date',
+      month: '',
+      day: '',
+      Date: '',
+      shortMonth: '',
     };
   }
-
+  onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || this.state.date;
+    this.setState({
+      show: Platform.OS === 'ios',
+      date: currentDate,
+    });
+    this.fetchDate();
+  };
+  showMode = currentMode => {
+    this.setState({
+      show: true,
+      mode: currentMode,
+    });
+  };
+  showDatepicker = () => {
+    this.showMode('date');
+  };
   _renderItem = ({item, index}) => {
     return (
       <View style={styles.slide}>
@@ -133,12 +172,30 @@ class ByStation extends Component {
       </View>
     );
   };
+  fetchDate = () => {
+    console.log(this.state.date.toDateString());
+    const fullDate = this.state.date.toDateString();
 
+    let arr = fullDate.split(' ');
+    this.setState({
+      Date: arr[2],
+      day: arr[0],
+      shortMonth: arr[1],
+      month: monthNames[this.state.date.getMonth()],
+    });
+    console.log(this.state.Date, this.state.month);
+  };
+  componentDidMount() {
+    this.onChange();
+  }
   render() {
+    // console.log(this.state.date.toDateString());
     console.log(this.props.startingStation, this.props.finalStation);
     return (
       <SafeAreaView style={{flex: 1}}>
-        <ScrollView style={{flexGrow: 1, backgroundColor: 'white'}}>
+        <ScrollView
+          style={{flexGrow: 1, backgroundColor: 'white'}}
+          showsVerticalScrollIndicator={false}>
           <View
             style={{
               marginTop: 20,
@@ -261,7 +318,7 @@ class ByStation extends Component {
                   color: 'black',
                   marginHorizontal: 10,
                 }}>
-                23
+                {this.state.Date}
               </Text>
               <View>
                 <Text
@@ -270,20 +327,21 @@ class ByStation extends Component {
                     fontWeight: '400',
                     color: 'black',
                   }}>
-                  December
+                  {this.state.month}
                 </Text>
                 <Text
                   style={{
                     fontSize: moderateScale(16),
                     fontWeight: '400',
                   }}>
-                  Thursday
+                  {this.state.day}day
                 </Text>
               </View>
               <MaterialCommunityIcons
                 name="calendar-month"
                 size={25}
                 style={{marginLeft: '5%'}}
+                onPress={this.showDatepicker}
               />
               <View
                 style={{
@@ -403,6 +461,16 @@ class ByStation extends Component {
               </Text>
             </View>
           </View>
+          {this.state.show && (
+            <DateTimePicker
+              testID="dateTimePicker"
+              value={this.state.date}
+              mode={this.state.mode}
+              is24Hour={true}
+              display="default"
+              onChange={this.onChange}
+            />
+          )}
           <TouchableOpacity
             style={{
               backgroundColor: '#47AFF1',

@@ -133,7 +133,9 @@ class ByTrain extends Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
-        <ScrollView style={{flexGrow: 1, backgroundColor: 'white'}}>
+        <ScrollView
+          style={{flexGrow: 1, backgroundColor: 'white'}}
+          showsVerticalScrollIndicator={false}>
           <View
             style={{
               backgroundColor: 'white',
