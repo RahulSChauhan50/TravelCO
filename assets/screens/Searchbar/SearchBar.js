@@ -34,6 +34,10 @@ class SearchBar extends Component {
     this.state = {
       search: '',
       filteredData: [],
+      setStart:
+        this.props.route.params.setStart !== undefined
+          ? this.props.route.params.setStart
+          : true,
     };
   }
   searchFilter = text => {
@@ -56,7 +60,7 @@ class SearchBar extends Component {
     }
   };
   render() {
-    console.log(this.state.filteredData, this.state.search);
+    console.log(this.props.route.params.setStart);
     const ItemSeparatorView = () => {
       return (
         <View style={{height: 1, width: '100%', backgroundColor: 'black'}} />
@@ -92,12 +96,15 @@ class SearchBar extends Component {
           <FlatList
             data={this.state.filteredData}
             keyExtractor={(item, index) => index}
-            // ItemSeparatorComponent={ItemSeparatorView}
+            ItemSeparatorComponent={ItemSeparatorView}
             renderItem={({item, index, separators}) => (
               <TouchableOpacity
-                onPress={() =>
-                  this.setState({search: item.title.toUpperCase()})
-                }>
+                onPress={() => {
+                  this.state.setStart
+                    ? this.props.setStartingStation(item.stationName)
+                    : this.props.setFinalStation(item.stationName);
+                  this.props.navigation.goBack();
+                }}>
                 <Text
                   style={{
                     fontSize: 14,

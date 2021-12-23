@@ -143,78 +143,88 @@ class ByStation extends Component {
             style={{
               marginTop: 20,
             }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                elevation: 10,
-                backgroundColor: 'white',
-                padding: 10,
-                paddingVertical: 20,
-                marginVertical: 2,
-              }}>
+            <TouchableOpacity
+              onPress={() =>
+                this.props.navigation.navigate('SearchBar', {setStart: true})
+              }>
               <View
                 style={{
+                  flexDirection: 'row',
                   elevation: 10,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  width: 70,
-                  borderColor: 'grey',
-                  borderWidth: 0.5,
-                  marginHorizontal: 10,
                   backgroundColor: 'white',
+                  padding: 10,
+                  paddingVertical: 20,
+                  marginVertical: 2,
                 }}>
-                <Text
+                <View
                   style={{
-                    fontSize: moderateScale(18),
-                    fontWeight: '700',
-                    color: 'black',
-                    padding: 2,
+                    elevation: 10,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: 70,
+                    borderColor: 'grey',
+                    borderWidth: 0.5,
+                    marginHorizontal: 10,
+                    backgroundColor: 'white',
                   }}>
-                  START
+                  <Text
+                    style={{
+                      fontSize: moderateScale(18),
+                      fontWeight: '700',
+                      color: 'black',
+                      padding: 2,
+                    }}>
+                    START
+                  </Text>
+                </View>
+                <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
+                  {this.props.startingStation === null
+                    ? 'Select Starting Station'
+                    : this.props.startingStation}
                 </Text>
               </View>
-              <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
-                {this.props.startingStation === null
-                  ? 'Select Starting Station'
-                  : this.props.finalStation}
-              </Text>
-            </View>
+            </TouchableOpacity>
             {/* <View style={{height: 1, backgroundColor: '#C3CAD3'}} /> */}
-            <View
-              style={{
-                flexDirection: 'row',
-                elevation: 10,
-                backgroundColor: 'white',
-                padding: 10,
-                paddingVertical: 20,
-              }}>
+            <TouchableOpacity
+              onPress={() =>
+                this.props.navigation.navigate('SearchBar', {setStart: false})
+              }>
               <View
                 style={{
-                  elevation: 20,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  width: 70,
-                  borderColor: 'grey',
-                  borderWidth: 0.5,
-                  marginHorizontal: 10,
+                  flexDirection: 'row',
+                  elevation: 10,
                   backgroundColor: 'white',
+                  padding: 10,
+                  paddingVertical: 20,
                 }}>
-                <Text
+                <View
                   style={{
-                    fontSize: moderateScale(18),
-                    fontWeight: '700',
-                    color: 'black',
-                    padding: 2,
+                    elevation: 20,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: 70,
+                    borderColor: 'grey',
+                    borderWidth: 0.5,
+                    marginHorizontal: 10,
+                    backgroundColor: 'white',
                   }}>
-                  END
+                  <Text
+                    style={{
+                      fontSize: moderateScale(18),
+                      fontWeight: '700',
+                      color: 'black',
+                      padding: 2,
+                    }}>
+                    END
+                  </Text>
+                </View>
+                <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
+                  {this.props.finalStation === null
+                    ? 'Select Final Station'
+                    : this.props.finalStation}
                 </Text>
               </View>
-              <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
-                {this.props.finalStation === null
-                  ? 'Select Final Station'
-                  : this.props.finalStation}
-              </Text>
-            </View>
+            </TouchableOpacity>
             <View
               style={{
                 position: 'absolute',

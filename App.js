@@ -89,7 +89,7 @@ const App = () => {
       <PaperProvider>
         <StatusBar backgroundColor="#2176E3" />
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="SearchBar">
+          <Stack.Navigator initialRouteName="Book">
             <Stack.Screen
               name="HomeScreen"
               component={HomeScreen}
