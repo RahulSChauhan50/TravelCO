@@ -21,13 +21,14 @@ import SearchBar from './assets/screens/Searchbar/SearchBar';
 import Notification from './assets/screens/Notification/Notification';
 import Wallet from './assets/screens/Wallet/Wallet';
 import Login from './assets/screens/Login/Login';
+import TripMoney from './assets/screens/TripMoney/TripMoney';
 import OttContent from './assets/screens/OttContent/OttContent';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
   return (
     <Tab.Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="OttContent"
       screenOptions={({route}) => ({
         headerShown: false,
         tabBarIcon: ({focused, color, size}) => {
@@ -37,10 +38,8 @@ function HomeScreen() {
               iconName = focused ? 'home' : 'home-outline';
               break;
             }
-            case 'Orders': {
-              iconName = focused
-                ? 'order-bool-descending-variant'
-                : 'order-bool-descending-variant';
+            case 'Trip Money': {
+              iconName = focused ? 'cash-usd' : 'cash-usd-outline';
               break;
             }
             case 'My Trips': {
@@ -68,10 +67,10 @@ function HomeScreen() {
         inactiveTintColor: 'gray',
       })}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Orders" component={SearchBar} />
+      <Tab.Screen name="OttContent" component={OttContent} />
       <Tab.Screen name="My Trips" component={MyTrips} />
       <Tab.Screen name="Offers" component={Offer} />
-      <Tab.Screen name="OttContent" component={OttContent} />
+      <Tab.Screen name="Trip Money" component={TripMoney} />
     </Tab.Navigator>
   );
 }
