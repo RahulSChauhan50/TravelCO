@@ -17,7 +17,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import FIcon from 'react-native-vector-icons/FontAwesome5';
-import {Picker} from '@react-native-picker/picker';
+import {Picker} from '@react-native-picker/picker';l
 const data = [{id: 1}, {id: 2}];
 
 const offer = [
