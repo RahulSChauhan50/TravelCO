@@ -61,10 +61,7 @@ class Trains extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ButtonToggle:
-        this.props.route.params === undefined
-          ? 'bookTrain'
-          : this.props.route.params.toggleOption,
+      ButtonToggle: 'bookTrain'
     };
   }
 
@@ -603,7 +600,6 @@ class Trains extends Component {
     }
   };
   render() {
-    console.log(this.props.route.params);
     return (
       <SafeAreaView style={{flex: 1}}>
         <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
