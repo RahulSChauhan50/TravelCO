@@ -145,6 +145,11 @@ class ByTrain extends Component {
               backgroundColor={'white'}
               onChangeText={text => this.setState({train: text})}
               value={this.state.train}
+              style={{
+                flex: 1,
+                color: 'grey',
+                fontSize: moderateScale(15),
+              }}
             />
           </View>
           <View

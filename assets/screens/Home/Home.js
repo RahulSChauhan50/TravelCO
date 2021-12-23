@@ -206,16 +206,6 @@ class Home extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-            </View>
-
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                flex: 1,
-                alignItems: 'center',
-                padding: 10,
-              }}>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Meals')}
                 rippleColor="#dbd9d9">
@@ -228,11 +218,27 @@ class Home extends Component {
                   />
                   <Text
                     style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Meals
+                    Cloud Kitchen
                   </Text>
                 </View>
               </TouchableOpacity>
-              <View style={{alignItems: 'center'}}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('TripMoney')}
+                rippleColor="#dbd9d9">
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="cash-usd"
+                    size={moderateScale(39)}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text
+                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    TripMoney
+                  </Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity style={{alignItems: 'center'}}>
                 <Avatar.Icon
                   icon="home-map-marker"
                   size={moderateScale(39)}
@@ -243,7 +249,7 @@ class Home extends Component {
                   style={{textAlign: 'center', fontSize: moderateScale(12)}}>
                   Tourism
                 </Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </Card>
           <View

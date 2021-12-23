@@ -78,7 +78,7 @@ export default class Trains extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ButtonToggle: 'bookTrain'
+      ButtonToggle: 'bookTrain',
     };
   }
   _renderItem = ({item, index}) => {
@@ -148,7 +148,11 @@ export default class Trains extends Component {
                 alignItems: 'center',
                 marginHorizontal: 10,
               }}>
-              <View
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('Book'),
+                    console.log('pressed');
+                }}
                 style={{
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -161,12 +165,8 @@ export default class Trains extends Component {
                 <MaterialCommunityIcons
                   name="ticket-confirmation-outline"
                   size={35}
-                  onPress={() => {
-                    this.props.navigation.navigate('Book'),
-                      console.log('pressed');
-                  }}
                 />
-              </View>
+              </TouchableOpacity>
               <Text>Book Ticket</Text>
             </View>
             <View
@@ -203,7 +203,34 @@ export default class Trains extends Component {
                   CHECK
                 </Text>
               </TouchableOpacity>
-              <Text>Book Ticket</Text>
+              <Text>Check PNR</Text>
+            </View>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginHorizontal: 10,
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('List');
+                }}
+                style={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  elevation: 10,
+                  padding: 10,
+                  borderRadius: 10,
+                  backgroundColor: 'white',
+                  marginBottom: 10,
+                }}>
+                <MaterialCommunityIcons
+                  name="train-variant"
+                  size={35}
+                  color={'black'}
+                />
+              </TouchableOpacity>
+              <Text>Train Status</Text>
             </View>
           </View>
 
