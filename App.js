@@ -137,44 +137,45 @@ const App = () => {
               options={{headerShown: false}}
             />
 
-          <Stack.Screen
-            name="Meals"
-            component={Meals}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Tourism"
-            component={Tourism}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Book"
-            component={Book}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="PNR"
-            component={CheckPNR}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="TripMoney"
-            component={TripMoney}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="List"
-            component={TrainList}
-            options={{headerShown: false}}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+            <Stack.Screen
+              name="Meals"
+              component={Meals}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Tourism"
+              component={Tourism}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Book"
+              component={Book}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="PNR"
+              component={CheckPNR}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="TripMoney"
+              component={TripMoney}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="List"
+              component={TrainList}
+              options={{headerShown: false}}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </Provider>
   );
 };
 
