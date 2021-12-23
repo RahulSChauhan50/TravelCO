@@ -191,22 +191,6 @@ class Home extends Component {
                 marginVertical: 5,
               }}>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Couples')}
-                rippleColor="#dbd9d9">
-                <View style={{alignItems: 'center'}}>
-                  <Avatar.Icon
-                    icon="home-heart"
-                    size={moderateScale(39)}
-                    color="#2176E3"
-                    style={{backgroundColor: '#e3f0f9'}}
-                  />
-                  <Text
-                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Couple{'\n'} Hotels
-                  </Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Cab')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
@@ -218,43 +202,7 @@ class Home extends Component {
                   />
                   <Text
                     style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Airport {'\n'}Cabs
-                  </Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() =>
-                  this.props.navigation.navigate('Trains', {
-                    toggleOption: 'PNRStatus',
-                  })
-                }
-                rippleColor="#dbd9d9">
-                <View style={{alignItems: 'center'}}>
-                  <Avatar.Icon
-                    icon="ticket-confirmation-outline"
-                    size={moderateScale(39)}
-                    color="#2176E3"
-                    style={{backgroundColor: '#e3f0f9'}}
-                  />
-                  <Text
-                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Train PNR {'\n'}Status
-                  </Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Cab')}
-                rippleColor="#dbd9d9">
-                <View style={{alignItems: 'center'}}>
-                  <Avatar.Icon
-                    icon="car-hatchback"
-                    size={moderateScale(39)}
-                    color="#2176E3"
-                    style={{backgroundColor: '#e3f0f9'}}
-                  />
-                  <Text
-                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Outstation {'\n'}Cabs
+                    Cabs
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -269,23 +217,7 @@ class Home extends Component {
                 padding: 10,
               }}>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Villas')}
-                rippleColor="#dbd9d9">
-                <View style={{alignItems: 'center'}}>
-                  <Avatar.Icon
-                    icon="home-city"
-                    size={moderateScale(39)}
-                    color="#2176E3"
-                    style={{backgroundColor: '#e3f0f9'}}
-                  />
-                  <Text
-                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Villas &{'\n'} Homestays
-                  </Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('AirportMeals')}
+                onPress={() => this.props.navigation.navigate('Meals')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon
@@ -296,30 +228,11 @@ class Home extends Component {
                   />
                   <Text
                     style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Airport{'\n'} meals
+                    Meals
                   </Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() =>
-                  this.props.navigation.navigate('Trains', {
-                    toggleOption: 'trainStatus',
-                  })
-                }
-                rippleColor="#dbd9d9">
-                <View style={{alignItems: 'center'}}>
-                  <Avatar.Icon
-                    icon="timetable"
-                    size={moderateScale(39)}
-                    color="#2176E3"
-                    style={{backgroundColor: '#e3f0f9'}}
-                  />
-                  <Text
-                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                    Train Running{'\n'} Status
-                  </Text>
-                </View>
-              </TouchableOpacity>
+<<<<<<< HEAD
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Tourism')}>
                 <View style={{alignItems: 'center'}}>
@@ -335,6 +248,20 @@ class Home extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
+=======
+              <View style={{alignItems: 'center'}}>
+                <Avatar.Icon
+                  icon="home-map-marker"
+                  size={moderateScale(39)}
+                  color="#2176E3"
+                  style={{backgroundColor: '#e3f0f9'}}
+                />
+                <Text
+                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                  Tourism
+                </Text>
+              </View>
+>>>>>>> 30eed22f514247a0727a1bb92c8546a703a17777
             </View>
           </Card>
           <View

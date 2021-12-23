@@ -11,29 +11,31 @@ import Home from './assets/screens/Home/Home';
 import Profile from './assets/screens/Profile/Profile';
 import Hotels from './assets/screens/Hotel/Hotels';
 import Flights from './assets/screens/Flights/Flights';
-import Couples from './assets/screens/Couple/Couples';
-import Villas from './assets/screens/Villas/Villas';
 import Trains from './assets/screens/Trains/Trains';
 import Bus from './assets/screens/Bus/Bus';
 import Cabs from './assets/screens/Cabs/Cabs';
-import AirportMeals from './assets/screens/AirportMeals/AirportMeals';
+import Meals from './assets/screens/Meals/Meals';
 import MyTrips from './assets/screens/MyTrip/MyTrips';
 import Offer from './assets/screens/Offer/Offer';
-import TripMoney from './assets/screens/TripMoney/TripMoney';
 import SearchBar from './assets/screens/Searchbar/SearchBar';
 import Notification from './assets/screens/Notification/Notification';
 import Wallet from './assets/screens/Wallet/Wallet';
 import Login from './assets/screens/Login/Login';
+<<<<<<< HEAD
 import OTP from './assets/screens/OTP/OTP';
 import Tourism from './assets/screens/Tourism/Tourism';
 import Book from './assets/screens/Trains/Book';
 import CheckPNR from './assets/screens/Trains/CheckPNR';
+=======
+import TripMoney from './assets/screens/TripMoney/TripMoney';
+import OttContent from './assets/screens/OttContent/OttContent';
+>>>>>>> 30eed22f514247a0727a1bb92c8546a703a17777
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
   return (
     <Tab.Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="OttContent"
       screenOptions={({route}) => ({
         headerShown: false,
         tabBarIcon: ({focused, color, size}) => {
@@ -43,10 +45,8 @@ function HomeScreen() {
               iconName = focused ? 'home' : 'home-outline';
               break;
             }
-            case 'Orders': {
-              iconName = focused
-                ? 'order-bool-descending-variant'
-                : 'order-bool-descending-variant';
+            case 'Trip Money': {
+              iconName = focused ? 'cash-usd' : 'cash-usd-outline';
               break;
             }
             case 'My Trips': {
@@ -57,8 +57,8 @@ function HomeScreen() {
               iconName = focused ? 'ticket-percent' : 'ticket-percent-outline';
               break;
             }
-            case 'Trip Money': {
-              iconName = focused ? 'cash-usd' : 'cash-usd-outline';
+            case 'OttContent': {
+              iconName = focused ? 'movie-open' : 'movie-open-outline';
               break;
             }
             default: {
@@ -74,7 +74,7 @@ function HomeScreen() {
         inactiveTintColor: 'gray',
       })}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Orders" component={SearchBar} />
+      <Tab.Screen name="OttContent" component={OttContent} />
       <Tab.Screen name="My Trips" component={MyTrips} />
       <Tab.Screen name="Offers" component={Offer} />
       <Tab.Screen name="Trip Money" component={TripMoney} />
@@ -90,7 +90,7 @@ const App = () => {
     <PaperProvider>
       <StatusBar backgroundColor="#2176E3" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator initialRouteName="HomeScreen">
           <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
@@ -112,18 +112,8 @@ const App = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen
-            name="Couples"
-            component={Couples}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
             name="Trains"
             component={Trains}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Villas"
-            component={Villas}
             options={{headerShown: false}}
           />
           <Stack.Screen
@@ -153,13 +143,8 @@ const App = () => {
           />
 
           <Stack.Screen
-            name="AirportMeals"
-            component={AirportMeals}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="OTP"
-            component={OTP}
+            name="Meals"
+            component={Meals}
             options={{headerShown: false}}
           />
           <Stack.Screen

@@ -78,10 +78,7 @@ export default class Trains extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ButtonToggle:
-        this.props.route.params === undefined
-          ? 'bookTrain'
-          : this.props.route.params.toggleOption,
+      ButtonToggle: 'bookTrain'
     };
   }
   _renderItem = ({item, index}) => {
