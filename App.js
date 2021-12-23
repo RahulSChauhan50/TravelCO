@@ -25,6 +25,9 @@ import Notification from './assets/screens/Notification/Notification';
 import Wallet from './assets/screens/Wallet/Wallet';
 import Login from './assets/screens/Login/Login';
 import OTP from './assets/screens/OTP/OTP';
+import Tourism from './assets/screens/Tourism/Tourism';
+import Book from './assets/screens/Trains/Book';
+import CheckPNR from './assets/screens/Trains/CheckPNR';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -162,6 +165,21 @@ const App = () => {
           <Stack.Screen
             name="Login"
             component={Login}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Tourism"
+            component={Tourism}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Book"
+            component={Book}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="PNR"
+            component={CheckPNR}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

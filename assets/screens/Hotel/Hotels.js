@@ -130,14 +130,12 @@ export default class Hotels extends Component {
               <Picker
                 mode="dropdown"
                 style={{
-                  width: '70%',
                   height: 30,
                   backgroundColor: 'white',
                   borderWidth: 1,
                   borderColor: 'blue',
                   borderRadius: 20,
                   elevation: 15,
-                  marginLeft: 10,
                 }}
                 selectedValue={this.state.item}
                 onValueChange={itemvalue => this.setState({item: itemvalue})}>

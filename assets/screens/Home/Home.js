@@ -320,18 +320,21 @@ class Home extends Component {
                   </Text>
                 </View>
               </TouchableOpacity>
-              <View style={{alignItems: 'center'}}>
-                <Avatar.Icon
-                  icon="home-map-marker"
-                  size={moderateScale(39)}
-                  color="#2176E3"
-                  style={{backgroundColor: '#e3f0f9'}}
-                />
-                <Text
-                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
-                  Nearby{'\n'} Getways
-                </Text>
-              </View>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Tourism')}>
+                <View style={{alignItems: 'center'}}>
+                  <Avatar.Icon
+                    icon="home-map-marker"
+                    size={moderateScale(39)}
+                    color="#2176E3"
+                    style={{backgroundColor: '#e3f0f9'}}
+                  />
+                  <Text
+                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    Tourism
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </Card>
           <View

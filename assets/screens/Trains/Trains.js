@@ -6,7 +6,9 @@ import {
   ScrollView,
   FlatList,
   Image,
+  StyleSheet,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {
@@ -20,44 +22,59 @@ import {
 } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Carousel from 'react-native-snap-carousel';
+const horizontalMargin = 10;
+const slideWidth = 280;
+
+const sliderWidth = Dimensions.get('window').width;
+const itemWidth = slideWidth + horizontalMargin * 2;
+
+const itemHeight = 200;
 const offer = [
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsvMnPhxiHD42Q7XTcM3H-HPtN7_9cVZwFDQ&usqp=CAU',
     status: 'In review',
     id: '01',
+    txt: 'How to view PNR Status',
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEze2m-ndA6l0ineIS9WRTt3NJVLsPccasA&usqp=CAU',
     status: 'Active',
     id: '02',
+    txt: 'How to use Voice',
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5H4kG05ZRQ9ZevjoRMZr-YnJwoxd9WMQs3g&usqp=CAU',
     status: 'Pending',
     id: '03',
+    txt: 'How to Book in 10+',
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEze2m-ndA6l0ineIS9WRTt3NJVLsPccasA&usqp=CAU',
     status: 'Ongoing',
     id: '06',
+    txt: 'How to Enjoy 24*7',
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEze2m-ndA6l0ineIS9WRTt3NJVLsPccasA&usqp=CAU',
     status: 'Ongoing',
     id: '06',
+    txt: 'Seat Assistance',
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEze2m-ndA6l0ineIS9WRTt3NJVLsPccasA&usqp=CAU',
     status: 'Ongoing',
     id: '06',
+    txt: 'Instant Refund',
   },
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEze2m-ndA6l0ineIS9WRTt3NJVLsPccasA&usqp=CAU',
     status: 'Ongoing',
     id: '06',
+    txt: 'PNR Confirmation',
   },
 ];
-class Trains extends Component {
+export default class Trains extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -67,543 +84,41 @@ class Trains extends Component {
           : this.props.route.params.toggleOption,
     };
   }
-
-  TrainsMainCardContent = () => {
-    switch (this.state.ButtonToggle) {
-      case 'bookTrain':
-        return (
-          <View style={{height: 490}}>
-            <View
-              style={{
-                height: 50,
-                width: '100%',
-                backgroundColor: '#2176E3',
-              }}
-            />
-            <Card
-              style={{
-                height: 420,
-                width: '96%',
-                alignSelf: 'center',
-                elevation: 10,
-                borderRadius: 10,
-                padding: 10,
-                position: 'absolute',
-              }}>
-              <View
-                style={{
-                  width: '90%',
-                  height: 30,
-                  borderRadius: 30,
-                  flexDirection: 'row',
-                  backgroundColor: '#DDEBF7',
-                  justifyContent: 'space-between',
-                  alignSelf: 'center',
-                }}>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'bookTrain'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'bookTrain'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'bookTrain'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    Book Train
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'PNRStatus'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'PNRStatus'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'PNRStatus'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    PNRStatus
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'trainStatus'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'trainStatus'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'trainStatus'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    Train Status
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              <View
-                style={{
-                  marginVertical: 20,
-                }}>
-                <Text>From</Text>
-                <Text
-                  style={{
-                    fontSize: moderateScale(18),
-                    color: 'black',
-                    fontWeight: '500',
-                  }}>
-                  Select Station
-                </Text>
-              </View>
-              <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
-              <Avatar.Icon
-                icon="arrow-up-down-bold"
-                color="white"
-                size={35}
-                style={{
-                  alignSelf: 'flex-end',
-                  marginVertical: -15,
-                  backgroundColor: 'grey',
-                }}
-              />
-              <View
-                style={{
-                  marginVertical: 20,
-                }}>
-                <Text>To</Text>
-                <Text
-                  style={{
-                    fontSize: moderateScale(18),
-                    color: 'black',
-                    fontWeight: '500',
-                  }}>
-                  Select Station
-                </Text>
-              </View>
-              <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
-              <View
-                style={{
-                  marginVertical: 20,
-                }}>
-                <Text>I know my train (Optional)</Text>
-                <Text
-                  style={{
-                    fontSize: moderateScale(18),
-                    color: 'black',
-                    fontWeight: '500',
-                  }}>
-                  Select Train
-                </Text>
-              </View>
-              <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
-              <View
-                style={{
-                  marginVertical: 20,
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <View>
-                  <Text>Date</Text>
-                  <Text
-                    style={{
-                      fontSize: moderateScale(18),
-                      color: 'black',
-                      fontWeight: '500',
-                    }}>
-                    07 Dec' 21
-                  </Text>
-                  <Text>Today, Tuesday</Text>
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    width: scale(180),
-                    justifyContent: 'space-between',
-                  }}>
-                  <View>
-                    <View
-                      style={{
-                        backgroundColor: '#e2e2e2',
-                        padding: 10,
-                        alignItems: 'center',
-                        borderBottomColor: 'green',
-                        borderBottomWidth: 1,
-                      }}>
-                      <Text style={{fontSize: moderateScale(10)}}>Today</Text>
-                    </View>
-                    <Text style={{color: 'green', fontSize: moderateScale(10)}}>
-                      Tatkal open
-                    </Text>
-                  </View>
-                  <View>
-                    <View
-                      style={{
-                        backgroundColor: '#e2e2e2',
-                        padding: 10,
-                        alignItems: 'center',
-                        borderBottomColor: 'green',
-                        borderBottomWidth: 1,
-                      }}>
-                      <Text style={{fontSize: moderateScale(10)}}>
-                        Tomorrow
-                      </Text>
-                    </View>
-                    <Text style={{color: 'green', fontSize: moderateScale(10)}}>
-                      Tatkal open
-                    </Text>
-                  </View>
-                  <View>
-                    <View
-                      style={{
-                        backgroundColor: '#e2e2e2',
-                        padding: 10,
-                        alignItems: 'center',
-                      }}>
-                      <Text style={{fontSize: moderateScale(10)}}>
-                        Day After
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <TouchableOpacity
-                style={{
-                  height: 40,
-                  width: scale(130),
-                  borderRadius: 20,
-                  backgroundColor: '#F73203',
-                  alignSelf: 'center',
-                }}>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    textAlignVertical: 'center',
-                    fontSize: moderateScale(17),
-                    fontWeight: '500',
-                    color: 'white',
-                    flex: 1,
-                  }}>
-                  SEARCH
-                </Text>
-              </TouchableOpacity>
-            </Card>
-          </View>
-        );
-      case 'PNRStatus':
-        return (
-          <View style={{height: 300}}>
-            <View
-              style={{
-                height: 70,
-                width: '100%',
-                backgroundColor: '#2176E3',
-              }}
-            />
-            <Card
-              style={{
-                height: 250,
-                width: '96%',
-                alignSelf: 'center',
-                elevation: 10,
-                padding: 10,
-                position: 'absolute',
-                marginTop: 20,
-              }}>
-              <View
-                style={{
-                  width: '90%',
-                  height: 30,
-                  borderRadius: 30,
-                  flexDirection: 'row',
-                  backgroundColor: '#DDEBF7',
-                  justifyContent: 'space-between',
-                  alignSelf: 'center',
-                }}>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'bookTrain'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'bookTrain'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'bookTrain'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    Book Train
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'PNRStatus'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'PNRStatus'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'PNRStatus'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    PNRStatus
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'trainStatus'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'trainStatus'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'trainStatus'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    Train Status
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              <View style={{flex: 1, justifyContent: 'center'}}>
-                <Text>PNR</Text>
-                <Text
-                  style={{
-                    fontSize: moderateScale(18),
-                    color: 'black',
-                    fontWeight: '500',
-                  }}>
-                  Enter PNR Number
-                </Text>
-                <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
-              </View>
-              <TouchableOpacity
-                style={{
-                  height: 40,
-                  width: scale(130),
-                  borderRadius: 20,
-                  backgroundColor: '#F73203',
-                  alignSelf: 'center',
-                }}>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    textAlignVertical: 'center',
-                    fontSize: moderateScale(17),
-                    fontWeight: '500',
-                    color: 'white',
-                    flex: 1,
-                  }}>
-                  SEARCH
-                </Text>
-              </TouchableOpacity>
-            </Card>
-          </View>
-        );
-      case 'trainStatus':
-        return (
-          <View style={{height: 300}}>
-            <View
-              style={{
-                height: 70,
-                width: '100%',
-                backgroundColor: '#2176E3',
-              }}
-            />
-            <Card
-              style={{
-                height: 250,
-                width: '96%',
-                alignSelf: 'center',
-                elevation: 10,
-                padding: 10,
-                position: 'absolute',
-                marginTop: 20,
-              }}>
-              <View
-                style={{
-                  width: '90%',
-                  height: 30,
-                  borderRadius: 30,
-                  flexDirection: 'row',
-                  backgroundColor: '#DDEBF7',
-                  justifyContent: 'space-between',
-                  alignSelf: 'center',
-                }}>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'bookTrain'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'bookTrain'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'bookTrain'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    Book Train
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'PNRStatus'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'PNRStatus'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'PNRStatus'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    PNRStatus
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => this.setState({ButtonToggle: 'trainStatus'})}
-                  style={{
-                    alignItems: 'center',
-                    backgroundColor:
-                      this.state.ButtonToggle === 'trainStatus'
-                        ? '#2176E3'
-                        : 'transparent',
-                    borderRadius: 30,
-                    width: '33%',
-                  }}>
-                  <Text
-                    style={{
-                      textAlignVertical: 'center',
-                      flex: 1,
-                      color:
-                        this.state.ButtonToggle === 'trainStatus'
-                          ? 'white'
-                          : '#2176E3',
-                    }}>
-                    Train Status
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              <View style={{flex: 1, justifyContent: 'center'}}>
-                <Text>Train</Text>
-                <Text
-                  style={{
-                    fontSize: moderateScale(18),
-                    color: 'black',
-                    fontWeight: '500',
-                  }}>
-                  Train Name/Number
-                </Text>
-                <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
-              </View>
-              <TouchableOpacity
-                style={{
-                  height: 40,
-                  width: scale(130),
-                  borderRadius: 20,
-                  backgroundColor: '#F73203',
-                  alignSelf: 'center',
-                }}>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    textAlignVertical: 'center',
-                    fontSize: moderateScale(17),
-                    fontWeight: '500',
-                    color: 'white',
-                    flex: 1,
-                  }}>
-                  SEARCH
-                </Text>
-              </TouchableOpacity>
-            </Card>
-          </View>
-        );
-      default:
-        return (
-          <View style={{height: 490}}>
-            <View
-              style={{
-                height: 70,
-                width: '100%',
-                backgroundColor: '#2176E3',
-              }}
-            />
-          </View>
-        );
-    }
+  _renderItem = ({item, index}) => {
+    return (
+      <View style={styles.slide}>
+        <Card
+          style={{
+            width: 300,
+            height: 200,
+            marginHorizontal: 5,
+            elevation: 10,
+            marginBottom: 10,
+          }}>
+          <Image
+            resizeMode="cover"
+            source={{uri: item.img}}
+            style={{
+              height: 200,
+              width: '100%',
+              alignSelf: 'center',
+            }}
+          />
+          <Text
+            style={{
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: moderateScale(18),
+              alignSelf: 'center',
+              marginTop: -50,
+            }}>
+            {item.city}
+          </Text>
+        </Card>
+      </View>
+    );
   };
   render() {
-    console.log(this.props.route.params);
     return (
       <SafeAreaView style={{flex: 1}}>
         <Appbar style={{backgroundColor: '#2176E3', elevation: 0}}>
@@ -618,248 +133,153 @@ class Trains extends Component {
             style={{backgroundColor: '#dee2e6'}}
           />
           <Appbar.Content
-            title="IRCTC Trains"
-            titleStyle={{fontSize: moderateScale(25)}}
+            title="Trains"
+            titleStyle={{fontSize: moderateScale(20)}}
           />
         </Appbar>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          {this.TrainsMainCardContent()}
-          <View style={{marginHorizontal: '2%'}}>
-            <Text style={{fontWeight: '700', fontSize: moderateScale(20)}}>
-              Train Information Services
-            </Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                marginVertical: 10,
-              }}>
-              <Card
-                style={{
-                  width: scale(150),
-                  height: 50,
-                  backgroundColor: 'white',
-                  borderRadius: 5,
-                  elevation: 5,
-                  justifyContent: 'flex-start',
-                  paddingStart: 5,
-                }}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    flex: 1,
-                  }}>
-                  <MaterialCommunityIcons
-                    name="information"
-                    size={moderateScale(30)}
-                  />
-                  <Text style={{fontWeight: '700', color: '#2176E3'}}>
-                    Check PNR
-                  </Text>
-                </View>
-              </Card>
-              <Card
-                style={{
-                  width: scale(150),
-                  height: 50,
-                  backgroundColor: 'white',
-                  borderRadius: 5,
-                  elevation: 5,
-                  justifyContent: 'flex-start',
-                  paddingStart: 5,
-                }}>
-                <View
-                  style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-                  <MaterialCommunityIcons
-                    name="information"
-                    size={moderateScale(30)}
-                  />
-                  <Text
-                    style={{
-                      fontWeight: '700',
-                      color: '#2176E3',
-                    }}>
-                    Check train {'\n'} running status
-                  </Text>
-                </View>
-              </Card>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                marginVertical: 10,
-              }}>
-              <Card
-                style={{
-                  width: scale(150),
-                  height: 50,
-                  backgroundColor: 'white',
-                  borderRadius: 5,
-                  elevation: 5,
-                  justifyContent: 'flex-start',
-                  paddingStart: 5,
-                }}>
-                <View
-                  style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-                  <MaterialCommunityIcons
-                    name="information"
-                    size={moderateScale(30)}
-                  />
-                  <Text style={{fontWeight: '700', color: '#2176E3'}}>
-                    Plateform Locator
-                  </Text>
-                </View>
-              </Card>
-              <Card
-                style={{
-                  width: scale(150),
-                  height: 50,
-                  backgroundColor: 'white',
-                  borderRadius: 5,
-                  elevation: 5,
-                  justifyContent: 'flex-start',
-                  paddingStart: 5,
-                }}>
-                <View
-                  style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-                  <MaterialCommunityIcons
-                    name="information"
-                    size={moderateScale(30)}
-                  />
-                  <Text
-                    style={{
-                      fontWeight: '700',
-                      color: '#2176E3',
-                    }}>
-                    Train Schedule
-                  </Text>
-                </View>
-              </Card>
-            </View>
-          </View>
-          <View style={{marginHorizontal: '2%', marginTop: 20}}>
-            <Text style={{fontWeight: '700', fontSize: moderateScale(20)}}>
-              IRCTC Settings
-            </Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                marginVertical: 10,
-              }}>
-              <Card
-                style={{
-                  width: scale(150),
-                  height: 50,
-                  backgroundColor: 'white',
-                  borderRadius: 5,
-                  elevation: 5,
-                  justifyContent: 'flex-start',
-                  paddingStart: 5,
-                }}>
-                <View
-                  style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-                  <MaterialCommunityIcons name="cog" size={moderateScale(30)} />
-                  <Text style={{fontWeight: '700', color: '#2176E3'}}>
-                    Forgot {'\n'} IRCTC ID
-                  </Text>
-                </View>
-              </Card>
-              <Card
-                style={{
-                  width: scale(150),
-                  height: 50,
-                  backgroundColor: 'white',
-                  borderRadius: 5,
-                  elevation: 5,
-                  justifyContent: 'flex-start',
-                  paddingStart: 5,
-                }}>
-                <View
-                  style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-                  <MaterialCommunityIcons name="cog" size={moderateScale(30)} />
-                  <Text
-                    style={{
-                      fontWeight: '700',
-                      color: '#2176E3',
-                    }}>
-                    Add IRCTC ID
-                  </Text>
-                </View>
-              </Card>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                marginVertical: 10,
-              }}>
-              <Card
-                style={{
-                  width: scale(150),
-                  height: 50,
-                  backgroundColor: 'white',
-                  borderRadius: 5,
-                  elevation: 5,
-                  justifyContent: 'flex-start',
-                  paddingStart: 5,
-                }}>
-                <View
-                  style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-                  <MaterialCommunityIcons name="cog" size={moderateScale(30)} />
-                  <Text style={{fontWeight: '700', color: '#2176E3'}}>
-                    Create {'\n'} IRCTC ID
-                  </Text>
-                </View>
-              </Card>
-            </View>
-          </View>
+        <ScrollView style={{flexGrow: 1, backgroundColor: 'white'}}>
           <View
             style={{
-              marginHorizontal: '2%',
-              marginVertical: 10,
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 20,
+              marginLeft: 10,
             }}>
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-              Announcements
-            </Text>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginHorizontal: 10,
+              }}>
+              <View
+                style={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  elevation: 10,
+                  padding: 10,
+                  borderRadius: 10,
+                  backgroundColor: 'white',
+                  marginBottom: 10,
+                }}>
+                <MaterialCommunityIcons
+                  name="ticket-confirmation-outline"
+                  size={35}
+                  onPress={() => {
+                    this.props.navigation.navigate('Book'),
+                      console.log('pressed');
+                  }}
+                />
+              </View>
+              <Text>Book Ticket</Text>
+            </View>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginHorizontal: 20,
+              }}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('PNR')}
+                style={{
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  elevation: 10,
+                  padding: 10,
+                  borderRadius: 10,
+                  backgroundColor: 'white',
+                  marginBottom: 10,
+                }}>
+                <Text
+                  style={{
+                    fontSize: moderateScale(14),
+                    color: '#50AFE4',
+                    fontWeight: '900',
+                  }}>
+                  PNR
+                </Text>
+                <Text
+                  style={{
+                    fontSize: moderateScale(12),
+                    color: 'blue',
+                    fontWeight: '900',
+                  }}>
+                  CHECK
+                </Text>
+              </TouchableOpacity>
+              <Text>Book Ticket</Text>
+            </View>
           </View>
-          <View>
+
+          <Carousel
+            data={offer}
+            renderItem={this._renderItem}
+            sliderWidth={sliderWidth}
+            itemWidth={itemWidth}
+            autoplay={true}
+            autoplayInterval={3000}
+            firstItem={1}
+          />
+          <Text
+            style={{
+              fontWeight: '700',
+              fontSize: moderateScale(20),
+              color: 'black',
+              margin: 10,
+            }}>
+            Reasons to book train tickets
+          </Text>
+          <View style={{marginLeft: 10}}>
             <FlatList
-              showsHorizontalScrollIndicator={false}
               horizontal
+              showsHorizontalScrollIndicator={false}
               data={offer}
               renderItem={({item, index, separators}) => (
-                <Card
-                  style={{
-                    marginHorizontal: 10,
-                    borderRadius: 10,
-                    elevation: 5,
-                    marginBottom: 10,
-                  }}>
-                  <Image
-                    source={{uri: item.img}}
+                <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                  <Card
                     style={{
-                      width: '100%',
-                      height: 70,
-                      borderRadius: 5,
-                      marginEnd: 10,
-                    }}
-                  />
-                  <View style={{padding: 10}}>
+                      width: 150,
+                      height: 200,
+                      borderRadius: 10,
+                      marginHorizontal: 5,
+                      elevation: 5,
+                      marginBottom: 10,
+                    }}>
+                    <Image
+                      resizeMode="cover"
+                      source={{uri: item.img}}
+                      style={{
+                        height: 200,
+                        width: '100%',
+                        borderRadius: 5,
+                        alignSelf: 'center',
+                      }}
+                    />
                     <Text
                       style={{
-                        textAlign: 'center',
+                        color: 'white',
                         fontWeight: 'bold',
+                        fontSize: moderateScale(18),
+                        alignSelf: 'center',
+                        marginTop: -50,
                       }}>
-                      Get Confirmed Train Ticket Or 3X Refund
+                      {item.city}
                     </Text>
-                    <Text>Limited Period</Text>
-                  </View>
-                </Card>
+                  </Card>
+                  <Text style={{color: 'black'}}>{item.txt}</Text>
+                </View>
               )}
               keyExtractor={(item, ind) => ind}
+            />
+          </View>
+          <View style={{marginVertical: 30}}>
+            <Carousel
+              data={offer}
+              renderItem={this._renderItem}
+              sliderWidth={sliderWidth}
+              itemWidth={itemWidth}
+              autoplay={true}
+              autoplayInterval={3000}
+              firstItem={1}
             />
           </View>
         </ScrollView>
@@ -867,5 +287,17 @@ class Trains extends Component {
     );
   }
 }
-
-export default Trains;
+const styles = StyleSheet.create({
+  slide: {
+    width: itemWidth,
+    height: itemHeight,
+    paddingHorizontal: horizontalMargin,
+    marginLeft: -15,
+    marginVertical: 20,
+  },
+  slideInnerContainer: {
+    width: slideWidth,
+    flex: 1,
+    // other styles for the inner container
+  },
+});
