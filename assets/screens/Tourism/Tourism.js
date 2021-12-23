@@ -18,7 +18,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import FIcon from 'react-native-vector-icons/FontAwesome5';
 import {Picker} from '@react-native-picker/picker';
-
 const data = [{id: 1}, {id: 2}];
 
 const offer = [

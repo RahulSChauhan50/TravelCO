@@ -21,6 +21,11 @@ import {
   Checkbox,
 } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
+import {connect} from 'react-redux';
+import {
+  setStartingStationAction,
+  setFinalStationAction,
+} from '../../Redux/index';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -130,6 +135,7 @@ class ByStation extends Component {
   };
 
   render() {
+    console.log(this.props.startingStation, this.props.finalStation);
     return (
       <SafeAreaView style={{flex: 1}}>
         <ScrollView style={{flexGrow: 1, backgroundColor: 'white'}}>
@@ -164,11 +170,13 @@ class ByStation extends Component {
                     color: 'black',
                     padding: 2,
                   }}>
-                  R
+                  START
                 </Text>
               </View>
               <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
-                Raipur Jn
+                {this.props.startingStation === null
+                  ? 'Select Starting Station'
+                  : this.props.finalStation}
               </Text>
             </View>
             {/* <View style={{height: 1, backgroundColor: '#C3CAD3'}} /> */}
@@ -198,11 +206,13 @@ class ByStation extends Component {
                     color: 'black',
                     padding: 2,
                   }}>
-                  VSKJ
+                  END
                 </Text>
               </View>
               <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
-                Vishakhapatanam
+                {this.props.finalStation === null
+                  ? 'Select Final Station'
+                  : this.props.finalStation}
               </Text>
             </View>
             <View
@@ -486,4 +496,22 @@ const styles = StyleSheet.create({
     // other styles for the inner container
   },
 });
-export default ByStation;
+
+const mapStateToProps = state => {
+  return {
+    startingStation: state.stationReducer.startingStation,
+    finalStation: state.stationReducer.finalStation,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setStartingStation: parameter => {
+      dispatch(setStartingStationAction(parameter));
+    },
+    setFinalStation: parameter => {
+      dispatch(setFinalStationAction(parameter));
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ByStation);
