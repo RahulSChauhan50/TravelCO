@@ -17,11 +17,11 @@ import Cabs from './assets/screens/Cabs/Cabs';
 import Meals from './assets/screens/Meals/Meals';
 import MyTrips from './assets/screens/MyTrip/MyTrips';
 import Offer from './assets/screens/Offer/Offer';
-import TripMoney from './assets/screens/TripMoney/TripMoney';
 import SearchBar from './assets/screens/Searchbar/SearchBar';
 import Notification from './assets/screens/Notification/Notification';
 import Wallet from './assets/screens/Wallet/Wallet';
 import Login from './assets/screens/Login/Login';
+import OttContent from './assets/screens/OttContent/OttContent';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -51,8 +51,8 @@ function HomeScreen() {
               iconName = focused ? 'ticket-percent' : 'ticket-percent-outline';
               break;
             }
-            case 'Trip Money': {
-              iconName = focused ? 'cash-usd' : 'cash-usd-outline';
+            case 'OttContent': {
+              iconName = focused ? 'movie-open' : 'movie-open-outline';
               break;
             }
             default: {
@@ -71,7 +71,7 @@ function HomeScreen() {
       <Tab.Screen name="Orders" component={SearchBar} />
       <Tab.Screen name="My Trips" component={MyTrips} />
       <Tab.Screen name="Offers" component={Offer} />
-      <Tab.Screen name="Trip Money" component={TripMoney} />
+      <Tab.Screen name="OttContent" component={OttContent} />
     </Tab.Navigator>
   );
 }
