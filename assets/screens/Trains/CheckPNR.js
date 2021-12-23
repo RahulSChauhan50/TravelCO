@@ -63,6 +63,11 @@ export default class CheckPNR extends Component {
                 onChangeText={text => this.setState({train: text})}
                 value={this.state.train}
                 underlineColorAndroid={'#ABABAB'}
+                style={{
+                  flex: 1,
+                  color: 'grey',
+                  fontSize: moderateScale(20),
+                }}
               />
             </View>
             <View

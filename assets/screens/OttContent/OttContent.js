@@ -124,7 +124,8 @@ class OttContent extends Component {
                     style={{
                       width: 150,
                       height: 150,
-                      borderRadius: 5,
+                      borderTopLeftRadius: 5,
+                      borderTopRightRadius: 5,
                     }}
                   />
                   <Text
@@ -171,7 +172,8 @@ class OttContent extends Component {
                     style={{
                       width: 150,
                       height: 150,
-                      borderRadius: 5,
+                      borderTopLeftRadius: 5,
+                      borderTopRightRadius: 5,
                     }}
                   />
                   <Text
@@ -218,7 +220,8 @@ class OttContent extends Component {
                     style={{
                       width: 150,
                       height: 150,
-                      borderRadius: 5,
+                      borderTopLeftRadius: 5,
+                      borderTopRightRadius: 5,
                     }}
                   />
                   <Text

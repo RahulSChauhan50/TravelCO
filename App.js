@@ -3,7 +3,7 @@ import {StatusBar} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Provider as PaperProvider} from 'react-native-paper';
+import {List, Provider as PaperProvider} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Provider} from 'react-redux';
@@ -28,6 +28,7 @@ import Book from './assets/screens/Trains/Book';
 import CheckPNR from './assets/screens/Trains/CheckPNR';
 import TripMoney from './assets/screens/TripMoney/TripMoney';
 import OttContent from './assets/screens/OttContent/OttContent';
+import TrainList from './assets/screens/List/List';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -45,10 +46,6 @@ function HomeScreen() {
             }
             case 'Trip Money': {
               iconName = focused ? 'cash-usd' : 'cash-usd-outline';
-              break;
-            }
-            case 'My Trips': {
-              iconName = focused ? 'bag-personal' : 'bag-personal-outline';
               break;
             }
             case 'Offers': {
@@ -75,7 +72,6 @@ function HomeScreen() {
       <Tab.Screen name="OttContent" component={OttContent} />
       <Tab.Screen name="My Trips" component={MyTrips} />
       <Tab.Screen name="Offers" component={Offer} />
-      <Tab.Screen name="Trip Money" component={TripMoney} />
     </Tab.Navigator>
   );
 }
@@ -141,35 +137,44 @@ const App = () => {
               options={{headerShown: false}}
             />
 
-            <Stack.Screen
-              name="Meals"
-              component={Meals}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="Login"
-              component={Login}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="Tourism"
-              component={Tourism}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="Book"
-              component={Book}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="PNR"
-              component={CheckPNR}
-              options={{headerShown: false}}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </PaperProvider>
-    </Provider>
+          <Stack.Screen
+            name="Meals"
+            component={Meals}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Tourism"
+            component={Tourism}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Book"
+            component={Book}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="PNR"
+            component={CheckPNR}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="TripMoney"
+            component={TripMoney}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="List"
+            component={TrainList}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 };
 
