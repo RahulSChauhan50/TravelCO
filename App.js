@@ -21,15 +21,11 @@ import SearchBar from './assets/screens/Searchbar/SearchBar';
 import Notification from './assets/screens/Notification/Notification';
 import Wallet from './assets/screens/Wallet/Wallet';
 import Login from './assets/screens/Login/Login';
-<<<<<<< HEAD
-import OTP from './assets/screens/OTP/OTP';
 import Tourism from './assets/screens/Tourism/Tourism';
 import Book from './assets/screens/Trains/Book';
 import CheckPNR from './assets/screens/Trains/CheckPNR';
-=======
 import TripMoney from './assets/screens/TripMoney/TripMoney';
 import OttContent from './assets/screens/OttContent/OttContent';
->>>>>>> 30eed22f514247a0727a1bb92c8546a703a17777
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
