@@ -35,7 +35,7 @@ class SearchBar extends Component {
       search: '',
       filteredData: [],
       setStart:
-        this.props.route.params.setStart !== undefined
+        this.props.route.params !== undefined
           ? this.props.route.params.setStart
           : true,
     };
@@ -60,7 +60,7 @@ class SearchBar extends Component {
     }
   };
   render() {
-    console.log(this.props.route.params.setStart);
+    console.log(this.props.route.params);
     const ItemSeparatorView = () => {
       return (
         <View style={{height: 1, width: '100%', backgroundColor: 'black'}} />
