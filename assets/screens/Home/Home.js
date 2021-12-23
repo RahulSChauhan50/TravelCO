@@ -217,7 +217,7 @@ class Home extends Component {
                 padding: 10,
               }}>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('AirportMeals')}
+                onPress={() => this.props.navigation.navigate('Meals')}
                 rippleColor="#dbd9d9">
                 <View style={{alignItems: 'center'}}>
                   <Avatar.Icon

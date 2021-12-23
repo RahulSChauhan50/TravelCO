@@ -11,12 +11,10 @@ import Home from './assets/screens/Home/Home';
 import Profile from './assets/screens/Profile/Profile';
 import Hotels from './assets/screens/Hotel/Hotels';
 import Flights from './assets/screens/Flights/Flights';
-import Couples from './assets/screens/Couple/Couples';
-import Villas from './assets/screens/Villas/Villas';
 import Trains from './assets/screens/Trains/Trains';
 import Bus from './assets/screens/Bus/Bus';
 import Cabs from './assets/screens/Cabs/Cabs';
-import AirportMeals from './assets/screens/AirportMeals/AirportMeals';
+import Meals from './assets/screens/Meals/Meals';
 import MyTrips from './assets/screens/MyTrip/MyTrips';
 import Offer from './assets/screens/Offer/Offer';
 import TripMoney from './assets/screens/TripMoney/TripMoney';
@@ -108,18 +106,8 @@ const App = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen
-            name="Couples"
-            component={Couples}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
             name="Trains"
             component={Trains}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Villas"
-            component={Villas}
             options={{headerShown: false}}
           />
           <Stack.Screen
@@ -149,8 +137,8 @@ const App = () => {
           />
 
           <Stack.Screen
-            name="AirportMeals"
-            component={AirportMeals}
+            name="Meals"
+            component={Meals}
             options={{headerShown: false}}
           />
           <Stack.Screen

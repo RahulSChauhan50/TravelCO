@@ -94,7 +94,7 @@ const offer = [
     id: '06',
   },
 ];
-class AirportMeals extends Component {
+class Meals extends Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
@@ -187,4 +187,4 @@ class AirportMeals extends Component {
   }
 }
 
-export default AirportMeals;
+export default Meals;
