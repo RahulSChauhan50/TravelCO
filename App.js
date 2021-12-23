@@ -24,7 +24,6 @@ import SearchBar from './assets/screens/Searchbar/SearchBar';
 import Notification from './assets/screens/Notification/Notification';
 import Wallet from './assets/screens/Wallet/Wallet';
 import Login from './assets/screens/Login/Login';
-import OTP from './assets/screens/OTP/OTP';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeScreen() {
@@ -152,11 +151,6 @@ const App = () => {
           <Stack.Screen
             name="AirportMeals"
             component={AirportMeals}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="OTP"
-            component={OTP}
             options={{headerShown: false}}
           />
           <Stack.Screen
