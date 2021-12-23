@@ -29,15 +29,10 @@
     "react-native-size-matters": "^0.4.0",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-splash-screen": "^3.3.0",
-<<<<<<< HEAD
-    "react-native-tab-view": "^3.1.1",
-    "react-native-vector-icons": "^9.0.0"
-=======
     "react-native-vector-icons": "^9.0.0",
     "react-native-video": "^5.2.0",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2"
->>>>>>> 30eed22f514247a0727a1bb92c8546a703a17777
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
