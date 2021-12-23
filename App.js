@@ -6,6 +6,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Provider as PaperProvider} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createStackNavigator} from '@react-navigation/stack';
+import {Provider} from 'react-redux';
+import store from './assets/Redux/store';
 
 import Home from './assets/screens/Home/Home';
 import Profile from './assets/screens/Profile/Profile';
@@ -83,89 +85,91 @@ const App = () => {
     SplashScreen.hide();
   }, []);
   return (
-    <PaperProvider>
-      <StatusBar backgroundColor="#2176E3" />
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen
-            name="HomeScreen"
-            component={HomeScreen}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Hotels"
-            component={Hotels}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Profile"
-            component={Profile}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Flights"
-            component={Flights}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Trains"
-            component={Trains}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Bus"
-            component={Bus}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Cab"
-            component={Cabs}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="SearchBar"
-            component={SearchBar}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Notifications"
-            component={Notification}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Wallet"
-            component={Wallet}
-            options={{headerShown: false}}
-          />
+    <Provider store={store}>
+      <PaperProvider>
+        <StatusBar backgroundColor="#2176E3" />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="SearchBar">
+            <Stack.Screen
+              name="HomeScreen"
+              component={HomeScreen}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Hotels"
+              component={Hotels}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Profile"
+              component={Profile}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Flights"
+              component={Flights}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Trains"
+              component={Trains}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Bus"
+              component={Bus}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Cab"
+              component={Cabs}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="SearchBar"
+              component={SearchBar}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Notifications"
+              component={Notification}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Wallet"
+              component={Wallet}
+              options={{headerShown: false}}
+            />
 
-          <Stack.Screen
-            name="Meals"
-            component={Meals}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Tourism"
-            component={Tourism}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Book"
-            component={Book}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="PNR"
-            component={CheckPNR}
-            options={{headerShown: false}}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+            <Stack.Screen
+              name="Meals"
+              component={Meals}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Tourism"
+              component={Tourism}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Book"
+              component={Book}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="PNR"
+              component={CheckPNR}
+              options={{headerShown: false}}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </Provider>
   );
 };
 
