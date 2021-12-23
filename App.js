@@ -31,7 +31,7 @@ const Tab = createBottomTabNavigator();
 function HomeScreen() {
   return (
     <Tab.Navigator
-      initialRouteName="OttContent"
+      initialRouteName="Home"
       screenOptions={({route}) => ({
         headerShown: false,
         tabBarIcon: ({focused, color, size}) => {
@@ -86,7 +86,7 @@ const App = () => {
     <PaperProvider>
       <StatusBar backgroundColor="#2176E3" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Navigator initialRouteName="Login">
           <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
