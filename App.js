@@ -10,7 +10,7 @@ import {Provider} from 'react-redux';
 import store from './assets/Redux/store';
 
 import Home from './assets/screens/Home/Home';
-import Profile from './assets/screens/Profile/Profile';l
+import Profile from './assets/screens/Profile/Profile';
 import Hotels from './assets/screens/Hotel/Hotels';
 import Flights from './assets/screens/Flights/Flights';
 import Trains from './assets/screens/Trains/Trains';
