@@ -159,7 +159,7 @@ export default class Wallet extends Component {
               Recent Transactions
             </Text>
             <View style={{marginVertical: 10}}>
-              <Text>Dec 04, 2021</Text>
+              <Text style={{color: 'grey'}}>Dec 04, 2021</Text>
               <View
                 style={{
                   marginTop: 10,
@@ -204,7 +204,7 @@ export default class Wallet extends Component {
             </View>
             <View style={{backgroundColor: 'grey', height: 0.2}} />
             <View style={{marginVertical: 10}}>
-              <Text>Dec 03, 2021</Text>
+              <Text style={{color: 'grey'}}>Dec 03, 2021</Text>
               <View
                 style={{
                   marginTop: 10,
@@ -235,7 +235,7 @@ export default class Wallet extends Component {
                       }}>
                       goCash expired
                     </Text>
-                    <Text>
+                    <Text style={{color: 'grey'}}>
                       Sigin-up bonus from Goibibo Expires on Dec 04, 2021
                     </Text>
                   </View>
@@ -323,6 +323,7 @@ export default class Wallet extends Component {
                       style={{
                         fontSize: moderateScale(10),
                         fontWeight: '400',
+                        color: 'grey',
                       }}>
                       Share your referral link and invite your friends on
                       Goibibo. Earn ₹125 goCash on every referral
@@ -361,7 +362,11 @@ export default class Wallet extends Component {
                 <Text style={{fontSize: moderateScale(13), color: 'black'}}>
                   {item.title}
                 </Text>
-                <MaterialCommunityIcons name="chevron-down" size={30} />
+                <MaterialCommunityIcons
+                  name="chevron-down"
+                  size={30}
+                  color={'black'}
+                />
               </View>
             ))}
           </View>
