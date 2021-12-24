@@ -144,6 +144,7 @@ class ByTrain extends Component {
             }}>
             <TextInput
               placeholder="Search Train Name or Number"
+              placeholderTextColor={'grey'}
               backgroundColor={'white'}
               onChangeText={text => this.setState({train: text})}
               value={this.state.train}
@@ -188,6 +189,7 @@ class ByTrain extends Component {
                   style={{
                     fontSize: moderateScale(16),
                     fontWeight: '400',
+                    color: 'grey',
                   }}>
                   Thursday
                 </Text>
@@ -196,6 +198,7 @@ class ByTrain extends Component {
                 name="calendar-month"
                 size={25}
                 style={{marginLeft: '5%'}}
+                color={'grey'}
               />
               <View
                 style={{
