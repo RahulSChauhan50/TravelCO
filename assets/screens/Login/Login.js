@@ -40,6 +40,8 @@ class Login extends Component {
           value={this.state.phone}
           onChangeText={text => this.setState({phone: text})}
           outlineColor="black"
+          style={{backgroundColor: 'white'}}
+          theme={{colors: {placeholder: 'black', text: 'black'}}}
         />
         <TouchableOpacity
           onPress={() => this.setState({display: 'otp'})}
@@ -92,6 +94,8 @@ class Login extends Component {
           value={this.state.phone}
           onChangeText={text => this.setState({phone: text})}
           outlineColor="black"
+          style={{backgroundColor: 'white'}}
+          theme={{colors: {placeholder: 'black', text: 'black'}}}
         />
         <TouchableOpacity
           style={{
