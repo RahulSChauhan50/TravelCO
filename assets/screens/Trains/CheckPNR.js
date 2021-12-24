@@ -53,12 +53,14 @@ export default class CheckPNR extends Component {
                 fontSize: moderateScale(14),
                 fontWeight: 'bold',
                 margin: 10,
+                color: 'black',
               }}>
               Check the booking status of your upcoming trip
             </Text>
             <View style={{paddingHorizontal: 10, elevation: 10}}>
               <TextInput
                 placeholder="10 digit PNR Number"
+                placeholderTextColor={'grey'}
                 backgroundColor={'white'}
                 onChangeText={text => this.setState({train: text})}
                 value={this.state.train}
@@ -77,7 +79,12 @@ export default class CheckPNR extends Component {
                 color={'#FFD700'}
                 size={30}
               />
-              <Text style={{fontSize: moderateScale(13), marginLeft: 10}}>
+              <Text
+                style={{
+                  fontSize: moderateScale(13),
+                  marginLeft: 10,
+                  color: 'grey',
+                }}>
                 Know how to find your PNR,{' '}
               </Text>
               <Text style={{color: '#47AFF1', fontSize: moderateScale(13)}}>
