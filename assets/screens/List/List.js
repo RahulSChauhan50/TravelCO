@@ -142,7 +142,11 @@ class TrainList extends Component {
                         : this.props.startingStation}
                     </Text>
                     <Text
-                      style={{fontSize: moderateScale(12), fontWeight: '500'}}>
+                      style={{
+                        fontSize: moderateScale(12),
+                        fontWeight: '500',
+                        color: 'grey',
+                      }}>
                       {'23 dec'}
                     </Text>
                   </View>
@@ -193,6 +197,7 @@ class TrainList extends Component {
                         style={{
                           fontSize: moderateScale(12),
                           fontWeight: '500',
+                          color: 'grey',
                         }}>
                         {item.date}
                       </Text>
@@ -242,7 +247,11 @@ class TrainList extends Component {
                         : this.props.finalStation}
                     </Text>
                     <Text
-                      style={{fontSize: moderateScale(12), fontWeight: '500'}}>
+                      style={{
+                        fontSize: moderateScale(12),
+                        fontWeight: '500',
+                        color: 'grey',
+                      }}>
                       {'23 Dec'}
                     </Text>
                   </View>
