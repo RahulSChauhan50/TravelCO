@@ -283,6 +283,7 @@ class Notification extends Component {
                       marginTop: 5,
                       fontSize: moderateScale(13),
                       fontWeight: '400',
+                      color: 'grey',
                     }}>
                     {item.disc}
                   </Text>
@@ -320,7 +321,9 @@ class Notification extends Component {
               ) : (
                 <View />
               )}
-              <Text style={{marginLeft: '18%', marginTop: 5}}>{item.time}</Text>
+              <Text style={{marginLeft: '18%', marginTop: 5, color: 'grey'}}>
+                {item.time}
+              </Text>
             </View>
           ))}
         </ScrollView>
