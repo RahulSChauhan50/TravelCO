@@ -204,6 +204,7 @@ class MyTrips extends Component {
                         marginHorizontal: 10,
                         elevation: 5,
                         marginBottom: 10,
+                        backgroundColor: 'white',
                       }}>
                       <Image
                         resizeMode="cover"
