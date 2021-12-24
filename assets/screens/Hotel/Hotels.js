@@ -137,11 +137,21 @@ export default class Hotels extends Component {
                   borderRadius: 20,
                   elevation: 15,
                 }}
+                dropdownIconColor="grey"
+                itemStyle={{backgroundColor: 'white'}}
                 selectedValue={this.state.item}
                 onValueChange={itemvalue => this.setState({item: itemvalue})}>
-                <Picker.Item label="Hotels" value={'Hotels'} />
-                <Picker.Item label="Couple Hotels" value={'Couple'} />
-                <Picker.Item label="Villas & Apartments" value={'Villas'} />
+                <Picker.Item label="Hotels" value={'Hotels'} color="black" />
+                <Picker.Item
+                  label="Couple Hotels"
+                  value={'Couple'}
+                  color="black"
+                />
+                <Picker.Item
+                  label="Villas & Apartments"
+                  value={'Villas'}
+                  color="black"
+                />
               </Picker>
             </View>
 
@@ -407,6 +417,7 @@ export default class Hotels extends Component {
                             marginHorizontal: 10,
                             elevation: 5,
                             marginBottom: 10,
+                            backgroundColor: 'white',
                           }}>
                           <Image
                             resizeMode="cover"
@@ -445,7 +456,7 @@ export default class Hotels extends Component {
                                 size={20}
                                 color="#F7B401"
                               />
-                              <Text>Hotel</Text>
+                              <Text style={{color: 'black'}}>Hotel</Text>
                               <View
                                 style={{
                                   backgroundColor: '#20db4c',
@@ -468,7 +479,7 @@ export default class Hotels extends Component {
                               }}>
                               The Daanish Residency
                             </Text>
-                            <Text style={{}}>{item.city}</Text>
+                            <Text style={{color: 'grey'}}>{item.city}</Text>
                             <View
                               style={{
                                 flexDirection: 'row',
@@ -587,6 +598,7 @@ export default class Hotels extends Component {
                             marginHorizontal: 10,
                             elevation: 5,
                             marginBottom: 10,
+                            backgroundColor: 'white',
                           }}>
                           <Image
                             resizeMode="cover"
@@ -625,7 +637,7 @@ export default class Hotels extends Component {
                                 size={20}
                                 color="#F7B401"
                               />
-                              <Text>Hotel</Text>
+                              <Text style={{color: 'black'}}>Hotel</Text>
                               <View
                                 style={{
                                   backgroundColor: '#20db4c',
@@ -648,7 +660,7 @@ export default class Hotels extends Component {
                               }}>
                               The Daanish Residency
                             </Text>
-                            <Text style={{}}>{item.city}</Text>
+                            <Text style={{color: 'grey'}}>{item.city}</Text>
                             <View
                               style={{
                                 flexDirection: 'row',
@@ -817,6 +829,7 @@ export default class Hotels extends Component {
                             marginHorizontal: 10,
                             elevation: 5,
                             marginBottom: 10,
+                            backgroundColor: 'white',
                           }}>
                           <Image
                             resizeMode="cover"
