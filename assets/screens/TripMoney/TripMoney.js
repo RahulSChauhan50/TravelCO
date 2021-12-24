@@ -148,19 +148,22 @@ class TripMoney extends Component {
             </Text>
             <View>
               <TextInput
-                theme={{colors: {primary: 'grey'}}}
+                theme={{colors: {text:'black'}}}
                 label={
                   <Text
                     style={{
                       fontSize: 18,
                       fontWeight: '900',
+                      color: 'grey',
                     }}>
                     Enter current pincode
                   </Text>
                 }
                 left={
                   <TextInput.Icon
-                    name={() => <Icon name={'location'} size={30} style={{}} />}
+                    name={() => (
+                      <Icon name={'location'} size={30} color={'grey'} />
+                    )}
                   />
                 }
                 underlineColor="grey"
