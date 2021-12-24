@@ -342,6 +342,7 @@ class ByStation extends Component {
                 size={25}
                 style={{marginLeft: '5%'}}
                 onPress={this.showDatepicker}
+                color={'grey'}
               />
               <View
                 style={{
