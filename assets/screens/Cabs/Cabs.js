@@ -103,6 +103,7 @@ class Cabs extends Component {
                 elevation: 10,
                 padding: 20,
                 position: 'absolute',
+                backgroundColor:'white'
               }}>
               <View
                 style={{
@@ -194,7 +195,7 @@ class Cabs extends Component {
                 style={{
                   marginVertical: 20,
                 }}>
-                <Text>From (Airport or Pickup address)</Text>
+                <Text style={{color:'grey'}}>From (Airport or Pickup address)</Text>
                 <Text
                   style={{
                     fontSize: moderateScale(17),
@@ -219,7 +220,7 @@ class Cabs extends Component {
                 style={{
                   marginVertical: 20,
                 }}>
-                <Text>To (Airport or Pickup address)</Text>
+                <Text style={{color:'grey'}}>To (Airport or Pickup address)</Text>
                 <Text
                   style={{
                     fontSize: moderateScale(17),
@@ -234,7 +235,7 @@ class Cabs extends Component {
                 style={{
                   marginVertical: 20,
                 }}>
-                <Text>I know my train (Optional)</Text>
+                <Text style={{color:'grey'}}>I know my train (Optional)</Text>
                 <Text
                   style={{
                     fontSize: moderateScale(18),
@@ -251,7 +252,7 @@ class Cabs extends Component {
                   justifyContent: 'space-between',
                 }}>
                 <View>
-                  <Text>Pickup Date</Text>
+                  <Text style={{color:'grey'}}>Pickup Date</Text>
                   <Text
                     style={{
                       fontSize: moderateScale(17),
@@ -279,7 +280,7 @@ class Cabs extends Component {
                     alignSelf: 'center',
                   }}></View>
                 <View>
-                  <Text style={{}}>Pickup Time</Text>
+                  <Text style={{color:'grey'}}>Pickup Time</Text>
                   <Text
                     style={{
                       fontSize: moderateScale(18),
@@ -348,6 +349,7 @@ class Cabs extends Component {
                       marginHorizontal: 10,
                       elevation: 5,
                       marginBottom: 10,
+                      backgroundColor:'white'
                     }}>
                     <Image
                       resizeMode="cover"
