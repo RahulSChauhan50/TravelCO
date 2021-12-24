@@ -390,6 +390,7 @@ export default class Couples extends Component {
                         marginHorizontal: 10,
                         elevation: 5,
                         marginBottom: 10,
+                        backgroundColor: 'white',
                       }}>
                       <Image
                         resizeMode="cover"
@@ -428,7 +429,7 @@ export default class Couples extends Component {
                             size={20}
                             color="#F7B401"
                           />
-                          <Text>Hotel</Text>
+                          <Text style={{color: 'black'}}>Hotel</Text>
                           <View
                             style={{
                               backgroundColor: '#20db4c',
@@ -450,7 +451,7 @@ export default class Couples extends Component {
                           }}>
                           The Daanish Residency
                         </Text>
-                        <Text style={{}}>{item.city}</Text>
+                        <Text style={{color: 'grey'}}>{item.city}</Text>
                         <View
                           style={{
                             flexDirection: 'row',
@@ -664,6 +665,7 @@ export default class Couples extends Component {
                         marginHorizontal: 10,
                         elevation: 5,
                         marginBottom: 10,
+                        backgroundColor: 'white',
                       }}>
                       <Image
                         resizeMode="cover"
