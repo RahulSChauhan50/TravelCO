@@ -261,17 +261,18 @@ export default class Villas extends Component {
               height: 70,
               padding: 10,
             }}>
-            <Text style={{fontSize: moderateScale(13)}}>
+            <Text style={{fontSize: moderateScale(13), color: 'grey'}}>
               Where do you want to go?
             </Text>
             <View style={{flexDirection: 'row', marginVertical: 5}}>
-              <FIcon name="search" size={20} />
+              <FIcon name="search" size={20} color={'grey'} />
               <Text
                 style={{
                   fontSize: moderateScale(17),
                   marginTop: -3,
                   fontWeight: '500',
                   marginLeft: 5,
+                  color: 'grey',
                 }}>
                 Area, Landmark or Property
               </Text>
@@ -420,6 +421,7 @@ export default class Villas extends Component {
                   marginHorizontal: '2%',
                   elevation: 5,
                   marginBottom: 10,
+                  backgroundColor: 'white',
                 }}
                 key={index}>
                 <Image
@@ -468,7 +470,7 @@ export default class Villas extends Component {
                     }}>
                     The Daanish Residency
                   </Text>
-                  <Text style={{}}>{item.city}</Text>
+                  <Text style={{color: 'grey'}}>{item.city}</Text>
                   <View
                     style={{
                       flexDirection: 'row',
@@ -491,13 +493,18 @@ export default class Villas extends Component {
                         3.9/5
                       </Text>
                     </View>
-                    <Text style={{textAlignVertical: 'center', marginLeft: 5}}>
+                    <Text
+                      style={{
+                        textAlignVertical: 'center',
+                        marginLeft: 5,
+                        color: 'grey',
+                      }}>
                       61 Ratings
                     </Text>
                   </View>
 
                   <View>
-                    <Text>from</Text>
+                    <Text style={{color: 'grey'}}>from</Text>
                     <Text
                       style={{
                         textDecorationLine: 'line-through',
@@ -586,6 +593,7 @@ export default class Villas extends Component {
                   marginHorizontal: '2%',
                   elevation: 5,
                   marginBottom: 10,
+                  backgroundColor: 'white',
                 }}
                 key={index}>
                 <Image
@@ -634,7 +642,7 @@ export default class Villas extends Component {
                     }}>
                     The Daanish Residency
                   </Text>
-                  <Text style={{}}>{item.city}</Text>
+                  <Text style={{color: 'grey'}}>{item.city}</Text>
                   <View
                     style={{
                       flexDirection: 'row',
@@ -657,13 +665,18 @@ export default class Villas extends Component {
                         3.9/5
                       </Text>
                     </View>
-                    <Text style={{textAlignVertical: 'center', marginLeft: 5}}>
+                    <Text
+                      style={{
+                        textAlignVertical: 'center',
+                        marginLeft: 5,
+                        color: 'grey',
+                      }}>
                       61 Ratings
                     </Text>
                   </View>
 
                   <View>
-                    <Text>from</Text>
+                    <Text style={{color: 'grey'}}>from</Text>
                     <Text
                       style={{
                         textDecorationLine: 'line-through',
@@ -750,6 +763,7 @@ export default class Villas extends Component {
                     marginHorizontal: 5,
                     elevation: 5,
                     marginBottom: 10,
+                    backgroundColor: 'white',
                   }}>
                   <Image
                     resizeMode="cover"
@@ -797,7 +811,7 @@ export default class Villas extends Component {
                       }}>
                       The Daanish Residency
                     </Text>
-                    <Text style={{}}>{item.city}</Text>
+                    <Text style={{color: 'grey'}}>{item.city}</Text>
                     <View
                       style={{
                         flexDirection: 'row',
@@ -821,13 +835,17 @@ export default class Villas extends Component {
                         </Text>
                       </View>
                       <Text
-                        style={{textAlignVertical: 'center', marginLeft: 5}}>
+                        style={{
+                          textAlignVertical: 'center',
+                          marginLeft: 5,
+                          color: 'grey',
+                        }}>
                         61 Ratings
                       </Text>
                     </View>
 
                     <View>
-                      <Text>from</Text>
+                      <Text style={{color: 'grey'}}>from</Text>
                       <Text
                         style={{
                           textDecorationLine: 'line-through',
@@ -856,7 +874,7 @@ export default class Villas extends Component {
                       //justifyContent: 'center',
                     }}>
                     <View style={{marginLeft: 30}}>
-                      <Text>More in</Text>
+                      <Text style={{color: 'grey'}}>More in</Text>
                       <Text
                         style={{
                           color: 'blue',
@@ -1002,6 +1020,7 @@ export default class Villas extends Component {
                     marginHorizontal: 5,
                     elevation: 5,
                     marginBottom: 10,
+                    backgroundColor: 'white',
                   }}>
                   <Image
                     resizeMode="cover"
@@ -1049,7 +1068,7 @@ export default class Villas extends Component {
                       }}>
                       The Daanish Residency
                     </Text>
-                    <Text style={{}}>{item.city}</Text>
+                    <Text style={{color: 'grey'}}>{item.city}</Text>
                     <View
                       style={{
                         flexDirection: 'row',
@@ -1073,13 +1092,17 @@ export default class Villas extends Component {
                         </Text>
                       </View>
                       <Text
-                        style={{textAlignVertical: 'center', marginLeft: 5}}>
+                        style={{
+                          textAlignVertical: 'center',
+                          marginLeft: 5,
+                          color: 'grey',
+                        }}>
                         61 Ratings
                       </Text>
                     </View>
 
                     <View>
-                      <Text>from</Text>
+                      <Text style={{color: 'grey'}}>from</Text>
                       <Text
                         style={{
                           textDecorationLine: 'line-through',
@@ -1108,7 +1131,7 @@ export default class Villas extends Component {
                       //justifyContent: 'center',
                     }}>
                     <View style={{marginLeft: 30}}>
-                      <Text>More in</Text>
+                      <Text style={{color: 'grey'}}>More in</Text>
                       <Text
                         style={{
                           color: 'blue',
