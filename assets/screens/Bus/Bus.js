@@ -112,6 +112,7 @@ class Bus extends Component {
                 padding: 10,
                 borderRadius: 10,
                 position: 'absolute',
+                backgroundColor: 'white',
               }}>
               <View
                 style={{
@@ -149,7 +150,11 @@ class Bus extends Component {
                   }}>
                   Hire Buses & Tempo Traveller for group tr...
                 </Text>
-                <MaterialCommunityIcons name="greater-than" size={20} />
+                <MaterialCommunityIcons
+                  name="greater-than"
+                  size={20}
+                  color={'grey'}
+                />
               </View>
 
               <View
@@ -164,7 +169,11 @@ class Bus extends Component {
                     marginVertical: 20,
                   }}>
                   <Text
-                    style={{fontSize: moderateScale(14), fontWeight: '400'}}>
+                    style={{
+                      fontSize: moderateScale(14),
+                      fontWeight: '400',
+                      color: 'grey',
+                    }}>
                     From
                   </Text>
                   <Text
@@ -191,7 +200,11 @@ class Bus extends Component {
                     marginVertical: 20,
                   }}>
                   <Text
-                    style={{fontSize: moderateScale(14), fontWeight: '400'}}>
+                    style={{
+                      fontSize: moderateScale(14),
+                      fontWeight: '400',
+                      color: 'grey',
+                    }}>
                     To
                   </Text>
                   <Text
@@ -222,6 +235,7 @@ class Bus extends Component {
                     fontSize: moderateScale(14),
                     fontWeight: '400',
                     marginLeft: 10,
+                    color: 'grey',
                   }}>
                   Depart
                 </Text>
@@ -240,6 +254,7 @@ class Bus extends Component {
                     fontSize: moderateScale(14),
                     fontWeight: '400',
                     marginLeft: 10,
+                    color: 'grey',
                   }}>
                   Today, Thu
                 </Text>
@@ -418,7 +433,11 @@ class Bus extends Component {
                       Introducing goSafe Buses
                     </Text>
                     <Text
-                      style={{maxWidth: '70%', fontSize: moderateScale(13)}}>
+                      style={{
+                        maxWidth: '70%',
+                        fontSize: moderateScale(13),
+                        color: 'grey',
+                      }}>
                       Sanitized environment Trained staff Safe practice
                     </Text>
                   </View>
@@ -480,6 +499,7 @@ class Bus extends Component {
                       marginHorizontal: 10,
                       elevation: 5,
                       marginBottom: 10,
+                      backgroundColor: 'white',
                     }}>
                     <Image
                       resizeMode="cover"
