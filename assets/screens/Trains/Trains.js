@@ -168,9 +168,10 @@ export default class Trains extends Component {
                 <MaterialCommunityIcons
                   name="ticket-confirmation-outline"
                   size={35}
+                  color={'grey'}
                 />
               </TouchableOpacity>
-              <Text>Book Ticket</Text>
+              <Text style={{color: 'black'}}>Book Ticket</Text>
             </View>
             <View
               style={{
@@ -206,7 +207,7 @@ export default class Trains extends Component {
                   CHECK
                 </Text>
               </TouchableOpacity>
-              <Text>Check PNR</Text>
+              <Text style={{color: 'black'}}>Check PNR</Text>
             </View>
             <View
               style={{
@@ -233,7 +234,7 @@ export default class Trains extends Component {
                   color={'black'}
                 />
               </TouchableOpacity>
-              <Text>Train Status</Text>
+              <Text style={{color: 'black'}}>Train Status</Text>
             </View>
           </View>
 
