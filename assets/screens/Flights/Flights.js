@@ -102,6 +102,7 @@ class Flights extends Component {
                 padding: 10,
                 position: 'absolute',
                 marginTop: 20,
+                backgroundColor: 'white',
               }}>
               <View
                 style={{
@@ -190,7 +191,7 @@ class Flights extends Component {
                   marginVertical: 20,
                 }}>
                 <View>
-                  <Text>From</Text>
+                  <Text style={{color: 'grey'}}>From</Text>
                   <Text
                     style={{
                       fontSize: moderateScale(18),
@@ -199,7 +200,7 @@ class Flights extends Component {
                     }}>
                     DEL
                   </Text>
-                  <Text>Delhi</Text>
+                  <Text style={{color: 'grey'}}>Delhi</Text>
                 </View>
                 <Avatar.Icon
                   icon="arrow-left-right-bold"
@@ -210,7 +211,7 @@ class Flights extends Component {
                   }}
                 />
                 <View>
-                  <Text>Destination</Text>
+                  <Text style={{color: 'grey'}}>Destination</Text>
                   <Text
                     style={{
                       fontSize: moderateScale(18),
@@ -219,7 +220,7 @@ class Flights extends Component {
                     }}>
                     BOM
                   </Text>
-                  <Text>Mumbai</Text>
+                  <Text style={{color: 'grey'}}>Mumbai</Text>
                 </View>
               </View>
               <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
@@ -230,7 +231,7 @@ class Flights extends Component {
                   marginVertical: 20,
                 }}>
                 <View>
-                  <Text>Depart</Text>
+                  <Text style={{color: 'grey'}}>Depart</Text>
                   <Text
                     style={{
                       fontSize: moderateScale(18),
@@ -239,10 +240,10 @@ class Flights extends Component {
                     }}>
                     07 Dec' 21
                   </Text>
-                  <Text>Today, Tuesday</Text>
+                  <Text style={{color: 'grey'}}>Today, Tuesday</Text>
                 </View>
                 <View>
-                  <Text>Return</Text>
+                  <Text style={{color: 'grey'}}>Return</Text>
                   <Text
                     style={{
                       fontSize: moderateScale(18),
@@ -251,7 +252,7 @@ class Flights extends Component {
                     }}>
                     Select date
                   </Text>
-                  <Text>book return</Text>
+                  <Text style={{color: 'grey'}}>book return</Text>
                 </View>
               </View>
               <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
@@ -262,7 +263,7 @@ class Flights extends Component {
                   marginVertical: 20,
                 }}>
                 <View>
-                  <Text>Travellers</Text>
+                  <Text style={{color: 'grey'}}>Travellers</Text>
                   <Text
                     style={{
                       fontSize: moderateScale(18),
@@ -273,7 +274,7 @@ class Flights extends Component {
                   </Text>
                 </View>
                 <View>
-                  <Text>Class</Text>
+                  <Text style={{color: 'grey'}}>Class</Text>
                   <Text
                     style={{
                       fontSize: moderateScale(18),
@@ -287,12 +288,14 @@ class Flights extends Component {
               <View style={{borderWidth: 0.3, borderColor: 'grey'}} />
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Checkbox
+                  uncheckedColor="grey"
+                  color="green"
                   status={this.state.nonStop ? 'checked' : 'unchecked'}
                   onPress={() => {
                     this.setState({nonStop: !this.state.nonStop});
                   }}
                 />
-                <Text>Non-Stop Only</Text>
+                <Text style={{color: 'grey'}}>Non-Stop Only</Text>
               </View>
               <TouchableOpacity
                 style={{
@@ -495,6 +498,7 @@ class Flights extends Component {
                     borderRadius: 10,
                     elevation: 5,
                     marginBottom: 10,
+                    backgroundColor: 'white',
                   }}>
                   <View style={{flexDirection: 'row', marginBottom: 10}}>
                     <Image
@@ -507,7 +511,7 @@ class Flights extends Component {
                       }}
                     />
                     <View>
-                      <Text>Domestic Flights</Text>
+                      <Text style={{color: 'grey'}}>Domestic Flights</Text>
                       <Text style={{fontWeight: 'bold', color: 'black'}}>
                         FLAT 25% OFF* on select{'\n'} routes
                       </Text>
