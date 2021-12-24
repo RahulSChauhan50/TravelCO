@@ -126,7 +126,7 @@ export default class Profile extends Component {
                 />
                 <View style={styles.vactext}>
                   <Text style={styles.getVac}>Got Vaccinated?</Text>
-                  <Text style={{fontSize: 14, top: 3}}>
+                  <Text style={{fontSize: 14, top: 3, color: 'grey'}}>
                     Download your Covid vaccination certificate now
                   </Text>
                 </View>
