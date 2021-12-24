@@ -122,7 +122,9 @@ class Home extends Component {
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text style={{fontSize: moderateScale(12)}}>Hotels</Text>
+                  <Text style={{fontSize: moderateScale(12), color: 'black'}}>
+                    Hotels
+                  </Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
@@ -135,7 +137,9 @@ class Home extends Component {
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text style={{fontSize: moderateScale(12)}}>Flights</Text>
+                  <Text style={{fontSize: moderateScale(12), color: 'black'}}>
+                    Flights
+                  </Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
@@ -152,7 +156,9 @@ class Home extends Component {
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text style={{fontSize: moderateScale(12)}}>Trains</Text>
+                  <Text style={{fontSize: moderateScale(12), color: 'black'}}>
+                    Trains
+                  </Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
@@ -165,7 +171,9 @@ class Home extends Component {
                     color="#2176E3"
                     style={{backgroundColor: '#e3f0f9'}}
                   />
-                  <Text style={{fontSize: moderateScale(12)}}>Bus</Text>
+                  <Text style={{fontSize: moderateScale(12), color: 'black'}}>
+                    Bus
+                  </Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -201,7 +209,11 @@ class Home extends Component {
                     style={{backgroundColor: '#e3f0f9'}}
                   />
                   <Text
-                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    style={{
+                      textAlign: 'center',
+                      fontSize: moderateScale(12),
+                      color: 'black',
+                    }}>
                     Cabs
                   </Text>
                 </View>
@@ -217,7 +229,11 @@ class Home extends Component {
                     style={{backgroundColor: '#e3f0f9'}}
                   />
                   <Text
-                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    style={{
+                      textAlign: 'center',
+                      fontSize: moderateScale(12),
+                      color: 'black',
+                    }}>
                     Cloud Kitchen
                   </Text>
                 </View>
@@ -233,7 +249,11 @@ class Home extends Component {
                     style={{backgroundColor: '#e3f0f9'}}
                   />
                   <Text
-                    style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                    style={{
+                      textAlign: 'center',
+                      fontSize: moderateScale(12),
+                      color: 'black',
+                    }}>
                     TripMoney
                   </Text>
                 </View>
@@ -248,7 +268,11 @@ class Home extends Component {
                   style={{backgroundColor: '#e3f0f9'}}
                 />
                 <Text
-                  style={{textAlign: 'center', fontSize: moderateScale(12)}}>
+                  style={{
+                    textAlign: 'center',
+                    fontSize: moderateScale(12),
+                    color: 'black',
+                  }}>
                   Tourism
                 </Text>
               </TouchableOpacity>
@@ -290,6 +314,7 @@ class Home extends Component {
                     borderRadius: 10,
                     elevation: 5,
                     marginBottom: 10,
+                    backgroundColor: 'white',
                   }}>
                   <View style={{flexDirection: 'row', marginBottom: 10}}>
                     <Image
@@ -302,7 +327,7 @@ class Home extends Component {
                       }}
                     />
                     <View>
-                      <Text>Domestic Flights</Text>
+                      <Text style={{color: 'black'}}>Domestic Flights</Text>
                       <Text style={{fontWeight: 'bold', color: 'black'}}>
                         FLAT 25% OFF* on select{'\n'} routes
                       </Text>
