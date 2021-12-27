@@ -22,6 +22,7 @@ import {
 } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -36,6 +37,22 @@ const sliderWidth = Dimensions.get('window').width;
 const itemWidth = slideWidth + horizontalMargin * 2;
 
 const itemHeight = 200;
+
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
 const offer = [
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsvMnPhxiHD42Q7XTcM3H-HPtN7_9cVZwFDQ&usqp=CAU',
@@ -91,10 +108,41 @@ class ByTrain extends Component {
     super(props);
     this.state = {
       check: false,
-      train: '',
+      date: new Date(),
+      date2: '',
+      date3: '',
+      show: false,
+      mode: 'date',
+      month: '',
+      day: '',
+      Date: '',
+      shortMonth: '',
+      day2: '',
+      Date2: '',
+      shortMonth2: '',
+      day3: '',
+      Date3: '',
+      shortMonth3: '',
     };
   }
 
+  onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || this.state.date;
+    this.setState({
+      show: Platform.OS === 'ios',
+      date: currentDate,
+    });
+    this.fetchDate();
+  };
+  showMode = currentMode => {
+    this.setState({
+      show: true,
+      mode: currentMode,
+    });
+  };
+  showDatepicker = () => {
+    this.showMode('date');
+  };
   _renderItem = ({item, index}) => {
     return (
       <View style={styles.slide}>
@@ -130,7 +178,40 @@ class ByTrain extends Component {
     );
   };
 
+  fetchDate = () => {
+    console.log(this.state.date.toDateString());
+    const fullDate = this.state.date.toDateString();
+    if (Number(this.state.date2) <= 2) {
+      var mnth2 = this.state.date.getMonth() + 1;
+      var mnth3 = this.state.date.getMonth() + 1;
+    } else {
+      var mnth2 = this.state.date.getMonth();
+      var mnth3 = this.state.date.getMonth();
+    }
+    console.log(mnth2, mnth3);
+    let arr = fullDate.split(' ');
+    this.setState({
+      Date: arr[2],
+      day: arr[0],
+      shortMonth: arr[1],
+      month: monthNames[this.state.date.getMonth()],
+      // shortMonth2: monthNames[actualMonth],
+      // shortMonth3: monthNames[actualMonth2],
+    });
+    console.log('date', this.state.shortMonth2, this.state.shortMonth3);
+    console.log(this.state.Date, this.state.month);
+  };
+  componentDidMount() {
+    this.setState({
+      date2: this.state.date.getDate() + 1,
+      date3: this.state.date.getDate() + 2,
+    });
+    console.log(this.state.date2, this.state.date3);
+    this.onChange();
+  }
+
   render() {
+    console.log('date', this.state.shortMonth2, this.state.shortMonth3);
     return (
       <SafeAreaView style={{flex: 1}}>
         <ScrollView
@@ -174,7 +255,7 @@ class ByTrain extends Component {
                   color: 'black',
                   marginHorizontal: 10,
                 }}>
-                23
+                {this.state.Date}
               </Text>
               <View>
                 <Text
@@ -183,7 +264,7 @@ class ByTrain extends Component {
                     fontWeight: '400',
                     color: 'black',
                   }}>
-                  December
+                  {this.state.month}
                 </Text>
                 <Text
                   style={{
@@ -191,7 +272,7 @@ class ByTrain extends Component {
                     fontWeight: '400',
                     color: 'grey',
                   }}>
-                  Thursday
+                  {this.state.day}day
                 </Text>
               </View>
               <MaterialCommunityIcons
@@ -199,6 +280,7 @@ class ByTrain extends Component {
                 size={25}
                 style={{marginLeft: '5%'}}
                 color={'grey'}
+                onPress={this.showDatepicker}
               />
               <View
                 style={{
@@ -218,7 +300,7 @@ class ByTrain extends Component {
                     fontWeight: '400',
                     color: 'black',
                   }}>
-                  23 Dec
+                  {this.state.Date} {this.state.shortMonth}
                 </Text>
                 <Text
                   style={{
@@ -247,7 +329,7 @@ class ByTrain extends Component {
                     fontWeight: '400',
                     color: 'black',
                   }}>
-                  24 Dec
+                  {this.state.date2} {this.state.shortMonth}
                 </Text>
                 <Text
                   style={{
@@ -276,7 +358,7 @@ class ByTrain extends Component {
                     fontWeight: '400',
                     color: 'black',
                   }}>
-                  25 Dec
+                  {this.state.date3} {this.state.shortMonth}
                 </Text>
                 <Text
                   style={{
@@ -288,6 +370,16 @@ class ByTrain extends Component {
                 </Text>
               </View>
             </View>
+            {this.state.show && (
+              <DateTimePicker
+                testID="dateTimePicker"
+                value={this.state.date}
+                mode={this.state.mode}
+                is24Hour={true}
+                display="default"
+                onChange={this.onChange}
+              />
+            )}
           </View>
           <TouchableOpacity
             style={{

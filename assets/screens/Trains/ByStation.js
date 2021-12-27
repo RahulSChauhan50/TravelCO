@@ -113,12 +113,20 @@ class ByStation extends Component {
     this.state = {
       check: false,
       date: new Date(),
+      date2: '',
+      date3: '',
       show: false,
       mode: 'date',
       month: '',
       day: '',
       Date: '',
       shortMonth: '',
+      day2: '',
+      Date2: '',
+      shortMonth2: '',
+      day3: '',
+      Date3: '',
+      shortMonth3: '',
     };
   }
   onChange = (event, selectedDate) => {
@@ -175,7 +183,6 @@ class ByStation extends Component {
   fetchDate = () => {
     console.log(this.state.date.toDateString());
     const fullDate = this.state.date.toDateString();
-
     let arr = fullDate.split(' ');
     this.setState({
       Date: arr[2],
@@ -186,10 +193,15 @@ class ByStation extends Component {
     console.log(this.state.Date, this.state.month);
   };
   componentDidMount() {
+    this.setState({
+      date2: this.state.date.getDate() + 1,
+      date3: this.state.date.getDate() + 2,
+    });
     this.onChange();
   }
   render() {
-    // console.log(this.state.date.toDateString());
+    console.log('date', this.state.date2, this.state.date3);
+
     console.log(this.props.startingStation, this.props.finalStation);
     return (
       <SafeAreaView style={{flex: 1}}>
@@ -362,7 +374,7 @@ class ByStation extends Component {
                     fontWeight: '400',
                     color: 'black',
                   }}>
-                  23 Dec
+                  {this.state.Date} {this.state.shortMonth}
                 </Text>
                 <Text
                   style={{
@@ -391,7 +403,7 @@ class ByStation extends Component {
                     fontWeight: '400',
                     color: 'black',
                   }}>
-                  24 Dec
+                  {this.state.date2} {this.state.shortMonth}
                 </Text>
                 <Text
                   style={{
@@ -420,7 +432,7 @@ class ByStation extends Component {
                     fontWeight: '400',
                     color: 'black',
                   }}>
-                  25 Dec
+                  {this.state.date3} {this.state.shortMonth}
                 </Text>
                 <Text
                   style={{
